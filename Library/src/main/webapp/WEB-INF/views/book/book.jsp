@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>원하는 도서 찾기</title>
     <link rel="stylesheet" href="/assets/css/book.css">
+    <link rel="stylesheet" href="/assets/css/menu.css">
 </head>
 <body>
     <div class="content_box">

@@ -1,26 +1,17 @@
-.main_menu {
-    position: fixed;
-    background-color: #fafafa;
-
-    height: 100vh;
-    left: 0;top: 0;
-    box-shadow:2px 0px 7px rgba(0, 0, 0, 0.1);
-    width: 150px;
-    font-size: 12px;
-    text-decoration: none; font-family:"Noto Sans KR", sans-serif ;
-    color: #333;
+.main_menu_list {
+    width: 150px; display: block; overflow: hidden; 
+    position: fixed; height: 100vh; left: 0; top: 0;
+    background-color: #fafafa; box-shadow:2px 0px 7px rgba(0, 0, 0, 0.1);
 }
-.main_menu > li {
-    margin-top: 50px;
-    padding: 40px; 
-    width: 100px;
+#logo {
+    padding:10px 15px; margin: 10px 0;
+    color: #666;text-decoration: none;font-weight: 500;
+    font-size: 16px; font-family:"Noto Sans KR", sans-serif ;
+    margin-top: 60px;padding: 20px; width: 100px; margin-left: 14px; float:left;
 }
-a > span {
-    text-decoration: none; font-family:"Noto Sans KR", sans-serif ;
-    color: #333; font-weight: 700;
-}
-.main_menu .library_info {font-size: 15px;}
-.main_menu .book_info {font-size: 15px;}
-
-.main_menu span:active {
+.main_menu a {
+    padding:10px 15px; margin: 10px 0;
+    color: #666;text-decoration: none;font-weight: 500;
+    font-size: 16px; font-family:"Noto Sans KR", sans-serif ;
+    margin-top: 60px;padding: 20px; width: 100px; margin-left: 14px; float:left;
 }

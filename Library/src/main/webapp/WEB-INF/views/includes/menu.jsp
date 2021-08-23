@@ -6,17 +6,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>도서관 및 도서 찾기 대시보드</title>
+    <title>도서관 및 도서 정보 대시보드</title>
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/menu.css">
 </head>
 <body>
     <div class="main_menu_list">
-        <a href="/" id="logo">메인으로</a>
+            <a href="/" id="logo">
+                <span>도서관 정보</span>
+            </a>
         <ul class="main_menu">
-            <li>
-                <a href="#"><span class="library_info">도서관 정보</span></a>
-            </li>
             <li>
                 <a href="/book"><span class="book_info">도서 정보</span></a>
             </li>
