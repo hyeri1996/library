@@ -3,8 +3,8 @@ package com.greenart.vo;
 import lombok.Data;
 
 @Data
-public class RecommandBookVO {
-    private Integer id;
+public class RecommendBookInfoVO {
+    private String id;
     private String itempair;
     private String item1;
     private String item2;

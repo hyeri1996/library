@@ -5,7 +5,8 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class PublicLibraryVO {
+public class SmallLibraryInfoVO {
+    private Integer seq;
     private String rec_key;
     private String author;
     private String vol;

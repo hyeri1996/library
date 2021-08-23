@@ -4,8 +4,6 @@ import lombok.Data;
 
 @Data
 public class LibraryInfoVO {
-    private Integer seq;
-    private Integer lib_code;
     private String lib_name;
     private String addr;
     private String address1;
@@ -14,4 +12,6 @@ public class LibraryInfoVO {
     private String homepage;
     private String operatingTime;
     private String closedOn;
+
+    private String lib_type_nm;
 }

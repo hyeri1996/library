@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.mapper.NewBookInfoMapper">
+    <select id="selectNewBookDate" resultType="com.greenart.vo.NewBookInfoVO">
+    select * from new_book order by input_date desc
+
+    </select>
+
+    <select id="selectNewBookTitle" resultType="com.greenart.vo.NewBookInfoVO">
+    select * from new_book
+    where book_title like #{book_title} order by book_title asc
+    </select>
+
+    <select id="selectNewBookInfo" resultType="com.greenart.vo.NewBookInfoVO">
+    select distinct 
+        c.lib_name, a.isbn13 , book_title, a.authors, a.description, a.publisher, a.pub_date, a.input_date 
+    from new_book as a
+        inner join public_library as b
+    on a.isbn13 = b.isbn13 
+        inner join library_info as c
+    on b.lib_code = c.lib_code 
+    where description != ''
+    limit 20 offset 60
+    </select>
+</mapper>

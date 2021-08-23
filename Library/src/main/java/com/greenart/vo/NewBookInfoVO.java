@@ -3,7 +3,7 @@ package com.greenart.vo;
 import lombok.Data;
 
 @Data
-public class NewBookVO {
+public class NewBookInfoVO {
     private Integer no;
     private String input_date;
     private String isbn10;
