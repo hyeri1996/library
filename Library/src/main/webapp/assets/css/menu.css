@@ -1,0 +1,26 @@
+.main_menu {
+    position: fixed;
+    background-color: #fafafa;
+
+    height: 100vh;
+    left: 0;top: 0;
+    box-shadow:2px 0px 7px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    font-size: 12px;
+    text-decoration: none; font-family:"Noto Sans KR", sans-serif ;
+    color: #333;
+}
+.main_menu > li {
+    margin-top: 50px;
+    padding: 40px; 
+    width: 100px;
+}
+a > span {
+    text-decoration: none; font-family:"Noto Sans KR", sans-serif ;
+    color: #333; font-weight: 700;
+}
+.main_menu .library_info {font-size: 15px;}
+.main_menu .book_info {font-size: 15px;}
+
+.main_menu span:active {
+}
