@@ -5,14 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
-<<<<<<< HEAD
-    @GetMapping("/")
-    public String getMain() {
-        return "/index";
-    }
-}
-
-=======
 
     @GetMapping("/")
     public String getMain() {
@@ -20,4 +12,3 @@ public class MainController {
         return "/includes/menu";
     }
 }
->>>>>>> develop
