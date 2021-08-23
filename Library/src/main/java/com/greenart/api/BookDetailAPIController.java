@@ -1,0 +1,39 @@
+package com.greenart.api;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.greenart.service.BookDetailInfoService;
+import com.greenart.vo.BookDetailVO;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+@RestController
+public class BookDetailAPIController {
+    @Autowired
+    BookDetailInfoService service;
+    @GetMapping("/api/book") 
+        public Map<String, Object> getBookDetailInfo() {
+            Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+                List<BookDetailVO> list = service.selectBookDetail();
+                resultMap.put("status", true);
+                resultMap.put("data", list);
+                return resultMap;
+            }
+        @GetMapping("/api/book/{title}") 
+            public Map<String, Object> getBookDetailInfoByTitle(
+                @PathVariable String title,@RequestParam Integer offset
+                ) {
+                Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+                title = "%"+title+"%"; // 키워드 검색 시 앞 뒤로 %를 붙여주셔야 됩니다.
+                List<BookDetailVO> list = service.selectBookDetailByTitle(title, offset);
+                resultMap.put("status", true);
+                resultMap.put("data", list);
+            return resultMap;
+        }
+}

@@ -3,12 +3,15 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.greenart.mapper.NewBookInfoMapper">
     <select id="selectNewBookDate" resultType="com.greenart.vo.NewBookInfoVO">
-    select * from new_book order by input_date desc
-
+    select 
+        isbn13,book_title,authors,description,publisher,pub_date
+    from new_book order by input_date desc
     </select>
 
     <select id="selectNewBookTitle" resultType="com.greenart.vo.NewBookInfoVO">
-    select * from new_book
+    select 
+        isbn13,book_title,authors,description,publisher,pub_date
+    from new_book
     where book_title like #{book_title} order by book_title asc
     </select>
 

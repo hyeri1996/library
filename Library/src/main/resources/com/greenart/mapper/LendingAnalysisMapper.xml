@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatix.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.mapper.LendingAnalysisMapper">
+    <select id="selectLendDay" resultType="com.greenart.vo.LendingAnalysisVO">
+        select WKDAY_NM, avg(LON_RATE) as LON_RATE
+        from loan_analysis 
+        where ANALS_TRGET_YEAR = #{ANALS_TRGET_YEAR} and
+        ANALS_TRGET_MT = #{ANALS_TRGET_MT}
+        group by WKDAY_NM
+    </select>
+    <select id="selectLendLibrary" resultType="com.greenart.vo.LendingAnalysisVO">
+        select LBRRY_NM, avg(LON_RATE) as LON_RATE
+        from loan_analysis 
+        where ANALS_TRGET_YEAR = #{ANALS_TRGET_YEAR} and
+        ANALS_TRGET_MT = #{ANALS_TRGET_MT}
+        group by LBRRY_NM order by avg(LON_RATE) desc limit 10
+    </select>
+</mapper>

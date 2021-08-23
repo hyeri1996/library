@@ -6,7 +6,7 @@ import com.greenart.vo.LibraryInfoVO;
 
 import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
+@mapper
 public interface LibraryInfoMapper {
     public List<LibraryInfoVO> selectLibraryInfoAddr();
     public List<LibraryInfoVO> selectLibraryInfoName(String lib_name);
