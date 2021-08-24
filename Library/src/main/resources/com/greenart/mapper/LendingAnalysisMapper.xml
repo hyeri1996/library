@@ -9,17 +9,36 @@
         group by ANALS_TRGET_MT
     </select>
     <select id="selectLendDay" resultType="com.greenart.vo.LendingAnalysisVO">
-        select LBRRY_NM, avg(LON_RATE) as LON_RATE
-        from loan_analysis 
-        where ANALS_TRGET_YEAR = #{ANALS_TRGET_YEAR} and
-        ANALS_TRGET_MT = #{ANALS_TRGET_MT}
-        group by LBRRY_NM order by avg(LON_RATE) desc limit 10
-    </select>
-    <select id="selectLendArea" resultType="com.greenart.vo.LendingAnalysisVO">
         select WKDAY_NM, avg(LON_RATE) as LON_RATE
         from loan_analysis 
         where ANALS_TRGET_YEAR = #{ANALS_TRGET_YEAR} and
         ANALS_TRGET_MT = #{ANALS_TRGET_MT}
         group by WKDAY_NM
+    </select>
+    <select id="selectLendArea" resultType="com.greenart.vo.LendingAnalysisVO">
+        select AREA_NM, 
+        case
+            when AREA_NM='서울특별시' then '서울'
+            when AREA_NM='부산광역시' then '부산'
+            when AREA_NM='대구광역시' then '대구'
+            when AREA_NM='인천광역시' then '인천'
+            when AREA_NM='광주광역시' then '광주'
+            when AREA_NM='대전광역시' then '대전'
+            when AREA_NM='울산광역시' then '울산'
+            when AREA_NM='세종특별자치시' then '세종'
+            when AREA_NM='경기도' then '경기'
+            when AREA_NM='강원도' then '강원'
+            when AREA_NM='충청북도' then '충북'
+            when AREA_NM='충청남도' then '충남'
+            when AREA_NM='전라북도' then '전북'
+            when AREA_NM='전라남도' then '전남'
+            when AREA_NM='경상북도' then '경북'
+            when AREA_NM='경상남도' then '경남'
+            when AREA_NM='제주특별자치도' then '제주'
+        end as area , avg(LON_RATE) as LON_RATE
+        from loan_analysis 
+        where ANALS_TRGET_YEAR = #{ANALS_TRGET_YEAR} and
+        ANALS_TRGET_MT = #{ANALS_TRGET_MT}
+        group by AREA_NM
     </select>
 </mapper>

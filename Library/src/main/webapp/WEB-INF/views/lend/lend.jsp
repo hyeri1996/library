@@ -22,26 +22,26 @@
         <div class="dashboard_area">
             <div class="dashboard_content">
                 <div class="content_left">
-                    <p>월별 대출 횟수 비율</p>
+                    <canvas id="month_chart" style="width: 100%; height: 100%;"></canvas>
                 </div>
                 <div class="content_right">
-
+                    <p>미정</p>
                 </div>
             </div>
             <div class="dashboard_content">
                 <div class="content_left">
-                    <p>요일별 대출 횟수 비율</p>
+                    <canvas id="day_chart" style="width: 100%; height: 100%;"></canvas>
                 </div>
                 <div class="content_right">
-
+                    <p>미정</p>
                 </div>
             </div>
             <div class="dashboard_content">
                 <div class="content_left">
-                    <p>지역별 대출 횟수 비율</p>
+                    <canvas id="area_chart" style="width: 100%; height: 100%;"></canvas>
                 </div>
                 <div class="content_right">
-                    
+                    <p>미정</p>
                 </div>
             </div>
         </div>
