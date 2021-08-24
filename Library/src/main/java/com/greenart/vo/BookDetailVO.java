@@ -4,6 +4,8 @@ import lombok.Data;
 
 @Data
 public class BookDetailVO {
+    private String master_seq;
+    private String isbn13;
     private String vol;
     private String title;
     private String author;
