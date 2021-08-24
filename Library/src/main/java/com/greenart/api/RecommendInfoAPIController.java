@@ -24,4 +24,12 @@ public class RecommendInfoAPIController {
         resultMap.put("data", list);
         return resultMap;
     }
+    // @GetMapping("/api/recommend/public")
+    // public Map<String, Object> getNewPublicLank() {
+    //     Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+    //     List<RecommendBookInfoVO> list = service.NewPublicLank();
+    //     resultMap.put("status", true);
+    //     resultMap.put("data", list);
+    //     return resultMap;
+    // }
 }

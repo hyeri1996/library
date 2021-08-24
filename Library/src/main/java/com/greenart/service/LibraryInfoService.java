@@ -24,4 +24,5 @@ public class LibraryInfoService {
     public LibraryInfoVO selectLibraryInfoByType(String lib_type_nm) {
         return mapper.selectLibraryInfoByType(lib_type_nm);
     }
+    
 }

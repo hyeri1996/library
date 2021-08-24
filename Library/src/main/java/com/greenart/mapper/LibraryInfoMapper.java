@@ -14,4 +14,5 @@ public interface LibraryInfoMapper {
 
     public LibraryInfoVO selectLibraryInfoByType(String lib_type_nm);
     
+    
 }

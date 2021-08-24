@@ -12,18 +12,17 @@
 </head>
 <body>
     <div class="main_menu_list">
-            <a href="/" id="logo">
+            <a href="/library" id="logo">
                 <span>도서관 정보</span>
             </a>
         <ul class="main_menu">
-            <li>
                 <a href="/book"><span class="book_info">도서 정보</span></a>
             </li>
             <li>
                 <a href="/lend"><span>대출 추이 및 분석</span></a>
             </li>
             <li>
-                <a href="#"><span>추천 도서 및 신작 도서</span></a>
+                <a href="/newbook"><span>추천 도서 및 신작 도서</span></a>
             </li>
         </ul>
     </div>

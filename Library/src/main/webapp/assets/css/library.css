@@ -1,0 +1,18 @@
+.dashboard_area {
+    width: 1400px; 
+    background-color: #fdc;
+    box-sizing: border-box; padding-left: 200px;
+}
+.dashboard_area > div {height: 400px; width: 100%; background-color: #fed; margin-bottom: 20px; position: relative;}
+
+.dashboard_area > div {
+    display: inline-block; vertical-align: top;
+    font-family: "Noto Sans KR", sans-serif; font-size: 20px; text-align: center;
+}
+.content_area .content_info {font-family: "Noto Sans KR", sans-serif; font-size: 60px;}
+.content_area > div {
+    display: inline-block; vertical-align: top; text-align: center;
+    padding: 50px; box-sizing: border-box; padding: 60px;
+}
+
+.dashboard_area > div p {font-weight: 700;}

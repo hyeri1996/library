@@ -12,4 +12,6 @@ public interface NewBookInfoMapper {
     public List<NewBookInfoVO> selectNewBookTitle(String book_title);
 
     public List<NewBookInfoVO> selectNewBookInfo();
+    public List<NewBookInfoVO> PublicBookCntRank();
+
 }

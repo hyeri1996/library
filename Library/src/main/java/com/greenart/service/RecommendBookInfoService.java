@@ -15,4 +15,5 @@ public class RecommendBookInfoService {
     public List<RecommendBookInfoVO> selectRecommendCount() {
         return mapper.selectRecommendCount();
     }
+    
 }

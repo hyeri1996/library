@@ -18,7 +18,7 @@ public class LibraryAPIController {
     @Autowired
     LibraryInfoService service;
     @GetMapping("/api/library")
-        public Map<String, Object> getLirbraryInfoAddr() {
+        public Map<String, Object> getLirbraryInfo() {
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
                 List<LibraryInfoVO> list = service.selectLibraryInfoAddr();
                 resultMap.put("status", true);
@@ -53,5 +53,4 @@ public class LibraryAPIController {
             resultMap.put("data", data);
             return resultMap;
         }
-
 }

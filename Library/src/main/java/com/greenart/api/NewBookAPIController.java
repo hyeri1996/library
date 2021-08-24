@@ -44,4 +44,12 @@ public class NewBookAPIController {
         resultMap.put("data", list);
         return resultMap;
     }
+    @GetMapping("/api/newbook/public/cnt")
+    public Map<String, Object> getNewPublicCntLank() {
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        List<NewBookInfoVO> list = service.PublicBookCntRank();
+        resultMap.put("status", true);
+        resultMap.put("data", list);
+        return resultMap;
+    }
 }

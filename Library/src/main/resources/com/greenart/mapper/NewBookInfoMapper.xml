@@ -26,4 +26,17 @@
     where description != ''
     limit 20 offset 60
     </select>
+    
+    <select id="PublicBookCntRank" resultType="com.greenart.vo.NewBookInfoVO">
+    select distinct 
+        a.isbn13, c.rank, c.vol
+    from new_book as a
+        inner join public_library as b 
+    on a.isbn13 = b.isbn13
+        inner join book_rank as c 
+    on b.isbn13 = c.isbn13 
+    order by c.rank desc
+    limit 5
+    </select>
+    
 </mapper>

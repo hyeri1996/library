@@ -4,7 +4,7 @@
 <mapper namespace="com.greenart.mapper.LibraryInfoMapper">
     <select id="selectLibraryInfoAddr" resultType="com.greenart.vo.LibraryInfoVO">
         select 
-            lib_code,lib_name,addr,address1,address2,tel,homepage,operatingTime,closedOn,lib_type_nm 
+            lib_code,lib_name,addr,address1,address2,tel,homepage,operatingTime,closedOn
         from library_info order by addr asc
     </select>
 

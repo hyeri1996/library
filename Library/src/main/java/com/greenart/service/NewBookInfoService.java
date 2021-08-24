@@ -21,4 +21,8 @@ public class NewBookInfoService {
     public List<NewBookInfoVO> selectNewBookInfo() {
         return mapper.selectNewBookInfo();
     }
+    public List<NewBookInfoVO> PublicBookCntRank() {
+        return mapper.PublicBookCntRank();
+    }
+    
 }
