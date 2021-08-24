@@ -3,7 +3,9 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.greenart.mapper.BookDetailMapper">
     <select id="selectBookDetail" resultType="com.greenart.vo.BookDetailVO">
-        select * from book_detail
+        select 
+            title,vol,author,publisher,description,pub_date,img_url
+        from book_detail
         limit 20
     </select>
     <select id="selectBookDetailByTitle" resultType="com.greenart.vo.BookDetailVO">
