@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.mapper.LibraryInfoMapper">
+    <select id="selectLibraryInfoAddr" resultType="com.greenart.vo.LibraryInfoVO">
+        select 
+            lib_code,lib_name,addr,address1,address2,tel,homepage,operatingTime,closedOn,lib_type_nm 
+        from library_info order by addr asc
+    </select>
+
+    <select id="selectLibraryInfoName" resultType="com.greenart.vo.LibraryInfoVO">
+        select 
+            lib_code,lib_name,addr,address1,address2,tel,homepage,operatingTime,closedOn,lib_type_nm 
+        from library_info
+        where lib_name like #{lib_name} order by lib_name asc
+    </select>
+
+    <select id="selectLibraryAddress" resultType="com.greenart.vo.LibraryInfoVO">
+        select 
+            lib_code,lib_name,addr,address1,address2,tel,homepage,operatingTime,closedOn,lib_type_nm 
+        from library_info
+        where address1 like #{address1} and address2 like #{address2} order by lib_name asc
+    </select>
+
+    <select id="selectLibraryInfoByType" resultType="com.greenart.vo.LibraryInfoVO">
+        select count(*) from library_info where lib_type_nm = #{lib_type_nm}
+    </select>
+        
+</mapper>

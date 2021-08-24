@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.mapper.SmallLibraryInfoMapper">
+    <select id="selectSmallLibraryKey" resultType="com.greenart.vo.SmallLibraryInfoVO">
+        select * from small_library order by rec_key asc
+    </select>
+    <select id="selectSmallLibraryTitle" resultType="com.greenart.vo.SmallLibraryInfoVO">
+        select * from small_library
+        where title like #{title} order by title asc
+    </select>
+
+</mapper>
