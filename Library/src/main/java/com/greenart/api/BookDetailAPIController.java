@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookDetailAPIController {
     @Autowired
     BookDetailInfoService service;
+    // 책정보 입력 X
     @GetMapping("/api/book") 
         public Map<String, Object> getBookDetailInfo() {
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
@@ -25,6 +26,7 @@ public class BookDetailAPIController {
                 resultMap.put("data", list);
                 return resultMap;
             }
+        // 책정보 제목 키워드 입력
         @GetMapping("/api/book/{title}") 
             public Map<String, Object> getBookDetailInfoByTitle(
                 @PathVariable String title,@RequestParam Integer offset
