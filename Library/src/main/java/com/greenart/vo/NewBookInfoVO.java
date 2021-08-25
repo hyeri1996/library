@@ -11,4 +11,7 @@ public class NewBookInfoVO {
     private String description;
     private String publisher;
     private String pub_date;
+
+    // private String rank;
+    // private String vol;
 }

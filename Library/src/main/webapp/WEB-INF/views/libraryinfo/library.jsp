@@ -18,31 +18,36 @@
     <script src="/assets/js/library.js"></script>
 </head>
 <body>
-    <div class="content_box">
+    <div class="container">
         <%@include file="/WEB-INF/views/includes/menu.jsp"%>
-        <h1>도서관 정보</h1>
         <div class="dashboard_area">
-            <div class="content_area">
-                <div>
-                    <p>공공/ 작은 도서관 비중</p>
-                    <p id="libraryCntRateChart"></p>
+            <div class="dashboard_content">
+                <div class="content_left">
+                    <p>공공 최다 대출 도서관 목록</p>
                 </div>
-                <div>
-                    <p>최다 대출 도서관 목록</p>
-                    <p id=''></p>
+                <div class="content_right">
+                    <p>공공 / 작은 도서관 비율</p>
+                    <canvas id="library_chart" style="width: 100%; height: 100%;"></canvas>
                 </div>
             </div>
-            <div class="content_area">
-                <div>
-                    <p>공공도서관 / 작은도서관 총 대출횟수 비교</p>
-                    <p></p>
+        </div>
+    <div class="container">
+        <%@include file="/WEB-INF/views/includes/menu.jsp"%>
+        <div class="dashboard_area">
+            <div class="dashboard_content">
+                <div class="content_left">
+                    <p>작은 최다 대출 도서관 목록</p>
                 </div>
-
+                <div class="content_right">
+                    <p>공공 / 작은 총 대출횟수 비율</p>
+                </div>
             </div>
-            <div class="content_info">
-                <h1>도서관 정보</h1>
-                <input type="text" id="search_keyword" placeholder="도서관 명을 입력하세요.">
-                <select id="adrress1">
+        </div>
+        <div class="dashboard_content">
+            <div class="search_box_area">
+                <p>도서관 정보</p>
+                
+                <select id="adrress1_select">
                     <option value="서울특별시">서울특별시</option>
                     <option value="경기도">경기도</option>
                     <option value="인천광역시">인천광역시</option>
@@ -61,10 +66,9 @@
                     <option value="충청북도">충청북도</option>
                     <option value="강원도">강원도</option>
                 </select>
-                <select id="adrress2">
-                    <option value="null">구/군 선택</option>
-                </select>
+                <input type="text" id="search_keyword" placeholder="도서관 명을 입력하세요.">
                 <button id="search">검색</button>
+                <table class="library_list_tbl">
                     <thead>
                         <tr>
                             <td>도서관 명</td>
@@ -73,9 +77,13 @@
                             <td>홈페이지</td>
                             <td>개관시간</td>
                             <td>휴관일</td>
-                            <td>도서관유형</td>
                         </tr>
                     </thead>
+                </table>
+                <div class="search_pager_area">
+                    <button id="library_prev">&lt;</button>
+                    <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
+                    <button id="library_next">&gt;</button>
                 </div>
             </div>
         </div>

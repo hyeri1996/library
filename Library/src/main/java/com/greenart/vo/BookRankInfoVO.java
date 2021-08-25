@@ -4,8 +4,12 @@ import lombok.Data;
 
 @Data
 public class BookRankInfoVO {
-    private String isbn13;
-    private String rank;
+
+    private String b_rank;
     private String title;
     private String author;
+
+    private String description;
+    private String publisher;
+
 }

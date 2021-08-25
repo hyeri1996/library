@@ -27,15 +27,15 @@ public class NewBookAPIController {
         resultMap.put("data", list);
         return resultMap;
     }
-    @GetMapping("/api/newbook/{book_title}")
-    public Map<String, Object> getNewBookTitle(@PathVariable String book_title) {
-        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        book_title = "%"+book_title+"%";
-        List<NewBookInfoVO> list = service.selectNewBookTitle(book_title);
-        resultMap.put("status", true);
-        resultMap.put("data", list);
-        return resultMap;
-    }
+    // @GetMapping("/api/newbook/{book_title}")
+    // public Map<String, Object> getNewBookTitle(@PathVariable String book_title) {
+    //     Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+    //     book_title = "%"+book_title+"%";
+    //     List<NewBookInfoVO> list = service.selectNewBookTitle(book_title);
+    //     resultMap.put("status", true);
+    //     resultMap.put("data", list);
+    //     return resultMap;
+    // }
     @GetMapping("/api/newbook/info")
     public Map<String, Object> getNewBookInfo() {
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
@@ -46,10 +46,12 @@ public class NewBookAPIController {
     }
     @GetMapping("/api/newbook/public/cnt")
     public Map<String, Object> getNewPublicCntLank() {
+        System.out.println("start");
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
         List<NewBookInfoVO> list = service.PublicBookCntRank();
         resultMap.put("status", true);
         resultMap.put("data", list);
+        System.out.println("end");
         return resultMap;
     }
 }

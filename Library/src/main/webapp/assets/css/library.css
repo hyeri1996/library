@@ -1,18 +1,30 @@
-.dashboard_area {
-    width: 1400px; 
-    background-color: #fdc;
-    box-sizing: border-box; padding-left: 200px;
-}
-.dashboard_area > div {height: 400px; width: 100%; background-color: #fed; margin-bottom: 20px; position: relative;}
-
-.dashboard_area > div {
+.dashboard_content p {font-size: 20px;}
+.dashboard_content {
+    box-sizing: border-box; padding:10px; font-size: 0; margin-top: 15px;}
+.dashboard_content > div {
     display: inline-block; vertical-align: top;
-    font-family: "Noto Sans KR", sans-serif; font-size: 20px; text-align: center;
+    font-size: 12px; font-weight: 500; font-family: "Noto Sans KR", sans-serif;}
+.content_left {
+    width: 620px; height: 200px;
+    margin-left: 20%;
 }
-.content_area .content_info {font-family: "Noto Sans KR", sans-serif; font-size: 60px;}
-.content_area > div {
-    display: inline-block; vertical-align: top; text-align: center;
-    padding: 50px; box-sizing: border-box; padding: 60px;
+.content_right {width: 250px; height: 200px; margin-left: 20px;}
+.content_left, .content_right {background-color: #fff; border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
+    padding:20px;
 }
 
-.dashboard_area > div p {font-weight: 700;}
+.search_box_area {
+    width: 1300px; height: 500px; margin-left: 10%;
+    background-color: #fff; border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
+    padding:20px;
+}
+.library_list_tbl {
+    font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
+}
+.library_list_tbl td {width: 10%; text-align: center;
+    padding: 15px 0; border: 1px solid #eee;
+    
+}
+.library_list_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}

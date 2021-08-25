@@ -20,7 +20,7 @@ public class LibraryAPIController {
     @GetMapping("/api/library")
         public Map<String, Object> getLirbraryInfo() {
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-                List<LibraryInfoVO> list = service.selectLibraryInfoAddr();
+                List<LibraryInfoVO> list = service.selectLibraryInfo();
                 resultMap.put("status", true);
                 resultMap.put("data", list);
                 return resultMap;

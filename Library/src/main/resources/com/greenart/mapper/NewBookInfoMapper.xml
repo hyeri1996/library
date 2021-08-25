@@ -16,27 +16,23 @@
     </select>
 
     <select id="selectNewBookInfo" resultType="com.greenart.vo.NewBookInfoVO">
-    select distinct 
-        c.lib_name, a.isbn13 , book_title, a.authors, a.description, a.publisher, a.pub_date, a.input_date 
-    from new_book as a
-        inner join public_library as b
-    on a.isbn13 = b.isbn13 
-        inner join library_info as c
-    on b.lib_code = c.lib_code 
-    where description != ''
-    limit 20 offset 60
+    select 
+        book_title, authors, description, publisher, pub_date
+        from new_book
+        limit 10 offset 15
+
     </select>
     
     <select id="PublicBookCntRank" resultType="com.greenart.vo.NewBookInfoVO">
-    select distinct 
-        a.isbn13, c.rank, c.vol
-    from new_book as a
-        inner join public_library as b 
-    on a.isbn13 = b.isbn13
-        inner join book_rank as c 
-    on b.isbn13 = c.isbn13 
-    order by c.rank desc
-    limit 5
+        select distinct 
+            c.rank, a.book_title, c.vol
+        from new_book as a
+            inner join public_library as b 
+        on a.isbn13 = b.isbn13
+            inner join book_rank as c 
+        on b.isbn13 = c.isbn13 
+        order by c.rank asc
+        limit 5
     </select>
     
 </mapper>

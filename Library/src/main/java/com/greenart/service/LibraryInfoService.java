@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 public class LibraryInfoService {
     @Autowired
     LibraryInfoMapper mapper;
-    public List<LibraryInfoVO> selectLibraryInfoAddr() {
-        return mapper.selectLibraryInfoAddr();
+    public List<LibraryInfoVO> selectLibraryInfo() {
+        return mapper.selectLibraryInfo();
     }
     public List<LibraryInfoVO> selectLibraryInfoName(String lib_name) {
         return mapper.selectLibraryInfoName(lib_name);
