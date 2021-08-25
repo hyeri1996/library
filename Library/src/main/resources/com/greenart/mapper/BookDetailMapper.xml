@@ -9,7 +9,9 @@
         limit 20
     </select>
     <select id="selectBookDetailByTitle" resultType="com.greenart.vo.BookDetailVO">
-        select * from book_detail where title like #{title}
+        select 
+            title,vol,author,publisher,description,pub_date,img_url
+        from book_detail where title like #{title}
         limit 20 offset #{offset};
     </select>
 </mapper>

@@ -23,6 +23,30 @@ public class LendingAnalysisAPIController {
     // public Map<String, Object> getLendDay(
     //     @PathVariable String ANALS_TRGET_YEAR, @PathVariable Integer ANALS_TRGET_MT
     //     ) 
+     // 월별 대출 비율
+    @GetMapping("/api/lend/month")
+    public Map<String, Object> getLendMonth(
+        @RequestParam @Nullable String ANALS_TRGET_YEAR
+        ) 
+    {
+        String year = "";
+         // 아무것도 입력하지 않았을 때
+        if(ANALS_TRGET_YEAR == null) {
+             // 오늘 날짜를 기준으로 연도와 월을 세팅합니다..
+            Calendar c = Calendar.getInstance();
+            year = ""+c.get(Calendar.YEAR);
+        }
+        else {
+             // 그게 아니라면, 입력한 값으로 세팅합니다.
+            year = ANALS_TRGET_YEAR;
+        }
+
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        List<LendingAnalysisVO> list = service.selectLendMonth(year);
+            resultMap.put("lendmonth", list);
+            return resultMap;
+    }
+    // 요일별 대출 비율
     @GetMapping("/api/lend/day")
     public Map<String, Object> getLendDay(
         @RequestParam @Nullable String ANALS_TRGET_YEAR, 
@@ -49,9 +73,9 @@ public class LendingAnalysisAPIController {
             resultMap.put("lendDay", list);
             return resultMap;
     }
-
-    @GetMapping("/api/lend/library")
-    public Map<String, Object> getLendLibrary(
+    // 지역별 대출 비율
+    @GetMapping("/api/lend/area")
+    public Map<String, Object> getLendArea(
         @RequestParam @Nullable String ANALS_TRGET_YEAR, 
         @RequestParam @Nullable Integer ANALS_TRGET_MT
         ) 
@@ -72,8 +96,8 @@ public class LendingAnalysisAPIController {
         }
 
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        List<LendingAnalysisVO> list = service.selectLendLibrary(year, month);
-            resultMap.put("lendlibrary", list);
+        List<LendingAnalysisVO> list = service.selectLendArea(year, month);
+            resultMap.put("lendarea", list);
             return resultMap;
     }
     

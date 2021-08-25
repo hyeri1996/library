@@ -11,4 +11,6 @@ public class LendingAnalysisVO {
     private String LBRRY_NM;
     private String WKDAY_NM;
     private Double LON_RATE;
+
+    private String area;
 }
