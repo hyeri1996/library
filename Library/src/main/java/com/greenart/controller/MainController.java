@@ -9,6 +9,6 @@ public class MainController {
     @GetMapping("/")
     public String getMain() {
         
-        return "/includes/menu";
+        return "/index";
     }
 }

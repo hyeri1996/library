@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.greenart.service.BookDetailInfoService;
 import com.greenart.vo.BookDetailVO;
+import com.greenart.vo.BookRankVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
@@ -38,4 +39,16 @@ public class BookDetailAPIController {
                 resultMap.put("data", list);
             return resultMap;
         }
+
+        // 대출 급상승 도서
+        @GetMapping("/api/book/rank/{reg_dt}")
+            public Map<String, Object> getBookRankChange(
+                @PathVariable String reg_dt
+            ){
+                Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+                List<BookRankVO> list = service.selectBookRankChange(reg_dt);
+                resultMap.put("status", true);
+                resultMap.put("ranklist", list);
+                return resultMap;
+            }
 }

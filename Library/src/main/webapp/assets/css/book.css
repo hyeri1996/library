@@ -1,28 +1,54 @@
 .dashboard_content {
-    box-sizing: border-box; padding:10px; font-size: 0; margin-top: 15px;}
+    box-sizing: border-box; padding:10px; font-size: 0; margin-top: 15px; display: inline-block; vertical-align: top;}
 .dashboard_content > div {
     display: inline-block; vertical-align: top;
-    font-size: 12px; font-weight: 500; font-family: "Noto Sans KR", sans-serif;}
-.content_left {
-    width: 510px; height: 200px;
-    margin-left: 20%;
+    font-size: 12px; font-weight: 500px; font-family: "Noto Sans KR", sans-serif;}
+.dashboard_content > p {
+    font-size: 12px; text-align: left; margin-bottom: 10px; margin-left: 10%;
+    font-weight: 700px; 
 }
-.content_right {width: 250px; height: 200px; margin-left: 20px;}
-.content_left, .content_right {background-color: #fff; border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
-    padding:20px;
+.content_right {
+    width: 1000px; height: 200px; margin-right: 5px; margin-left: 20px;
+    text-align: center;
 }
 
 .search_box_area {
-    width: 780px; height: 370px; margin-left: 20%;
+    width: 780px; height: 370px;
     background-color: #fff; border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
     padding:20px;
 }
-.search_box_tbl {
+#search {
+    width: 500px; font-size: 15px; font-weight: 300px;margin-bottom: 7px;
+    box-sizing: content-box; font-family: "Noto Sans KR", serif;
+    border-radius: 10px;
+}
+.book_detail_tbl {
     font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
 }
-.search_box_tbl td {width: 33.33%; text-align: center;
+.book_detail_tbl td {width: 33.33%; text-align: center;
     padding: 10px 0; border: 1px solid #eee;
 }
-.search_box_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
+.book_detail_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
+.rank_dashboard {
+    width: 1080px;  margin:30px auto; text-align: center;
+    font-family: "Noto Sans KR", serif; 
+}
+.book_rank {
+    background-color: #fff;
+    width: 1080px; display:contents; vertical-align: top;
+    margin-bottom: 20px; font-size: 16px; text-align: center;
+    padding-bottom: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    width: calc((100% - 40px) / 5)
+}
+.book_rank p {font-family: "Noto Sans KR", sans-serif; }
+.book_rank .rank_box {
+    display: inline-block; vertical-align: top; width: 190px; margin: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); border-radius: 15px; height: 200px; text-align: center;
+    box-sizing: border-box; font-family: "Noto Sans KR", sans-serif;
+}
+.bookTitle {font-size: 16px; margin-top: 20px; font-weight: 700; margin-bottom: 20px;}
+.author {font-size: 14px; font-weight: 700;}
+.publisher {font-size: 14px; font-weight: 700;}
+.regRank{font-size: 14px; font-weight: 700;}
+.changeRank {font-size: 12px;  font-weight: 700;;color: #f22;}
