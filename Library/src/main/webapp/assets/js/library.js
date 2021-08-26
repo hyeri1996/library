@@ -1,5 +1,4 @@
 $(function() {
-
     // 공공 최다 대출 도서관 목록
     
     // 공공/작은 도서관 비율
@@ -12,21 +11,30 @@ $(function() {
             for(let i=0; i<r.type.length; i++) {
                 typeArr.push(r.type[i].lib_type_nm);
             }
+
             let ctx = $("#type_chart");
             let type_Chart = new Chart(ctx, {
                 type:"pie",
-                options:{
-                    responsive:false,
-                },
+                // options:{
+                //     response:false,
+                // },
                 data:{
-                    labels:["공공", "작은"],
+                    labels:["공공" , "작은"],
                     datasets:[
                         {
-                            label:"공공도서관 / 작은도서관",
+                            label:"공공/작은 도서관",
                             data:typeArr,
-                            backgroundColor:["#FCF8E8", "#D4E2D4"]
+                            backgroundColor:["#DFCD85" , "#F7F6D3"]
                         }
                     ]
+                },
+                options: {
+                    responsive:false,
+                    plugins: {
+                        legend: {
+                            display: false,
+                        }
+                    }
                 }
             });
         }

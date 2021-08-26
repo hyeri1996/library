@@ -5,14 +5,21 @@
 .banner_item .library_type_rate {
     position: relative;
     top: 50%;
-    left: 80%;
+    left: 77%;
     transform: translate(-50%, -50%);
-    font-size: 5rem;
-    color: white;
+    font-size: 10px;
+    color: #666;
     z-index: 2;
     text-align: center;
     background-color: rgba(207, 195, 195, 0.9);
-    width: 200px;height: 200px;
+    width: 230px;height: 250px;
+    box-shadow: 10px 10px 5px 5px #444;
+}
+.library_type_rate { border-radius: 15px;
+}
+.library_type_rate > p {
+    font-size: 16px; margin-bottom: 20px; padding-top: 15px;font-weight: 500;
+    font-family: "Noto Sans KR", serif; color: #333;
 }
 .new_book_box > p {
     font-size: 40px; font-family:"Noto Sans KR", serif; font-weight: 500;
@@ -34,10 +41,10 @@
     font-size: 12px; text-align: left; margin-bottom: 10px; margin-left: 10%;
     font-weight: 700px; 
 }
-.search_box_area {
-    width: 1150px; height: 500px;
+.new_book_tbl_area {
+    width: 1150px; height: 450px;
     background-color: #fff; border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
+    box-sizing: border-box;
     padding:20px; margin-left: 7%;
 }
 .new_book_tbl {
@@ -47,3 +54,10 @@
     padding: 25px 0; border: 1px solid #eee; font-size: 15px;
 }
 .new_book_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
+
+.content_box #first_line {
+    margin-bottom: -20px;
+}
+.content_box #last_line {
+    margin-top: -10px;
+}
