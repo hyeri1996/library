@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.structure.min.css" integrity="sha512-oM24YOsgj1yCDHwW895ZtK7zoDQgscnwkCLXcPUNsTRwoW1T1nDIuwkZq/O6oLYjpuz4DfEDr02Pguu68r4/3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css" integrity="sha512-9h7XRlUeUwcHUf9bNiWSTO9ovOWFELxTlViP801e5BbwNJ5ir9ua6L20tEroWZdm+HFBAWBLx2qH4l4QHHlRyg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/css/book.css">
+    <script src="https://kit.fontawesome.com/ef5f05643d.js" crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets/js/book.js"></script>
 </head>
 <body>
+    <%@include file="/WEB-INF/views/includes/menu.jsp"%>
     <div class="container">
-        <%@include file="/WEB-INF/views/includes/menu.jsp"%>
+        <p>인기 상승 도서</p>
+        <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
         <div class="dashboard_area">
             <div class="rank_dashboard">
                 <div class="content_right">
@@ -26,25 +29,21 @@
                 
                     </div>
                 </div>
-                <div class="dashboard_content">
-                    <div class="search_box_area">
-                            <input type="text" id="search" placeholder="책의 제목을 입력해주세요.">
-                            <button id="search_btn">검색</button>
-                        <table class="book_detail_tbl">
-                            <thead>
-                                <tr>
-                                    <td>제목</td>
-                                    <td>지은이</td>
-                                    <td>출판사</td>
-                                </tr>
-                            </thead>
-                        </table>
-                        <div class="search_pager_area">
-                            <button id="book_prev">&lt;</button>
-                            <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
-                            <button id="book_next">&gt;</button>
-                        </div>
-                    </div>
+            </div>
+            <div class="book_list">
+                <div class="search_book">
+                    <p>
+                        <i class="fas fa-search  fa-rotate-90" style="font-size: 30px;"></i>
+                        도서 찾기
+                    </p>
+                    <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
+                <div class="search_book_box">
+                    <input type="search" id="search_box" placeholder="찾으시는 책의 제목을 입력해 주세요.">
+                    <button id="search_btn">
+                        <span>검색</span>
+                    </button>
+                    <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
+                </div>
                 </div>
             </div>
         </div>
