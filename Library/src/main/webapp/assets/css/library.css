@@ -15,7 +15,7 @@
 }
 
 .search_box_area {
-    width: 1300px; height: 500px; margin-left: 10%;
+    width: 780px; height: 500px; margin-left: 20%;
     background-color: #fff; border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
     padding:20px;
@@ -24,7 +24,7 @@
     font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
 }
 .library_list_tbl td {width: 10%; text-align: center;
-    padding: 15px 0; border: 1px solid #eee;
+    padding: 13px 0; border: 1px solid #eee;
     
 }
 .library_list_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}

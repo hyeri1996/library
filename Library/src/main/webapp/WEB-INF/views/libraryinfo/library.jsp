@@ -26,8 +26,7 @@
                     <p>공공 최다 대출 도서관 목록</p>
                 </div>
                 <div class="content_right">
-                    <p>공공 / 작은 도서관 비율</p>
-                    <canvas id="library_chart" style="width: 100%; height: 100%;"></canvas>
+                    <canvas id="type_chart" style="width: 100%; height: 100%;"></canvas>
                 </div>
             </div>
         </div>
@@ -73,10 +72,10 @@
                         <tr>
                             <td>도서관 명</td>
                             <td>도로명주소</td>
-                            <td>대표번호</td>
+                            <!-- <td>대표번호</td>
                             <td>홈페이지</td>
                             <td>개관시간</td>
-                            <td>휴관일</td>
+                            <td>휴관일</td> -->
                         </tr>
                     </thead>
                 </table>

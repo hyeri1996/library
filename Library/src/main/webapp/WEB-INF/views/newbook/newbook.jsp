@@ -29,8 +29,8 @@
                             <tr>
                                 <td>도서 명</td>
                                 <td>저자</td>
-                                <!-- <td>책 소개</td> -->
-                                <td>출판사</td>
+                                <td>책 소개</td>
+                                <td>발행일</td>
                             </tr>
                         </thead>
                         <tbody id="public_tbody">
@@ -52,8 +52,8 @@
                             <tr>
                                 <td>도서 명</td>
                                 <td>저자</td>
-                                <!-- <td>책 소개</td> -->
-                                <td>출판사</td>
+                                <td>책 소개</td>
+                                <td>발행일</td>
                             </tr>
                         </thead>
                         <tbody id="small_tbody"></tbody>

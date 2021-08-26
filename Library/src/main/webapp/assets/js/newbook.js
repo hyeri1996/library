@@ -12,8 +12,9 @@ $(function() {
                 '<tr>'+
                     '<td>'+r.data[i].title+'</td>'+
                     '<td>'+r.data[i].author+'</td>'+
-                    // '<td>'+r.data[i].description+'</td>'+
-                    '<td>'+r.data[i].publisher+'</td>'+
+                    '<td>'+r.data[i].description+'</td>'+
+                    // '<td>'+r.data[i].publisher+'</td>'+
+                    '<td>'+r.data[i].pub_date+'</td>'+
                 '</tr>'
                 $("#public_tbody").append(tag);
 
@@ -49,8 +50,9 @@ $(function() {
                 '<tr>'+
                     '<td>'+r.data[i].title+'</td>'+
                     '<td>'+r.data[i].author+'</td>'+
-                    // '<td>'+r.data[i].description+'</td>'+
-                    '<td>'+r.data[i].publisher+'</td>'+
+                    '<td>'+r.data[i].description+'</td>'+
+                    // '<td>'+r.data[i].publisher+'</td>'+
+                    '<td>'+r.data[i].pub_date+'</td>'+
                 '</tr>'
                 $("#small_tbody").append(tag);
 
@@ -75,7 +77,7 @@ $(function() {
     });
 
 
-    // 신작목록
+    // 신작 도서 목록 상세 (도서명, 저자, 도서소개, 출판사, 발행일)
     $.ajax ({
         type:"get",
         url:"/api/newbook/info",
@@ -110,5 +112,14 @@ $(function() {
             }
         }
     });
+
+    // 신작도서 목록 (도서명, 저자, 출판사)
+    $.ajax({
+        type:"get",
+        url:"/api/newbook/list",
+        success:function(r){
+            console.log(r);
+        }
+    })
 
 });

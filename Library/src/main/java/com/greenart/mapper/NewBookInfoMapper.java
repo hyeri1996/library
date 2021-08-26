@@ -11,7 +11,9 @@ public interface NewBookInfoMapper {
     public List<NewBookInfoVO> selectNewBookDate();
     public List<NewBookInfoVO> selectNewBookTitle(String book_title);
 
-    public List<NewBookInfoVO> selectNewBookInfo();
+    public List<NewBookInfoVO> selectNewBookInfo(); // 신작도서목록(상세)
     public List<NewBookInfoVO> PublicBookCntRank();
+
+    public List<NewBookInfoVO> selectNewBookList();     // 신작도서목록
 
 }

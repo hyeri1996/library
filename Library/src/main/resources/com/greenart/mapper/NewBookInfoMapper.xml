@@ -15,14 +15,21 @@
     where book_title like #{book_title} order by book_title asc
     </select>
 
+    <!-- 신작도서 목록(상세) -->
     <select id="selectNewBookInfo" resultType="com.greenart.vo.NewBookInfoVO">
     select 
         book_title, authors, description, publisher, pub_date
         from new_book
-        limit 10 offset 15
-
+        limit 8 offset 10
     </select>
     
+    <!-- 신작도서 정보 -->
+    <select id="selectNewBookList" resultType="com.greenart.vo.NewBookInfoVO">
+    select 
+        book_title, authors, publisher
+        from new_book
+        limit 10
+    </select>
     <select id="PublicBookCntRank" resultType="com.greenart.vo.NewBookInfoVO">
         select distinct 
             c.rank, a.book_title, c.vol

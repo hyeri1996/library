@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class LibraryAPIController {
     @Autowired
     LibraryInfoService service;
-    @GetMapping("/api/library")
+
+        // 도서관 정보
+        @GetMapping("/api/library")
         public Map<String, Object> getLirbraryInfo() {
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
                 List<LibraryInfoVO> list = service.selectLibraryInfo();
@@ -25,6 +27,8 @@ public class LibraryAPIController {
                 resultMap.put("data", list);
                 return resultMap;
             }
+
+            // 도서관 명 검색
         @GetMapping("/api/library/{lib_name}") 
         public Map<String, Object> getLibraryName(@PathVariable String lib_name) {
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
@@ -34,6 +38,8 @@ public class LibraryAPIController {
                 resultMap.put("data", list);
                 return resultMap;
             }
+
+            // 주소1, 주소2 검색
         @GetMapping("/api/library/{address1}/{address2}")
         public Map<String, Object> getLibarayAdrress(@PathVariable String address1, @PathVariable String address2) {
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
@@ -43,14 +49,57 @@ public class LibraryAPIController {
             resultMap.put("status", true);
             resultMap.put("data", list);
             return resultMap;
-        }
-        @GetMapping("/api/library/type/{lib_type_nm}")
-        public Map<String, Object> getLibraryInfoByType(@PathVariable String lib_type_nm) {
+            }
+
+            // 도서관 비율
+        @GetMapping("/api/library/type")
+        public Map<String, Object> getLibraryInfoByType() {
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-            LibraryInfoVO data = null;
-            lib_type_nm = "%"+lib_type_nm+"%";
+            // LibraryInfoVO data = null;
+            // lib_type_nm = "%"+lib_type_nm+"%";
+            List<LibraryInfoVO> list = service.selectLibraryInfoByType();
             resultMap.put("status", true);
-            resultMap.put("data", data);
+            resultMap.put("type", list);
             return resultMap;
         }
-}
+
+        // 작은도서관 정보 (도서관 명, 도로명 주소)
+        @GetMapping("/api/small/info")
+        public Map<String, Object> getSmallInfoSearch() {
+            Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+            List<LibraryInfoVO> list = service.selectSmallSearch();
+            resultMap.put("status", true);
+            resultMap.put("data", list);
+            return resultMap;
+        }
+
+        // 작은도서관 상세정보 (대표번호, 홈페이지, 개관시간, 휴관일)
+        @GetMapping("/api/smalllibrary/info")
+        public Map<String, Object> getSmallLibraryInfo() {
+            Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+            List<LibraryInfoVO> list = service.selectSmallLibraryInfo();
+            resultMap.put("status", true);
+            resultMap.put("data", list);
+            return resultMap;
+        }
+
+        // 공공도서관 정보 (도서관 명, 도로명 주소)
+        @GetMapping("/api/public/info")
+        public Map<String, Object> getPublicInfoSearch() {
+            Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+            List<LibraryInfoVO> list = service.selectPublicSearch();
+            resultMap.put("status", true);
+            resultMap.put("data", list);
+            return resultMap;
+        }
+        
+        // 공공도서관 상세정보 (대표번호, 홈페이지, 개관시간, 휴관일)
+        @GetMapping("/api/publiclibrary/info")
+        public Map<String, Object> getPublicLibraryInfo() {
+            Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+            List<LibraryInfoVO> list = service.selectPublicLibraryInfo();
+            resultMap.put("status", true);
+            resultMap.put("data", list);
+            return resultMap;
+        }
+    }

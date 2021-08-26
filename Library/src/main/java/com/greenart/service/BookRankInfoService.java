@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.greenart.mapper.BookRankInfoMapper;
 import com.greenart.vo.BookRankInfoVO;
-import com.greenart.vo.NewBookInfoVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,9 +12,13 @@ import org.springframework.stereotype.Service;
 public class BookRankInfoService {
     @Autowired
     BookRankInfoMapper mapper;
+
+    // 공공도서관 베스트셀러
     public List<BookRankInfoVO> NewPublicLank() {
         return mapper.NewPublicLank();
     }
+
+    // 작은도서관 베스트셀러
     public List<BookRankInfoVO> NewSmallLank() {
         return mapper.NewSmallLank();
     }

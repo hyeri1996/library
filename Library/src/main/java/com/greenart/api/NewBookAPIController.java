@@ -36,6 +36,8 @@ public class NewBookAPIController {
     //     resultMap.put("data", list);
     //     return resultMap;
     // }
+
+    // 신작도서 목록 상세 (도서명, 저자, 도서소개, 출판사, 발행일)
     @GetMapping("/api/newbook/info")
     public Map<String, Object> getNewBookInfo() {
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
@@ -44,6 +46,18 @@ public class NewBookAPIController {
         resultMap.put("data", list);
         return resultMap;
     }
+
+    // 신작도서 목록 (도서명, 저자, 출판사)
+    @GetMapping("/api/newbook/list")
+    public Map<String, Object> getNewBookList() {
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        List<NewBookInfoVO> list = service.selectNewBookList();
+        resultMap.put("status", true);
+        resultMap.put("data", list);
+        return resultMap;
+    }
+    
+
     @GetMapping("/api/newbook/public/cnt")
     public Map<String, Object> getNewPublicCntLank() {
         System.out.println("start");

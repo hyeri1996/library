@@ -22,7 +22,7 @@
                 <a href="/lend"><span>대출 추이 및 분석</span></a>
             </li>
             <li>
-                <a href="/newbook"><span>추천 도서 및 신작 도서</span></a>
+                <a href="/newbook"><span>배스트셀러 및 신작 도서</span></a>
             </li>
         </ul>
     </div>
