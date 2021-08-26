@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets/js/library.js"></script>
+    <script src="/assets/js/newbook.js"></script>
 </head>
 <body>
     <div class="container">
@@ -28,7 +29,6 @@
         </div>
     </div>
     <div class="dashboard_content">
-    
         <div class="search_box_area">
             <select id="adrress_select">
                 <option value="서울특별시">서울특별시</option>
@@ -63,9 +63,37 @@
                 </tbody>
             </table>
             <div class="search_pager_area">
-                <button id="library_prev">&lt;</button>
+                <button id="public_prev">&lt;</button>
                 <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
-                <button id="library_next">&gt;</button>
+                <button id="public_next">&gt;</button>
+            </div>
+        </div>
+    </div>
+    <div class="public_library_search">
+        <div class="public_book_box">
+            <p>공공 도서관 베스트셀러</p>
+            <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
+        </div>
+    </div>
+    <div class="dashboard_content">
+        <div class="search_box">
+            <table class="public_bestseller_tbl">
+                <thead>
+                    <tr>
+                        <td>도서 명</td>
+                        <td>저자</td>
+                        <td>도서 소개</td>
+                        <td>발행일</td>
+                    </tr>
+                </thead>
+                <tbody id="public_bestseller_tbody">
+
+                </tbody>
+            </table>
+            <div class="search_pager_area">
+                <button id="public_prev">&lt;</button>
+                <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
+                <button id="public_next">&gt;</button>
             </div>
         </div>
     </div>  

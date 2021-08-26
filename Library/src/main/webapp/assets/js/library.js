@@ -38,6 +38,15 @@ $(function() {
         url:"api/small/info",
         success:function(r) {
             console.log(r);
+            for(let i=0; i<r.data.length; i++) {
+                let tag = 
+                '<tr>'+
+                    '<td>'+r.data[i].lib_name+'</td>'+
+                    '<td>'+r.data[i].addr+'</td>'+
+                '</tr>'
+                $("#small_library_tbody").append(tag);
+
+            }
         }
     });
 
@@ -77,6 +86,8 @@ $(function() {
             console.log(r);
         }
     })
+
+    
 
 
 

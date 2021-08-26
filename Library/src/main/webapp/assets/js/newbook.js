@@ -13,27 +13,10 @@ $(function() {
                     '<td>'+r.data[i].title+'</td>'+
                     '<td>'+r.data[i].author+'</td>'+
                     '<td>'+r.data[i].description+'</td>'+
-                    // '<td>'+r.data[i].publisher+'</td>'+
                     '<td>'+r.data[i].pub_date+'</td>'+
                 '</tr>'
-                $("#public_tbody").append(tag);
+                $("#public_bestseller_tbody").append(tag);
 
-                $("#public_next").click(function(){
-                    let currentPage = Number($(".current").html());
-                    currentPage++;
-                    if(currentPage > 10) currentPage = 10;
-                    $(".current").html(currentPage);
-                    $("#public_tbody").removeClass("active");
-                    $("#public_tbody").eq(currentPage-1).addClass("active");
-                })
-                $("#public_prev").click(function(){
-                    let currentPage = Number($(".current").html());
-                    currentPage--;
-                    if(currentPage < 1) currentPage = 1;
-                    $(".current").html(currentPage);
-                    $("#public_tbody").removeClass("active");
-                    $("#public_tbody").eq(currentPage-1).addClass("active");
-                })
             }
         }
     });
@@ -54,24 +37,7 @@ $(function() {
                     // '<td>'+r.data[i].publisher+'</td>'+
                     '<td>'+r.data[i].pub_date+'</td>'+
                 '</tr>'
-                $("#small_tbody").append(tag);
-
-                $("#small_next").click(function(){
-                    let currentPage = Number($(".current").html());
-                    currentPage++;
-                    if(currentPage > 10) currentPage = 10;
-                    $(".current").html(currentPage);
-                    $("#small_tbody").removeClass("active");
-                    $("#small_tbody").eq(currentPage-1).addClass("active");
-                })
-                $("#small_prev").click(function(){
-                    let currentPage = Number($(".current").html());
-                    currentPage--;
-                    if(currentPage < 1) currentPage = 1;
-                    $(".current").html(currentPage);
-                    $("#small_tbody").removeClass("active");
-                    $("#small_tbody").eq(currentPage-1).addClass("active");
-                })
+                $("#small_bestseller_tbody").append(tag);
             }
         }
     });
