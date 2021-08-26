@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.mapper.BookRankInfoMapper">
+
+    <!-- 공공도서관 베스트셀러 -->
+    <select id="NewPublicLank" resultType="com.greenart.vo.BookRankInfoVO">
+        select distinct 
+            b_rank, a.title, a.author, a.description, a.publisher, a.pub_date
+        from book_rank as a 
+        inner join public_library as b 
+        on a.isbn13 = b.isbn13
+        inner join new_book as c 
+        on a.isbn13 = c.isbn13 
+        where b_rank ='1'
+        order by b_rank asc
+        limit 10 offset 15
+    </select>
+
+    <!-- 작은도서관 베스트셀러 -->
+    <select id="NewSmallLank" resultType="com.greenart.vo.BookRankInfoVO">
+        select distinct 
+            b_rank, a.title, a.author, a.description, a.publisher, a.pub_date
+        from book_rank as a 
+        inner join small_library as b 
+        on a.isbn13 = b.isbn13
+        inner join new_book as c 
+        on a.isbn13 = c.isbn13 
+        where b_rank ='1'
+        order by b_rank asc
+        limit 10 offset 15
+    </select>
+
+</mapper>

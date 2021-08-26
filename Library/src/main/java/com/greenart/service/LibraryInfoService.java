@@ -12,16 +12,44 @@ import org.springframework.stereotype.Service;
 public class LibraryInfoService {
     @Autowired
     LibraryInfoMapper mapper;
-    public List<LibraryInfoVO> selectLibraryInfoAddr() {
-        return mapper.selectLibraryInfoAddr();
+    
+    // 도서관 정보
+    public List<LibraryInfoVO> selectLibraryInfo() {
+        return mapper.selectLibraryInfo();
     }
+
+    // 도서관 명 검색
     public List<LibraryInfoVO> selectLibraryInfoName(String lib_name) {
         return mapper.selectLibraryInfoName(lib_name);
     }
+
+    // 주소 검색
     public List<LibraryInfoVO> selectLibraryAddress(String address1, String address2) {
         return mapper.selectLibraryAddress(address1, address2);
     }
-    public LibraryInfoVO selectLibraryInfoByType(String lib_type_nm) {
-        return mapper.selectLibraryInfoByType(lib_type_nm);
+
+    // 도서관 비율
+    public List<LibraryInfoVO> selectLibraryInfoByType(){
+        return mapper.selectLibraryInfoByType();
+    }
+    
+    // 작은도서관 정보
+    public List<LibraryInfoVO> selectSmallSearch() {
+        return mapper.selectSmallSearch();
+    }
+
+    // 작은도서관 상세정보
+    public List<LibraryInfoVO> selectSmallLibraryInfo() {
+        return mapper.selectSmallLibraryInfo();
+    }
+
+    // 공공도서관 정보
+    public List<LibraryInfoVO> selectPublicSearch() {
+        return mapper.selectPublicSearch();
+    }
+
+    // 공공도서관 상세정보
+    public List<LibraryInfoVO> selectPublicLibraryInfo() {
+        return mapper.selectPublicLibraryInfo();
     }
 }

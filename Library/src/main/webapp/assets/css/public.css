@@ -1,0 +1,41 @@
+.public_book_box > p {
+    font-size: 25px; font-family:"Noto Sans KR", serif; font-weight: 500;
+    margin-left: 100px; margin-top: 20px;float: left; margin-bottom: 10px;
+    color: #666;
+}
+
+.dashboard_content {
+    box-sizing: border-box; padding:10px; font-size: 0; margin-top: 15px; display: inline-block; vertical-align: top;}
+.dashboard_content > div {
+    display: inline-block; vertical-align: top;
+    font-size: 12px; font-weight: 500px; font-family: "Noto Sans KR", sans-serif;}
+.dashboard_content > p {
+    font-size: 12px; text-align: left; margin-bottom: 10px; margin-left: 10%;
+    font-weight: 700px; 
+}
+.search_box_area {
+    width: 800px; height: 500px;
+    background-color: #fff; border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
+    padding:10px; margin-left: 7%;
+}
+.public_library_tbl {
+    font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
+}
+.public_library_tbl td {width: 33.33%; text-align: center;
+    padding: 10px 0; border: 1px solid #eee; font-size: 15px;
+}
+.public_library_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
+
+#search_keyword {
+    width: 400px; font-size: 15px; font-weight: 300px;margin-bottom: 7px;
+    box-sizing: content-box; font-family: "Noto Sans KR", serif;
+    border-radius: 10px;
+}
+#search_btn {
+    box-sizing: content-box; background-color: #fff; border-radius: 5px;
+}
+#adrress_select {
+    font-family: "Noto Sans KR", sans-serif;
+    position: relative;
+}
