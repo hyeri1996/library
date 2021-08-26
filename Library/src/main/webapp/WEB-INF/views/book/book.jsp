@@ -20,30 +20,31 @@
     <div class="container">
         <%@include file="/WEB-INF/views/includes/menu.jsp"%>
         <div class="dashboard_area">
-            <div class="dashboard_content">
-                <div class="content_left">
-                    <p>최다 이용 도서 순위</p>
-                </div>
+            <div class="rank_dashboard">
                 <div class="content_right">
-                    <p>미정</p>
+                    <div class="book_rank">
+                
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="dashboard_content">
-            <div class="search_box_area">
-                <table class="search_box_tbl">
-                    <thead>
-                        <tr>
-                            <td>제목</td>
-                            <td>지은이</td>
-                            <td>출판사</td>
-                        </tr>
-                    </thead>
-                </table>
-                <div class="search_pager_area">
-                    <button id="region_prev">&lt;</button>
-                    <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
-                    <button id="region_next">&gt;</button>
+                <div class="dashboard_content">
+                    <div class="search_box_area">
+                            <input type="text" id="search" placeholder="책의 제목을 입력해주세요.">
+                            <button id="search_btn">검색</button>
+                        <table class="book_detail_tbl">
+                            <thead>
+                                <tr>
+                                    <td>제목</td>
+                                    <td>지은이</td>
+                                    <td>출판사</td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <div class="search_pager_area">
+                            <button id="book_prev">&lt;</button>
+                            <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
+                            <button id="book_next">&gt;</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -14,4 +14,11 @@
         from book_detail where title like #{title}
         limit 20 offset #{offset};
     </select>
+
+    <select id="selectBookRankChange" resultType="com.greenart.vo.BookRankVO">
+    select distinct 
+	change_rank,reg_rank,prev_rank,book_title,author,publisher,reg_dt
+    from book_rank_ch
+    where reg_dt = #{reg_dt}
+    </select>
 </mapper>

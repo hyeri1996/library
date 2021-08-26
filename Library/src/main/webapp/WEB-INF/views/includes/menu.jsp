@@ -12,19 +12,17 @@
 </head>
 <body>
     <div class="main_menu_list">
-            <a href="/library" id="logo">
-                <span>도서관 정보</span>
-            </a>
-        <ul class="main_menu">
-                <a href="/book"><span class="book_info">도서 정보</span></a>
-            </li>
-            <li>
-                <a href="/lend"><span>대출 추이 및 분석</span></a>
-            </li>
-            <li>
-                <a href="/newbook"><span>배스트셀러 및 신작 도서</span></a>
-            </li>
-        </ul>
+        <a href="/" id="logo">
+            <span>로고 영역</span>
+        </a>
+        <div class="menu_list">
+            <div class="main_menu">
+                <a href="/public">공공 도서관 정보</a>
+                <a href="/small">작은 도서관 정보</a>
+                <a href="/book">도서 정보</a>
+                <a href="/lend">대출추이 및 분석</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.greenart.mapper.BookDetailMapper;
 import com.greenart.vo.BookDetailVO;
+import com.greenart.vo.BookRankVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,5 +17,9 @@ public class BookDetailInfoService {
     }
     public List<BookDetailVO> selectBookDetailByTitle(String title, Integer offset) {
         return mapper.selectBookDetailByTitle(title,offset);
+    }
+
+    public List<BookRankVO> selectBookRankChange(String reg_dt) {
+        return mapper.selectBookRankChange(reg_dt);
     }
 }
