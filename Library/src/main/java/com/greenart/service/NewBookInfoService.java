@@ -12,13 +12,26 @@ import org.springframework.stereotype.Service;
 public class NewBookInfoService {
     @Autowired
     NewBookInfoMapper mapper;
+
+
     public List<NewBookInfoVO> selectNewBookDate() {
         return mapper.selectNewBookDate();
     }
     public List<NewBookInfoVO> selectNewBookTitle(String book_title) {
         return mapper.selectNewBookTitle(book_title);
     }
+
+    // 신작도서 목록 (상세)
     public List<NewBookInfoVO> selectNewBookInfo() {
         return mapper.selectNewBookInfo();
     }
+    public List<NewBookInfoVO> PublicBookCntRank() {
+        return mapper.PublicBookCntRank();
+    }
+
+    // 신작도서 목록 
+    public List<NewBookInfoVO> selectNewBookList() {
+        return mapper.selectNewBookList();
+    }
+    
 }

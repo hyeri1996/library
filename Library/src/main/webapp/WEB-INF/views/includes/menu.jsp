@@ -17,8 +17,8 @@
         </a>
         <div class="menu_list">
             <div class="main_menu">
-                <a href="#">공공 도서관 정보</a>
-                <a href="#">작은 도서관 정보</a>
+                <a href="/public">공공 도서관 정보</a>
+                <a href="/small">작은 도서관 정보</a>
                 <a href="/book">도서 정보</a>
                 <a href="/lend">대출추이 및 분석</a>
             </div>
