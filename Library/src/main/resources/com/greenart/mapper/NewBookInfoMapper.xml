@@ -28,9 +28,10 @@
     select 
         book_title, authors, publisher
         from new_book
-        limit 10
+        limit 5
     </select>
-    <select id="PublicBookCntRank" resultType="com.greenart.vo.NewBookInfoVO">
+
+    <!-- <select id="PublicBookCntRank" resultType="com.greenart.vo.NewBookInfoVO">
         select distinct 
             c.rank, a.book_title, c.vol
         from new_book as a
@@ -40,6 +41,6 @@
         on b.isbn13 = c.isbn13 
         order by c.rank asc
         limit 5
-    </select>
+    </select> -->
     
 </mapper>

@@ -51,11 +51,21 @@ $(function() {
     });
 
     // 공공도서관 정보 (도서관 명, 도로명 주소)
+
     $.ajax({
         type:"get",
         url:"/api/public/info",
         success:function(r) {
             console.log(r);
+            for(let i=0; i<r.data.length; i++) {
+                let tag = 
+                '<tr>'+
+                    '<td>'+r.data[i].lib_name+'</td>'+
+                    '<td>'+r.data[i].addr+'</td>'+
+                '</tr>'
+                $("#public_library_tbody").append(tag);
+
+            }
         }
     });
 

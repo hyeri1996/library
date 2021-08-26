@@ -21,6 +21,13 @@
         <div class="banner_item">
         </div>
     </selection>
+    <div class="new_book_list">
+        <div class="new_book_box">
+            <p>신작 도서</p>
+            <a href="/">+</a>
+            <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
+        </div>
+    </div>
     <div class="dashboard_content">
         <div class="search_box_area">
             <table class="new_book_tbl">
@@ -31,13 +38,11 @@
                         <td>출판사</td>
                     </tr>
                 </thead>
+                <tbody id="newbook_tbody">
+
+                </tbody>
             </table>
-            <div class="search_pager_area">
-                <button id="newbook_prev">&lt;</button>
-                <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
-                <button id="newbook_next">&gt;</button>
-            </div>
         </div>
-    </div>
+    </div>  
 </body>
 </html>
