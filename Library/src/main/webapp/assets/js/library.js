@@ -46,6 +46,13 @@ $(function() {
                 '</tr>'
                 $("#small_library_tbody").append(tag);
 
+                $("#search_btn").click(function(){
+                    let seq = $("#adrress_select option:selected").val();
+                    let keyword = $("#search_keyword").val();
+                    if(seq == "전체") seq = null;
+                    getProductData(keyword, seq, 0);
+                })
+
             }
         }
     });
@@ -56,6 +63,7 @@ $(function() {
         url:"/api/smalllibrary/info",
         success:function(r){
             console.log(r);
+            
         }
     });
 
@@ -84,6 +92,7 @@ $(function() {
         url:"/api/publiclibrary/info",
         success:function(r) {
             console.log(r);
+            
         }
     })
 

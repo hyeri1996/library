@@ -24,7 +24,7 @@
     <div class="new_book_list">
         <div class="new_book_box">
             <p>신작 도서</p>
-            <a href="/">+</a>
+            <a href="/newbook">+</a>
             <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
         </div>
     </div>

@@ -3,21 +3,22 @@
     margin-left: 100px; margin-top: 20px;float: left; margin-bottom: 10px;
     color: #666;
 }
-
 .dashboard_content {
-    box-sizing: border-box; padding:10px; font-size: 0; margin-top: 15px; display: inline-block; vertical-align: top;}
+    box-sizing: border-box; padding:10px; font-size: 0; margin-top: 15px; display: inline-block; vertical-align: top;
+    width: 1350px; position: relative;}
 .dashboard_content > div {
     display: inline-block; vertical-align: top;
     font-size: 12px; font-weight: 500px; font-family: "Noto Sans KR", sans-serif;}
 .dashboard_content > p {
-    font-size: 12px; text-align: left; margin-bottom: 10px; margin-left: 10%;
+    font-size: 12px; text-align: left; margin-bottom: 10px;
     font-weight: 700px; 
 }
+
 .search_box_area {
-    width: 800px; height: 500px;
+    width: 600px; height: 500px; position: relative;
     background-color: #fff; border-radius: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
-    padding:10px; margin-left: 7%;
+    padding:10px; margin-left: 5%; margin-right: 5px;
 }
 .small_library_tbl {
     font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
@@ -26,6 +27,20 @@
     padding: 10px 0; border: 1px solid #eee; font-size: 15px;
 }
 .small_library_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
+.search_box_detail {
+    width: 550px; height: 500px; 
+    background-color: #fff; border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
+    padding:10px; margin-left: 30px; position: relative;
+}
+.small_info_area {width: 250px; height: 200px; position: relative;}
+.small_info_tbl {
+    font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
+}
+.small_info_tbl td {width: 20%; text-align: center;
+    padding: 10px 0; border: 1px solid #eee; font-size: 15px;
+}
+.small_info_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
 
 .search_box {
     width: 1200px; height: 700px;
@@ -42,7 +57,7 @@
 .small_bestseller_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
 
 #search_keyword {
-    width: 400px; font-size: 15px; font-weight: 300px;margin-bottom: 7px;
+    width: 200px; font-size: 15px; font-weight: 300px;margin-bottom: 7px;
     box-sizing: content-box; font-family: "Noto Sans KR", serif;
     border-radius: 10px;
 }
@@ -55,3 +70,19 @@
 }
 #small_prev {background-color: #fff; border-radius: 5px;}
 #small_next {background-color: #fff; border-radius: 5px;}
+
+
+.search_box_info {
+    width: 650px; height: 500px;
+    background-color: #fff; border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
+    padding:10px; margin-left: 25%;
+}
+.small_info_area {width: 250px; height: 200px; position: relative;}
+.small_info_tbl {
+    font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
+}
+.small_info_tbl td {width: 20%; text-align: center;
+    padding: 10px 0; border: 1px solid #eee; font-size: 15px;
+}
+.small_info_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}

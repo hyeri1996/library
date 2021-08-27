@@ -30,7 +30,7 @@
     </div>
     <div class="dashboard_content">
         <div class="search_box_area">
-            <select id="adrress_select">
+            <select id="address_select">
                 <option value="서울특별시">서울특별시</option>
                 <option value="경기도">경기도</option>
                 <option value="인천광역시">인천광역시</option>
@@ -66,6 +66,29 @@
                 <button id="public_prev">&lt;</button>
                 <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
                 <button id="public_next">&gt;</button>
+            </div>
+        </div>
+        <div class="public_info_area">
+            <div class="search_box_detail">    
+                <p>상세정보</p>
+                <table class="public_info_tbl">
+                    <thead>
+                        <tr>
+                            <td>대표번호</td>
+                            <td>홈페이지</td>
+                            <td>개관시간</td>
+                            <td>휴관일</td>
+                        </tr>
+                    </thead>
+                    <tbody id="public_library_tbody">
+
+                    </tbody>
+                </table>
+                <div class="search_pager_area">
+                    <button id="public_prev">&lt;</button>
+                    <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
+                    <button id="public_next">&gt;</button>
+                </div>
             </div>
         </div>
     </div>
