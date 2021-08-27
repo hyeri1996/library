@@ -122,18 +122,19 @@ $(function () {
         );
         let url = "http://localhost:8090/api/public/address?address1=" + address1;
         let total = 0;
-        currentPage = 0
+        currentPage = 0;
         $.ajax ({
             type:"get",
             url:url,
             success:function(r){
-                totalPage = total = Math.ceil(r.data.length/10);
+                console.log(r)
+                totalPage = total = Math.ceil(r.data.length/5);
                 for(let i=0; i<total; i++) {
                     $(".public_library_tbl").append('<tbody class="public_tbody"></tbody>');
                 }
 
                 for(let i=0; i<r.data.length; i++) {
-                    let page = Math.floor(i / 10);
+                    let page = Math.floor(i / 5);
                     let tag = 
                     '<tr>'+
                         '<td>'+r.data[i].lib_name+'</td>'+
@@ -148,13 +149,4 @@ $(function () {
             }
         })
     }
-    $("#search").click(function(){
-        let address1 = $("#adrress1_select option:selected").val();
-        let keyword = $("#search_keyword").val();
-        if(address1 == "전체") address1 = null;
-        getProductData(address1, keyword, 0);
-    })
-
-
-
 })

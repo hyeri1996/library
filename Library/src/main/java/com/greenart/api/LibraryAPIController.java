@@ -114,4 +114,16 @@ public class LibraryAPIController {
             resultMap.put("data", list);
             return resultMap;
         }
+
+        // 작은도서관 지역선택
+        @GetMapping("/api/small/address")
+        public Map<String, Object> getSmallLibraryAddr(
+            @RequestParam String address1
+        ){
+            Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+            List<LibraryInfoVO> list = service.selectSmallLibraryAddr(address1+"%");
+            resultMap.put("status", true);
+            resultMap.put("data", list);
+            return resultMap;
+        }
     }

@@ -22,4 +22,5 @@ public interface LibraryInfoMapper {
     public List<LibraryInfoVO> selectPublicLibraryInfo();   // 공공도서관 상세정보
 
     public List<LibraryInfoVO> selectPublicLibraryAddr(String address1); // 공공도서관 지역 선택
+    public List<LibraryInfoVO> selectSmallLibraryAddr(String address1); // 작은도서관 지역 선택
 }

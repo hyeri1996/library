@@ -1,7 +1,7 @@
-.public_book_box > p {
+.small_book_box > p {
     font-size: 25px; font-family:"Noto Sans KR", serif; font-weight: 700;
     margin-left: 100px; margin-top: 20px;float: left; margin-bottom: 10px;
-    color: #666; 
+    color: #666;
 }
 .dashboard_content {
     box-sizing: border-box; padding:10px; font-size: 0; margin-top: 15px; display: inline-block; vertical-align: top;
@@ -20,13 +20,13 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
     padding:10px; margin-left: 6%; margin-right: 0px;
 }
-.public_library_tbl {
+.small_library_tbl {
     font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
 }
-.public_library_tbl td {width: 33.33%; text-align: center;
+.small_library_tbl td {width: 33.33%; text-align: center;
     padding: 10px 0; border: 1px solid #eee; font-size: 15px;
 }
-.public_library_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
+.small_library_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
 
 
 .search_box_detail {
@@ -35,14 +35,14 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
     padding:10px; margin-left: 30px; position: relative;
 }
-.public_info_area {width: 250px; height: 200px; position: relative;}
-.public_info_tbl {
+.small_info_area {width: 250px; height: 200px; position: relative;}
+.small_info_tbl {
     font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
 }
-.public_info_tbl td {width: 20%; text-align: center;
+.small_info_tbl td {width: 20%; text-align: center;
     padding: 10px 0; border: 1px solid #eee; font-size: 15px;
 }
-.public_info_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
+.small_info_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
 
 
 .search_box {
@@ -51,13 +51,13 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
     padding:10px; margin-left: 5%;
 }
-.public_bestseller_tbl {
+.small_bestseller_tbl {
     font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
 }
-.public_bestseller_tbl td {width: 20%; text-align: center;
+.small_bestseller_tbl td {width: 20%; text-align: center;
     padding: 10px 0; border: 1px solid #eee; font-size: 15px;
 }
-.public_bestseller_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
+.small_bestseller_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
 
 #search_keyword {
     width: 380px; font-size: 15px; font-weight: 300px;margin-bottom: 7px;
@@ -73,8 +73,8 @@
     position: relative; font-size: 14px; font-weight: 500;
     box-shadow: 0 0 1px rgba(0,0,0,0.2);
 }
-#public_prev {background-color: #fff; border-radius: 5px;}
-#public_next {background-color: #fff; border-radius: 5px;}
+#small_prev {background-color: #fff; border-radius: 5px;}
+#small_next {background-color: #fff; border-radius: 5px;}
 .search_pager_area {
     text-align: center; margin-top: 10px;position:relative
 }
