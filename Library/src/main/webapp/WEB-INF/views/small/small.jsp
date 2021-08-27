@@ -31,9 +31,8 @@
         </div>
     </div>
     <div class="dashboard_content">
-    
         <div class="search_box_area">
-            <select id="adrress1_select">
+            <select id="adrress_select">
                 <option value="서울">서울특별시</option>
                 <option value="경기">경기도</option>
                 <option value="인천">인천광역시</option>
@@ -61,9 +60,11 @@
                         <td>도로명 주소</td>
                     </tr>
                 </thead>
+                <!-- <div class="content_area"> -->
                     <tbody class="small_tbody">
 
                     </tbody>
+                <!-- </div> -->
             </table>
             <div class="search_pager_area">
                 <button id="library_prev">&lt;</button>
@@ -75,22 +76,38 @@
             <div class="search_box_detail">    
                 <p>상세정보</p>
                 <table class="small_info_tbl">
+                    <tbody id="small_library_tbody">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    <div class="small_library_search">
+            <div class="small_book_box">
+                <p>베스트셀러</p>
+                <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
+            </div>
+        </div>
+        <div class="dashboard_content">
+            <div class="search_box">
+                <table class="small_bestseller_tbl">
                     <thead>
                         <tr>
-                            <td>대표번호</td>
-                            <td>홈페이지</td>
-                            <td>개관시간</td>
-                            <td>휴관일</td>
+                            <td>도서 명</td>
+                            <td>저자</td>
+                            <td>도서 소개</td>
+                            <td>발행일</td>
                         </tr>
                     </thead>
-                    <tbody id="small_library_tbody">
+                    <tbody id="small_bestseller_tbody">
 
                     </tbody>
                 </table>
                 <div class="search_pager_area">
-                    <button id="small_prev">&lt;</button>
+                    <button id="bestseller_prev">&lt;</button>
                     <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
-                    <button id="small_next">&gt;</button>
+                    <button id="bestseller_next">&gt;</button>
                 </div>
             </div>
         </div>

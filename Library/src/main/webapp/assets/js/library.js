@@ -199,8 +199,121 @@ $(function () {
                 $(".public_bestseller_tbody").eq(0).css("display", "table-row-group");
                 $(".bestseller_total").html(total);
                 $(".bestseller_current").html(bestsellercurrentPage+1)
-                
-                
+            }
+        })
+
+    // 도서관 목록 지역1선택
+    $("#adrress_select").change(function () {
+        console.log("changed");
+        let address = $("#adrress_select").find("option:selected").val();
+        
+        getSmallInfoByregion(address);
+    })
+    let libcurrentPage = 0;
+    let libtotalPage = 0;
+
+    getSmallInfoByregion("서울");
+    
+    $("#library_next").click(function(){
+        libcurrentPage++;
+        if(libcurrentPage >= libtotalPage) libcurrentPage = libtotalPage - 1;
+        $(".small_tbody").css("display", "none");
+        $(".small_tbody").eq(libcurrentPage).css("display", "table-row-group");
+        $(".current").html(libcurrentPage+1)
+    })
+    $("#library_prev").click(function(){
+        libcurrentPage--;
+        if(libcurrentPage < 0) libcurrentPage = 0;
+        $(".small_tbody").css("display", "none");
+        $(".small_tbody").eq(libcurrentPage).css("display", "table-row-group");
+        $(".current").html(libcurrentPage+1)
+    })
+
+    function getSmallInfoByregion(address1) {
+        $(".small_library_tbl").html(
+            '<thead><tr><td>도서관 명</td><td>도로명 주소</td></tr></thead>'
+        );
+        let url = "http://localhost:8090/api/small/address?address1=" + address1;
+        let total = 0;
+        libcurrentPage = 0;
+        $.ajax ({
+            type:"get",
+            url:url,
+            success:function(r){
+                console.log(r)
+                libtotalPage = total = Math.ceil(r.data.length/5);
+                for(let i=0; i<total; i++) {
+                    $(".small_library_tbl").append('<tbody class="small_tbody"></tbody>');
+                }
+
+                for(let i=0; i<r.data.length; i++) {
+                    let page = Math.floor(i / 5);
+                    let tag = 
+                    '<tr>'+
+                        '<td>'+r.data[i].lib_name+'</td>'+
+                        '<td>'+r.data[i].addr+'</td>'+
+                    '</tr>'
+                    $(".small_tbody").eq(page).append(tag);
+                }
+                $(".small_tbody").css("display", "none");
+                $(".small_tbody").eq(0).css("display", "table-row-group");
+                $(".total").html(total);
+                $(".current").html(libcurrentPage+1)
+            }
+        })
+    }
+
+    // 작은도서관 상세정보 (대표전화 , 휴관일 , 개관일 , 홈페이지)
+    let smallinfocurrentPage = 0;
+    let smallinfototalPage = 0;
+    
+    $("#detail_next").click(function(){
+        infocurrentPage++;
+        if(smallinfocurrentPage >= smallinfototalPage) smallinfocurrentPage = smallinfototalPage - 1;
+        $(".small_library_tbody").css("display", "none");
+        $(".small_library_tbody").eq(smallinfocurrentPage).css("display", "table-row-group");
+        $(".info_current").html(smallinfocurrentPage+1)
+    })
+    $("#detail_prev").click(function(){
+        smallinfocurrentPage--;
+        if(smallinfocurrentPage < 0) smallinfocurrentPage = 0;
+        $(".small_library_tbody").css("display", "none");
+        $(".small_library_tbody").eq(smallinfocurrentPage).css("display", "table-row-group");
+        $(".info_current").html(smallinfocurrentPage+1)
+    })
+
+    let smalltotal = 0;
+    currentPage = 0;
+    $.ajax({
+        type: "get",
+        url: "/api/small/detail",
+        success: function (r) {
+            console.log(r);
+            smallinfototalPage = smalltotal = Math.ceil(r.data.length/1);
+                for(let i=0; i<smalltotal; i++) {
+                    $(".small_info_tbl").append('<tbody class="small_library_tbody"></tbody>');
+                }
+                for(let i=0; i<r.data.length; i++) {
+                    let page = Math.floor(i / 1);
+                    let tag = 
+                    '<tr>'+
+                        '<td><i class="fas fa-phone"></i>'+r.data[i].tel+'</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                        '<td><i class="fas fa-home"></i>'+r.data[i].homepage+'</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                        '<td><i class="far fa-clock"></i>'+r.data[i].operatingTime+'</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                        '<td><i class="far fa-calendar-times"></i>'+r.data[i].closedOn+'</td>'+
+                    '</tr>'
+                    $(".small_library_tbody").eq(page).append(tag);
+                }
+                $(".small_library_tbody").css("display", "none");
+                $(".small_library_tbody").eq(0).css("display", "table-row-group");
+                $(".info_total").html(smallinfototalPage);
+                $(".info_current").html(smallinfocurrentPage+1)
             }
         })
 })
