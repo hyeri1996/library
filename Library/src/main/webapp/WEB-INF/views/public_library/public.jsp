@@ -30,24 +30,24 @@
     <div class="dashboard_content">
     
         <div class="search_box_area">
-            <select id="adrress_select">
-                <option value="서울특별시">서울특별시</option>
-                <option value="경기도">경기도</option>
-                <option value="인천광역시">인천광역시</option>
-                <option value="세종특별자치시">세종특별자치시</option>
-                <option value="대전광역시">대전광역시</option>
-                <option value="대구광역시">대구광역시</option>
-                <option value="울산광역시">울산광역시</option>
-                <option value="광주광역시">광주광역시</option>
-                <option value="부산광역시">부산광역시</option>
-                <option value="제주특별자치도">제주특별자치도</option>
+            <select id="adrress1_select">
+                <option value="서울">서울특별시</option>
+                <option value="경기">경기도</option>
+                <option value="인천">인천광역시</option>
+                <option value="세종">세종특별자치시</option>
+                <option value="대전">대전광역시</option>
+                <option value="대구">대구광역시</option>
+                <option value="울산">울산광역시</option>
+                <option value="광주">광주광역시</option>
+                <option value="부산">부산광역시</option>
+                <option value="제주">제주특별자치도</option>
                 <option value="경상남도">경상남도</option>
                 <option value="경상북도">경상북도</option>
                 <option value="전라남도">전라남도</option>
                 <option value="전라북도">전라북도</option>
                 <option value="충청남도">충청남도</option>
                 <option value="충청북도">충청북도</option>
-                <option value="강원도">강원도</option>
+                <option value="강원">강원도</option>
             </select>
             <input type="text" id="search_keyword" placeholder="도서관 명을 입력하세요.">
                 <button id="search_btn">검색</button>
@@ -58,14 +58,39 @@
                         <td>도로명 주소</td>
                     </tr>
                 </thead>
-                <tbody id="public_library_tbody">
+                <!-- <div class="content_area"> -->
+                    <tbody class="public_tbody">
 
-                </tbody>
+                    </tbody>
+                <!-- </div> -->
             </table>
             <div class="search_pager_area">
                 <button id="library_prev">&lt;</button>
                 <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
                 <button id="library_next">&gt;</button>
+            </div>
+        </div>
+        <div class="public_info_area">
+            <div class="search_box_detail">    
+                <p>상세정보</p>
+                <table class="public_info_tbl">
+                    <thead>
+                        <tr>
+                            <td>대표번호</td>
+                            <td>홈페이지</td>
+                            <td>개관시간</td>
+                            <td>휴관일</td>
+                        </tr>
+                    </thead>
+                    <tbody id="public_library_tbody">
+
+                    </tbody>
+                </table>
+                <div class="search_pager_area">
+                    <button id="public_prev">&lt;</button>
+                    <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
+                    <button id="public_next">&gt;</button>
+                </div>
             </div>
         </div>
     </div>  

@@ -71,4 +71,9 @@
         limit 10
     </select>
 
+    <!-- 공공도서관 지역선택 -->
+    <select id="selectPublicLibraryAddr" resultType="com.greenart.vo.LibraryInfoVO">
+        select lib_name, addr from library_info
+        where lib_type_nm = '공공' and address1 like #{address1}
+    </select>
 </mapper>

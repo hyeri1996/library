@@ -8,6 +8,6 @@ public class PublicController {
     @GetMapping("/public")
     public String getMain() {
         
-        return "/public/public";
+        return "/public_library/public";
     }
 }
