@@ -1,6 +1,6 @@
 .container > p {
     margin-top: 20px; margin-left: 100px; margin-bottom: 0;
-    font-size: 36px; font-family: "Noto Sans KR", serif; font-weight: 500;
+    font-size: 36px; font-family: "Noto Sans KR", serif; font-weight: 700;
     color: #666;
 }
 .content_right {
@@ -22,7 +22,7 @@
 .book_rank p {font-family: "Noto Sans KR", sans-serif; }
 .book_rank .rank_box {
     display: inline-block; vertical-align: top; width: 190px; margin: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2); border-radius: 15px; height: 200px; text-align: center;
+    box-shadow: 10px 10px 5px 5px rgb(128, 127, 127); border-radius: 15px; height: 200px; text-align: center;
     box-sizing: border-box; font-family: "Noto Sans KR", sans-serif; margin-right: 20px; 
     margin-left: 20px;
 }
@@ -32,7 +32,7 @@
 .regRank{font-size: 14px; font-weight: 700;}
 .changeRank {font-size: 12px;  font-weight: 700;;color: #f22;}
 .search_book > p {
-    font-size: 40px; font-family:"Noto Sans KR", serif; font-weight: 500;
+    font-size: 40px; font-family:"Noto Sans KR", serif; font-weight: 700;
     margin-left: 100px; margin-top: 20px;float: left; margin-bottom: 10px;
     color: #666;
 }

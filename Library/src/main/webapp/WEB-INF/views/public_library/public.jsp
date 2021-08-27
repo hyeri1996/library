@@ -77,23 +77,10 @@
             <div class="search_box_detail">    
                 <p>상세정보</p>
                 <table class="public_info_tbl">
-                    <thead>
-                        <tr>
-                            <td>대표번호</td>
-                            <td>홈페이지</td>
-                            <td>개관시간</td>
-                            <td>휴관일</td>
-                        </tr>
-                    </thead>
                     <tbody id="public_library_tbody">
-
+                        
                     </tbody>
                 </table>
-                <div class="search_pager_area">
-                    <button id="public_prev">&lt;</button>
-                    <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
-                    <button id="public_next">&gt;</button>
-                </div>
             </div>
         </div>
     </div>  

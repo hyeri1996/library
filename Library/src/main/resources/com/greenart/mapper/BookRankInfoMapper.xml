@@ -6,7 +6,7 @@
     <!-- 공공도서관 베스트셀러 -->
     <select id="NewPublicLank" resultType="com.greenart.vo.BookRankInfoVO">
         select distinct 
-            b_rank, a.title, a.author, a.description, a.publisher, a.pub_date
+            b_rank, a.title, a.author, a.description, a.pub_date
         from book_rank as a 
         inner join public_library as b 
         on a.isbn13 = b.isbn13
@@ -14,13 +14,13 @@
         on a.isbn13 = c.isbn13 
         where b_rank ='1'
         order by b_rank asc
-        limit 10 offset 15
+        limit 5 offset 10
     </select>
 
     <!-- 작은도서관 베스트셀러 -->
     <select id="NewSmallLank" resultType="com.greenart.vo.BookRankInfoVO">
         select distinct 
-            b_rank, a.title, a.author, a.description, a.publisher, a.pub_date
+            b_rank, a.title, a.author, a.description, a.pub_date
         from book_rank as a 
         inner join small_library as b 
         on a.isbn13 = b.isbn13
@@ -28,7 +28,7 @@
         on a.isbn13 = c.isbn13 
         where b_rank ='1'
         order by b_rank asc
-        limit 10 offset 15
+        limit 5 offset 10
     </select>
 
 </mapper>
