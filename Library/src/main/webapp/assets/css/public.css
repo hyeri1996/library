@@ -115,3 +115,24 @@
     color:rgb(241,88,102)
 }
 
+.public_library_search {box-sizing: border-box; padding:10px; font-size: 0; margin-top: 10px; display: inline-block; vertical-align: top;
+    width: 1350px; position: relative;}
+.dashboard_content > div {
+    display: inline-block; vertical-align: top;
+    font-size: 12px; font-weight: 500px; font-family: "Noto Sans KR", sans-serif;}
+.dashboard_content > p {
+    font-size: 12px; text-align: left; margin-bottom: 10px;
+    font-weight: 700px; 
+}
+.public_bestseller_tbl {
+    font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
+    margin-top: 20px;
+}
+.public_bestseller_tbl td {width: 20%; text-align: center;
+    padding: 10px 0; border: 1px solid #eee; font-size: 15px;
+}
+.public_bestseller_tbl thead td {font-weight: 700; font-size: 18px; padding: 15px;
+    border-bottom: 5px double rgb(196, 196, 196);
+    border-left: none}
+
+

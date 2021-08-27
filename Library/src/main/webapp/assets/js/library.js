@@ -152,4 +152,55 @@ $(function () {
                 $(".detail_current").html(infocurrentPage+1)
             }
         })
+
+    // 공공 베스트셀러
+
+    let bestsellercurrentPage = 0;
+    let bestsellertotalPage = 0;
+    
+    $("#bestseller_next").click(function(){
+        bestsellercurrentPage++;
+        if(bestsellercurrentPage >= bestsellertotalPage) bestsellercurrentPage = bestsellertotalPage - 1;
+        $(".public_bestseller_tbody").css("display", "none");
+        $(".public_bestseller_tbody").eq(bestsellercurrentPage).css("display", "table-row-group");
+        $(".detail_current").html(bestsellercurrentPage+1)
+    })
+    $("#bestseller_prev").click(function(){
+        bestsellercurrentPage--;
+        if(bestsellercurrentPage < 0) bestsellercurrentPage = 0;
+        $(".public_bestseller_tbody").css("display", "none");
+        $(".public_bestseller_tbody").eq(bestsellercurrentPage).css("display", "table-row-group");
+        $(".detail_current").html(bestsellercurrentPage+1)
+    })
+
+    let besttotal = 0;
+    currentPage = 0;
+    $.ajax({
+        type: "get",
+        url: "/api/bookrank/public",
+        success: function (r) {
+            console.log(r);
+            bestsellertotalPage = besttotal = Math.ceil(r.data.length/1);
+                for(let i=0; i<besttotal; i++) {
+                    $(".public_bestseller_tbl").append('<tbody class="public_bestseller_tbody"></tbody>');
+                }
+                for(let i=0; i<r.data.length; i++) {
+                    let page = Math.floor(i / 5);
+                    let tag = 
+                    '<tr>'+
+                        '<td>'+r.data[i].title+'</td>'+
+                        '<td>'+r.data[i].author+'</td>'+
+                        '<td>'+r.data[i].description+'</td>'+
+                        '<td>'+r.data[i].pub_date+'</td>'+
+                    '</tr>'
+                    $(".public_bestseller_tbody").eq(page).append(tag);
+                }
+                $(".public_bestseller_tbody").css("display", "none");
+                $(".public_bestseller_tbody").eq(0).css("display", "table-row-group");
+                $(".bestseller_total").html(total);
+                $(".bestseller_current").html(bestsellercurrentPage+1)
+                
+                
+            }
+        })
 })
