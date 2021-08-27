@@ -102,4 +102,16 @@ public class LibraryAPIController {
             resultMap.put("data", list);
             return resultMap;
         }
+
+        // 공공도서관 지역선택
+        @GetMapping("/api/public/address")
+        public Map<String, Object> getPublicLibraryAddr(
+            @RequestParam String address1
+        ){
+            Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+            List<LibraryInfoVO> list = service.selectPublicLibraryAddr(address1+"%");
+            resultMap.put("status", true);
+            resultMap.put("data", list);
+            return resultMap;
+        }
     }

@@ -68,8 +68,6 @@
     font-family: "Noto Sans KR", sans-serif;
     position: relative;
 }
-#small_prev {background-color: #fff; border-radius: 5px;}
-#small_next {background-color: #fff; border-radius: 5px;}
 
 
 .search_box_info {
@@ -86,3 +84,9 @@
     padding: 10px 0; border: 1px solid #eee; font-size: 15px;
 }
 .small_info_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
+
+#small_prev {background-color: #fff; border-radius: 5px;}
+#small_next {background-color: #fff; border-radius: 5px;}
+.search_pager_area {
+    text-align: center; margin-top: 10px;position:relative
+}

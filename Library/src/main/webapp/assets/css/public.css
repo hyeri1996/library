@@ -13,6 +13,7 @@
     font-size: 12px; text-align: left; margin-bottom: 10px;
     font-weight: 700px; 
 }
+
 .search_box_area {
     width: 600px; height: 500px; position: relative;
     background-color: #fff; border-radius: 20px;
@@ -26,6 +27,7 @@
     padding: 10px 0; border: 1px solid #eee; font-size: 15px;
 }
 .public_library_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
+
 
 .search_box_detail {
     width: 550px; height: 500px; 
@@ -58,16 +60,21 @@
 .public_bestseller_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
 
 #search_keyword {
-    width: 200px; font-size: 15px; font-weight: 300px;margin-bottom: 7px;
+    width: 380px; font-size: 15px; font-weight: 300px;margin-bottom: 7px;
     box-sizing: content-box; font-family: "Noto Sans KR", serif;
-    border-radius: 10px;
+    border-radius: 5px; margin-left: 10px;
 }
 #search_btn {
     box-sizing: content-box; background-color: #fff; border-radius: 5px;
+    margin-left: 10px;font-family: "Noto Sans KR", serif; height: 23px;
 }
-#address_select {
+#adrress1_select {
     font-family: "Noto Sans KR", sans-serif;
-    position: relative;
+    position: relative; font-size: 14px; font-weight: 500;
+    box-shadow: 0 0 1px rgba(0,0,0,0.2);
 }
 #public_prev {background-color: #fff; border-radius: 5px;}
 #public_next {background-color: #fff; border-radius: 5px;}
+.search_pager_area {
+    text-align: center; margin-top: 10px;position:relative
+}

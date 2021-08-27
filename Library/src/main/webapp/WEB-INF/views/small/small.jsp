@@ -15,7 +15,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets/js/library.js"></script>
-    <script src="/assets/js/newbook.js"></script>
 </head>
 <body>
     <div class="container">
@@ -93,7 +92,7 @@
         </div>
         <div class="small_library_search">
             <div class="small_book_box">
-                <p>작은 도서관 베스트셀러</p>
+                <p>베스트셀러</p>
                 <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
             </div>
         </div>
