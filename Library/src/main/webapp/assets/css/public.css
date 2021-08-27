@@ -104,7 +104,9 @@
     font-size: 14px; font-weight: 500; font-family: "Noto Sans KR", serif;
     padding: 20px;
 }
-
+.fa-landmark:before {
+    font-size: 24px; margin-left: 10px;  margin-right: 0;
+}
 ::before {
     font-size: 14px;
     margin-right: 7px;
