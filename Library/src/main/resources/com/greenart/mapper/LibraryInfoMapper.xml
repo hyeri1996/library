@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+<!DOCTYPE mapper PUBLIC "-//mybatix.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.greenart.mapper.LibraryInfoMapper">
-    <!-- 도서관 정보 -->
     <select id="selectLibraryInfo" resultType="com.greenart.vo.LibraryInfoVO">
         select distinct 
             lib_name,addr
         from library_info order by addr asc limit 9
     </select>
 
-    <!-- 도서관 명 검색 -->
     <select id="selectLibraryInfoName" resultType="com.greenart.vo.LibraryInfoVO">
         select 
             lib_code,lib_name,addr,address1,address2,tel,homepage,operatingTime,closedOn,lib_type_nm 
@@ -17,7 +15,6 @@
         where lib_name like #{lib_name} order by lib_name asc
     </select>
 
-    <!-- 주소1, 주소2 검색 -->
     <select id="selectLibraryAddress" resultType="com.greenart.vo.LibraryInfoVO">
         select 
             lib_code,lib_name,addr,address1,address2,tel,homepage,operatingTime,closedOn,lib_type_nm 
@@ -25,17 +22,11 @@
         where address1 like #{address1} and address2 like #{address2} order by lib_name asc
     </select>
 
-    <!-- <select id="selectLibraryInfoByType" resultType="com.greenart.vo.LibraryInfoVO">
-        select count(*) from library_info where lib_type_nm = #{lib_type_nm}
-    </select> -->
-
-    <!-- 공공/작은 도서관 비율 -->
     <select id="selectLibraryInfoByType" resultType="com.greenart.vo.LibraryInfoVO">
         select count(*) lib_type_nm from library_info
         group by lib_type_nm
     </select>
 
-    <!-- 작은도서관 찾기(정보) -->
     <select id="selectSmallSearch" resultType="com.greenart.vo.LibraryInfoVO">
         select distinct 
             lib_name,addr
@@ -44,7 +35,6 @@
         limit 10
     </select>
 
-    <!-- 작은도서관 상세정보 -->
     <select id="selectSmallLibraryInfo" resultType="com.greenart.vo.LibraryInfoVO">
         select distinct 
             tel, homepage, operatingTime, closedOn
@@ -53,7 +43,6 @@
         limit 5
     </select>
 
-    <!-- 공공도서관 찾기(정보) -->
     <select id="selectPublicSearch" resultType="com.greenart.vo.LibraryInfoVO">
         select distinct 
             lib_name,addr
@@ -62,7 +51,6 @@
         limit 10
     </select>
 
-    <!-- 공공도서관 상세정보 -->
     <select id="selectPublicLibraryInfo" resultType="com.greenart.vo.LibraryInfoVO">
         select distinct 
             tel, homepage, operatingTime, closedOn
@@ -70,19 +58,6 @@
         where lib_type_nm ='공공'
     </select>
 
-    <!-- 공공도서관 지역선택 -->
-    <select id="selectPublicLibraryAddr" resultType="com.greenart.vo.LibraryInfoVO">
-        select lib_name, addr from library_info
-        where lib_type_nm = '공공' and address1 like #{address1}
-    </select>
-
-    <!-- 작은도서관 지역선택 -->
-    <select id="selectSmallLibraryAddr" resultType="com.greenart.vo.LibraryInfoVO">
-        select lib_name, addr from library_info
-        where lib_type_nm = '작은' and address1 like #{address1}
-    </select>
-
-    <!-- 공공도서관 지역선택 -->
     <select id="selectPublicLibraryAddr" resultType="com.greenart.vo.LibraryInfoVO">
         select lib_name, addr from library_info
         where lib_type_nm = '공공' and address1 like #{address1}
@@ -92,4 +67,5 @@
         select lib_name, addr from library_info
         where lib_type_nm = '작은' and address1 like #{address1}
     </select>
+
 </mapper>
