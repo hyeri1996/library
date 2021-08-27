@@ -77,61 +77,12 @@
             <div class="search_box_detail">    
                 <p>상세정보</p>
                 <table class="public_info_tbl">
-                    <thead>
-                        <tr>
-                            <td>대표번호</td>
-                            <td>홈페이지</td>
-                            <td>개관시간</td>
-                            <td>휴관일</td>
-                        </tr>
-                    </thead>
                     <tbody id="public_library_tbody">
-
+                        
                     </tbody>
                 </table>
-                <div class="search_pager_area">
-                    <button id="public_prev">&lt;</button>
-                    <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
-                    <button id="public_next">&gt;</button>
-                </div>
-<<<<<<< HEAD:Library/src/main/webapp/WEB-INF/views/public_library/public.jsp
-                
-            </div>
-        </div>
-    </div>
-    <div class="public_library_search">
-        <div class="public_book_box">
-            <p>베스트셀러</p>
-            <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
-        </div>
-    </div>
-    <div class="dashboard_content">
-        <div class="search_box">
-            <table class="public_bestseller_tbl">
-                <thead>
-                    <tr>
-                        <td>도서 명</td>
-                        <td>저자</td>
-                        <td>도서 소개</td>
-                        <td>발행일</td>
-                    </tr>
-                </thead>
-                <tbody id="public_bestseller_tbody">
-
-                </tbody>
-            </table>
-            <div class="search_pager_area">
-                <button id="public_prev">&lt;</button>
-                <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
-                <button id="public_next">&gt;</button>
-            </div>
-        </div>
-    </div>
-=======
             </div>
         </div>
     </div>  
->>>>>>> develop:Library/src/main/webapp/WEB-INF/views/public/public.jsp
 </body>
 </html>
-    

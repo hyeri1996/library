@@ -38,57 +38,7 @@ $(function () {
         }
     });
 
-    // 작은도서관 정보 (도서관 명, 도로명주소)
-    $.ajax({
-        type: "get",
-        url: "api/small/info",
-        success: function (r) {
-            console.log(r);
-        }
-    });
-
-    // 작은도서관 상세정보 (대표번호, 홈페이지, 개관시간, 휴관일)
-    $.ajax({
-        type: "get",
-        url: "/api/smalllibrary/info",
-        success: function (r) {
-            console.log(r);
-        }
-    });
-
-    // 공공도서관 정보 (도서관 명, 도로명 주소)
-    // $.ajax({
-    //     type: "get",
-    //     url: "/api/public/info",
-    //     success: function (r) {
-    //         console.log(r);
-    //         for (let i = 0; i < r.data.length; i++) {
-    //             let tag =
-    //                 '<tr>' +
-    //                 '<td>' + r.data[i].lib_name + '</td>' +
-    //                 '<td>' + r.data[i].addr + '</td>' +
-    //                 '</tr>'
-    //             $("#public_library_tbody").append(tag);
-
-    //         }
-    //     }
-    // });
-
-    // 공공도서관 상세정보 (대표번호, 홈페이지, 개관시간, 휴관일)
-    $.ajax({
-        type: "get",
-        url: "/api/publiclibrary/info",
-        success: function (r) {
-            console.log(r);
-        }
-    })
-
-
-
-
-
     // 도서관 목록 지역1선택
-
     $("#adrress1_select").change(function () {
         console.log("changed");
         let address1 = $("#adrress1_select").find("option:selected").val();
@@ -116,7 +66,6 @@ $(function () {
     })
 
     function getPublicInfoByregion(address1) {
-        // = is missing...
         $(".public_library_tbl").html(
             '<thead><tr><td>도서관 명</td><td>도로명 주소</td></tr></thead>'
         );
@@ -150,31 +99,57 @@ $(function () {
         })
     }
 
-    // 공공도서관 상세정보
+    // 공공도서관 상세정보 (대표전화 , 휴관일 , 개관일 , 홈페이지)
+    let infocurrentPage = 0;
+    let infototalPage = 0;
+    
+    $("#detail_next").click(function(){
+        infocurrentPage++;
+        if(infocurrentPage >= infototalPage) infocurrentPage = infototalPage - 1;
+        $(".public_library_tbody").css("display", "none");
+        $(".public_library_tbody").eq(infocurrentPage).css("display", "table-row-group");
+        $(".detail_current").html(infocurrentPage+1)
+    })
+    $("#detail_prev").click(function(){
+        infocurrentPage--;
+        if(infocurrentPage < 0) infocurrentPage = 0;
+        $(".public_library_tbody").css("display", "none");
+        $(".public_library_tbody").eq(infocurrentPage).css("display", "table-row-group");
+        $(".detail_current").html(infocurrentPage+1)
+    })
+
+    let infototal = 0;
+    currentPage = 0;
     $.ajax({
         type: "get",
-        url: "/api/publiclibrary/info",
+        url: "/api/public/detail",
         success: function (r) {
             console.log(r);
-            totalPage = total = Math.ceil(r.data.length/10);
-                for(let i=0; i<total; i++) {
+            infototalPage = infototal = Math.ceil(r.data.length/1);
+                for(let i=0; i<infototal; i++) {
                     $(".public_info_tbl").append('<tbody class="public_library_tbody"></tbody>');
                 }
                 for(let i=0; i<r.data.length; i++) {
-                    let page = Math.floor(i / 10);
+                    let page = Math.floor(i / 1);
                     let tag = 
                     '<tr>'+
-                        '<td>'+r.data[i].tel+'</td>'+
-                        '<td>'+r.data[i].homepage+'</td>'+
-                        '<td>'+r.data[i].operatingTime+'</td>'+
-                        '<td>'+r.data[i].closedOn+'</td>'+
+                        '<td><i class="fas fa-phone"></i>'+r.data[i].tel+'</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                        '<td><i class="fas fa-home"></i>'+r.data[i].homepage+'</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                        '<td><i class="far fa-clock"></i>'+r.data[i].operatingTime+'</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                        '<td><i class="far fa-calendar-times"></i>'+r.data[i].closedOn+'</td>'+
                     '</tr>'
                     $(".public_library_tbody").eq(page).append(tag);
                 }
                 $(".public_library_tbody").css("display", "none");
                 $(".public_library_tbody").eq(0).css("display", "table-row-group");
-                $(".total").html(total);
-                $(".current").html(currentPage+1)
+                $(".detail_total").html(infototalPage);
+                $(".detail_current").html(infocurrentPage+1)
             }
         })
 })

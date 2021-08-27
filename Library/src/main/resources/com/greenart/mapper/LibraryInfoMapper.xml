@@ -68,7 +68,6 @@
             tel, homepage, operatingTime, closedOn
         from library_info
         where lib_type_nm ='공공'
-        limit 5
     </select>
 
     <!-- 공공도서관 지역선택 -->
@@ -76,12 +75,11 @@
         select lib_name, addr from library_info
         where lib_type_nm = '공공' and address1 like #{address1}
     </select>
-<<<<<<< HEAD
-=======
 
+    <!-- 작은도서관 지역선택 -->
     <select id="selectSmallLibraryAddr" resultType="com.greenart.vo.LibraryInfoVO">
         select lib_name, addr from library_info
         where lib_type_nm = '작은' and address1 like #{address1}
     </select>
->>>>>>> develop
+
 </mapper>
