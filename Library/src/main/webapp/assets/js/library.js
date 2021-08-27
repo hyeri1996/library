@@ -80,28 +80,9 @@ $(function () {
         url: "/api/publiclibrary/info",
         success: function (r) {
             console.log(r);
-            totalPage = total = Math.ceil(r.data.length/10);
-                for(let i=0; i<total; i++) {
-                    $(".public_info_tbl").append('<tbody class="public_library_tbody"></tbody>');
-                }
-                for(let i=0; i<r.data.length; i++) {
-                    let page = Math.floor(i / 10);
-                    let tag = 
-                    '<tr>'+
-                        '<td>'+r.data[i].tel+'</td>'+
-                        '<td>'+r.data[i].homepage+'</td>'+
-                        '<td>'+r.data[i].operatingTime+'</td>'+
-                        '<td>'+r.data[i].closedOn+'</td>'+
-                    '</tr>'
-                    $(".public_library_tbody").eq(page).append(tag);
-                }
-                $(".public_library_tbody").css("display", "none");
-                $(".public_library_tbody").eq(0).css("display", "table-row-group");
-                $(".total").html(total);
-                $(".current").html(currentPage+1)
-            }
-        })
-    });
+        }
+    })
+
 
 
 
@@ -141,18 +122,19 @@ $(function () {
         );
         let url = "http://localhost:8090/api/public/address?address1=" + address1;
         let total = 0;
-        currentPage = 0
+        currentPage = 0;
         $.ajax ({
             type:"get",
             url:url,
             success:function(r){
-                totalPage = total = Math.ceil(r.data.length/10);
+                console.log(r)
+                totalPage = total = Math.ceil(r.data.length/5);
                 for(let i=0; i<total; i++) {
                     $(".public_library_tbl").append('<tbody class="public_tbody"></tbody>');
                 }
 
                 for(let i=0; i<r.data.length; i++) {
-                    let page = Math.floor(i / 10);
+                    let page = Math.floor(i / 5);
                     let tag = 
                     '<tr>'+
                         '<td>'+r.data[i].lib_name+'</td>'+
@@ -167,73 +149,32 @@ $(function () {
             }
         })
     }
-    $("#search").click(function(){
-        let address1 = $("#adrress1_select option:selected").val();
-        let keyword = $("#search_keyword").val();
-        if(address1 == "전체") address1 = null;
-        getProductData(address1, keyword, 0);
-    })
 
-
-
-    // 공공도서관 베스트셀러
-
-    
+    // 공공도서관 상세정보
     $.ajax({
-        type:"get",
-        url:"/api/bookrank/public",
-        success:function(r) {
+        type: "get",
+        url: "/api/publiclibrary/info",
+        success: function (r) {
             console.log(r);
             totalPage = total = Math.ceil(r.data.length/10);
                 for(let i=0; i<total; i++) {
-                    $(".public_bestseller_tbl").append('<tbody class="public_bestseller_tbody"></tbody>');
+                    $(".public_info_tbl").append('<tbody class="public_library_tbody"></tbody>');
                 }
-
                 for(let i=0; i<r.data.length; i++) {
                     let page = Math.floor(i / 10);
                     let tag = 
                     '<tr>'+
-                        '<td>'+r.data[i].title+'</td>'+
-                        '<td>'+r.data[i].author+'</td>'+
-                        '<td>'+r.data[i].description+'</td>'+
-                        '<td>'+r.data[i].pub_date+'</td>'+
+                        '<td>'+r.data[i].tel+'</td>'+
+                        '<td>'+r.data[i].homepage+'</td>'+
+                        '<td>'+r.data[i].operatingTime+'</td>'+
+                        '<td>'+r.data[i].closedOn+'</td>'+
                     '</tr>'
-                    $(".public_bestseller_tbody").eq(page).append(tag);
+                    $(".public_library_tbody").eq(page).append(tag);
                 }
-                $(".public_bestseller_tbody").css("display", "none");
-                $(".public_bestseller_tbody").eq(0).css("display", "table-row-group");
+                $(".public_library_tbody").css("display", "none");
+                $(".public_library_tbody").eq(0).css("display", "table-row-group");
                 $(".total").html(total);
                 $(".current").html(currentPage+1)
             }
         })
-
-
-
-    // 작은 도서관 베스트셀러
-    $.ajax({
-        type:"get",
-        url:"/api/bookrank/small",
-        success:function(r) {
-            console.log(r);
-            totalPage = total = Math.ceil(r.data.length/10);
-                for(let i=0; i<total; i++) {
-                    $(".small_bestseller_tbl").append('<tbody class="small_bestseller_tbody"></tbody>');
-                }
-
-                for(let i=0; i<r.data.length; i++) {
-                    let page = Math.floor(i / 10);
-                    let tag = 
-                    '<tr>'+
-                        '<td>'+r.data[i].title+'</td>'+
-                        '<td>'+r.data[i].author+'</td>'+
-                        '<td>'+r.data[i].description+'</td>'+
-                        '<td>'+r.data[i].pub_date+'</td>'+
-                    '</tr>'
-                    $(".small_bestseller_tbody").eq(page).append(tag);
-                }
-                $(".small_bestseller_tbody").css("display", "none");
-                $(".small_bestseller_tbody").eq(0).css("display", "table-row-group");
-                $(".total").html(total);
-                $(".current").html(currentPage+1)
-                }
-            });
+})

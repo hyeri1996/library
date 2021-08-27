@@ -76,4 +76,12 @@
         select lib_name, addr from library_info
         where lib_type_nm = '공공' and address1 like #{address1}
     </select>
+<<<<<<< HEAD
+=======
+
+    <select id="selectSmallLibraryAddr" resultType="com.greenart.vo.LibraryInfoVO">
+        select lib_name, addr from library_info
+        where lib_type_nm = '작은' and address1 like #{address1}
+    </select>
+>>>>>>> develop
 </mapper>

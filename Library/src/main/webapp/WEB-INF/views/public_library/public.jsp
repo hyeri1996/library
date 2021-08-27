@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공공도서관 정보</title>
+    <script src="https://kit.fontawesome.com/ef5f05643d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.structure.min.css" integrity="sha512-oM24YOsgj1yCDHwW895ZtK7zoDQgscnwkCLXcPUNsTRwoW1T1nDIuwkZq/O6oLYjpuz4DfEDr02Pguu68r4/3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css" integrity="sha512-9h7XRlUeUwcHUf9bNiWSTO9ovOWFELxTlViP801e5BbwNJ5ir9ua6L20tEroWZdm+HFBAWBLx2qH4l4QHHlRyg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -22,7 +23,9 @@
         <%@include file="/WEB-INF/views/includes/menu.jsp"%>
         <div class="public_library_search">
             <div class="public_book_box">
-                <p>공공도서관 찾기</p>
+                <p><i class="fas fa-landmark" style="font-size: 24px;"></i>
+                    공공 도서관 찾기
+                </p>
                 <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
             </div>
         </div>
@@ -91,6 +94,7 @@
                     <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
                     <button id="public_next">&gt;</button>
                 </div>
+<<<<<<< HEAD:Library/src/main/webapp/WEB-INF/views/public_library/public.jsp
                 
             </div>
         </div>
@@ -123,6 +127,11 @@
             </div>
         </div>
     </div>
+=======
+            </div>
+        </div>
+    </div>  
+>>>>>>> develop:Library/src/main/webapp/WEB-INF/views/public/public.jsp
 </body>
 </html>
     

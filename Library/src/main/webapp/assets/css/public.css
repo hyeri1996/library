@@ -1,7 +1,7 @@
 .public_book_box > p {
-    font-size: 25px; font-family:"Noto Sans KR", serif; font-weight: 500;
+    font-size: 25px; font-family:"Noto Sans KR", serif; font-weight: 700;
     margin-left: 100px; margin-top: 20px;float: left; margin-bottom: 10px;
-    color: #666;
+    color: #666; 
 }
 .dashboard_content {
     box-sizing: border-box; padding:10px; font-size: 0; margin-top: 15px; display: inline-block; vertical-align: top;
@@ -15,10 +15,10 @@
 }
 
 .search_box_area {
-    width: 600px; height: 500px; position: relative;
+    width: 600px; height: 400px; position: relative;
     background-color: #fff; border-radius: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
-    padding:10px; margin-left: 5%; margin-right: 5px;
+    padding:10px; margin-left: 6%; margin-right: 0px;
 }
 .public_library_tbl {
     font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
@@ -30,7 +30,7 @@
 
 
 .search_box_detail {
-    width: 550px; height: 500px; 
+    width: 550px; height: 400px; 
     background-color: #fff; border-radius: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
     padding:10px; margin-left: 30px; position: relative;

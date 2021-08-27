@@ -1,5 +1,5 @@
 .small_book_box > p {
-    font-size: 25px; font-family:"Noto Sans KR", serif; font-weight: 500;
+    font-size: 25px; font-family:"Noto Sans KR", serif; font-weight: 700;
     margin-left: 100px; margin-top: 20px;float: left; margin-bottom: 10px;
     color: #666;
 }
@@ -15,10 +15,10 @@
 }
 
 .search_box_area {
-    width: 600px; height: 500px; position: relative;
+    width: 600px; height: 400px; position: relative;
     background-color: #fff; border-radius: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
-    padding:10px; margin-left: 5%; margin-right: 5px;
+    padding:10px; margin-left: 6%; margin-right: 0px;
 }
 .small_library_tbl {
     font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
@@ -27,8 +27,10 @@
     padding: 10px 0; border: 1px solid #eee; font-size: 15px;
 }
 .small_library_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
+
+
 .search_box_detail {
-    width: 550px; height: 500px; 
+    width: 550px; height: 400px; 
     background-color: #fff; border-radius: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
     padding:10px; margin-left: 30px; position: relative;
@@ -57,34 +59,19 @@
 .small_bestseller_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
 
 #search_keyword {
-    width: 200px; font-size: 15px; font-weight: 300px;margin-bottom: 7px;
+    width: 380px; font-size: 15px; font-weight: 300px;margin-bottom: 7px;
     box-sizing: content-box; font-family: "Noto Sans KR", serif;
-    border-radius: 10px;
+    border-radius: 5px; margin-left: 10px;
 }
 #search_btn {
     box-sizing: content-box; background-color: #fff; border-radius: 5px;
+    margin-left: 10px;font-family: "Noto Sans KR", serif; height: 23px;
 }
-#adrress_select {
+#adrress1_select {
     font-family: "Noto Sans KR", sans-serif;
-    position: relative;
+    position: relative; font-size: 14px; font-weight: 500;
+    box-shadow: 0 0 1px rgba(0,0,0,0.2);
 }
-
-
-.search_box_info {
-    width: 650px; height: 500px;
-    background-color: #fff; border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
-    padding:10px; margin-left: 25%;
-}
-.small_info_area {width: 250px; height: 200px; position: relative;}
-.small_info_tbl {
-    font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
-}
-.small_info_tbl td {width: 20%; text-align: center;
-    padding: 10px 0; border: 1px solid #eee; font-size: 15px;
-}
-.small_info_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
-
 #small_prev {background-color: #fff; border-radius: 5px;}
 #small_next {background-color: #fff; border-radius: 5px;}
 .search_pager_area {
