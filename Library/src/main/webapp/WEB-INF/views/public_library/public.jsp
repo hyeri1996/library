@@ -106,7 +106,7 @@
                 </table>
                 <div class="search_pager_area">
                     <button id="bestseller_prev">&lt;</button>
-                    <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
+                    <span class="best_current">이전페이지</span> / <span class="best_total">다음페이지</span>
                     <button id="bestseller_next">&gt;</button>
                 </div>
             </div>

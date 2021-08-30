@@ -13,21 +13,35 @@
     font-size: 12px; text-align: left; margin-bottom: 10px; margin-left: 10%;
     font-weight: 700px; 
 }
+
 .search_box_area {
-    width: 1150px; height: 900px;
+    width: 1150px; height: 900px; position: relative;
     background-color: #fff; border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
-    padding:10px; margin-left: 7%;
+    box-sizing: border-box;
+    padding:10px; margin-left: 7%; margin-top: 10px; margin-right: 0px;
 }
 .new_book_list_tbl {
-    font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
+    font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif; margin-top: 20px;
 }
-.new_book_list_tbl td {width: 20%; text-align: center;
-    padding: 10px 0; border: 1px solid #eee; font-size: 15px;
+.new_book_list_tbl td {width: 20%; font-weight: 700; text-align: center; 
+    font-family: "Noto Sans KR", serif;
+    padding: 15px;
+    border-bottom: 1px solid rgb(196, 196, 196);
+    border-left: 5px double rgb(196, 196, 196);
 }
-.new_book_list_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
 
-#newbook_prev {background-color: #fff; border-radius: 5px;}
-#newbook_next {background-color: #fff; border-radius: 5px;}
+.new_book_list_tbl thead td {font-weight: 700; font-size: 15px; padding: 15px;
+    border-bottom: 5px double rgb(196, 196, 196);
+    border-left: none}
+
+.new_book_tbl thead td:first-child {
+    border-left: none;
+}
+.public_library_tbl thead:first-child {
+    border-left: none;
+}
+.search_pager_area {
+    text-align: center; margin-top: 20px;
+}
 
 
