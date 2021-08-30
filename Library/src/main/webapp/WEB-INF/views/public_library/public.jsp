@@ -34,6 +34,7 @@
     
         <div class="search_box_area">
             <select id="adrress1_select">
+                <option value="">전국</option>
                 <option value="서울">서울특별시</option>
                 <option value="경기">경기도</option>
                 <option value="인천">인천광역시</option>

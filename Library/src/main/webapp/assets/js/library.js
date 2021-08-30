@@ -40,15 +40,22 @@ $(function () {
 
     // 도서관 목록 지역1선택
     $("#adrress1_select").change(function () {
-        console.log("changed");
+        // console.log("changed");
+        $("#search_keyword").val("");
         let address1 = $("#adrress1_select").find("option:selected").val();
-        // getpublic -> getPublic 
-        getPublicInfoByregion(address1);
+        let keyword = $("#search_keyword").val();
+        getPublicInfoByregion(address1, keyword);
+    })
+
+    $("#search_btn").click(function(){
+        let address1 = $("#adrress1_select").find("option:selected").val();
+        let keyword = $("#search_keyword").val();
+        getPublicInfoByregion(address1, keyword);
     })
     let currentPage = 0;
     let totalPage = 0;
 
-    getPublicInfoByregion("서울");
+    getPublicInfoByregion("서울", "");
     
     $("#library_next").click(function(){
         currentPage++;
@@ -65,11 +72,12 @@ $(function () {
         $(".current").html(currentPage+1)
     })
 
-    function getPublicInfoByregion(address1) {
+    function getPublicInfoByregion(address1, keyword) {
         $(".public_library_tbl").html(
             '<thead><tr><td>도서관 명</td><td>도로명 주소</td></tr></thead>'
         );
-        let url = "http://localhost:8090/api/public/address?address1=" + address1;
+
+        let url = "/api/public/address?address1=" + address1+"&keyword="+keyword;
         let total = 0;
         currentPage = 0;
         $.ajax ({

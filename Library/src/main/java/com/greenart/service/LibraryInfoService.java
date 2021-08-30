@@ -54,12 +54,15 @@ public class LibraryInfoService {
     }
 
     // 공공도서관 지역 선택
-    public List<LibraryInfoVO> selectPublicLibraryAddr(String address1) {
-        return mapper.selectPublicLibraryAddr(address1);
+    public List<LibraryInfoVO> selectPublicLibraryAddr(String address1, String keyword) {
+        return mapper.selectPublicLibraryAddr(address1, keyword);
     }
 
     // 작은도서관 지역 선택
-    public List<LibraryInfoVO> selectSmallLibraryAddr(String address1) {
-        return mapper.selectSmallLibraryAddr(address1);
+    public List<LibraryInfoVO> selectSmallLibraryAddr(String address1, String keyword) {
+        return mapper.selectSmallLibraryAddr(address1, keyword);
     }
+
+    
+
 }

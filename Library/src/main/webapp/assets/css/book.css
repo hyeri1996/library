@@ -22,7 +22,8 @@
 .book_rank p {font-family: "Noto Sans KR", sans-serif; }
 .book_rank .rank_box {
     display: inline-block; vertical-align: top; width: 190px; margin: 5px;
-    box-shadow: 10px 10px 5px 5px rgb(128, 127, 127); border-radius: 15px; height: 200px; text-align: center;
+    border: 5px solid rgb(129, 129, 129);
+    box-shadow: 7px 7px 5px 5px rgb(190, 190, 190); border-radius: 20px 0 60px 0; height: 200px; text-align: center;
     box-sizing: border-box; font-family: "Noto Sans KR", sans-serif; margin-right: 20px; 
     margin-left: 20px;
 }

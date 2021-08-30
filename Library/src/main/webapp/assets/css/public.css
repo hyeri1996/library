@@ -66,11 +66,9 @@
     position: relative; font-size: 14px; font-weight: 500;
     box-shadow: 0 0 1px rgba(0,0,0,0.2);
 }
-#public_prev {background-color: #fff; border-radius: 5px;}
-#public_next {background-color: #fff; border-radius: 5px;}
 
 .search_pager_area {
-    text-align: center; margin-top: 20px;
+    text-align: center; margin-top: 25px;
 }
 .detail_pager_area {
     text-align: center; margin-top: 20px;
@@ -114,4 +112,5 @@
 .fa-calendar-times:before {
     color:rgb(241,88,102)
 }
+
 

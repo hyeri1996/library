@@ -8,6 +8,7 @@ import com.greenart.service.LibraryInfoService;
 import com.greenart.vo.LibraryInfoVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -106,10 +107,12 @@ public class LibraryAPIController {
         // 공공도서관 지역선택
         @GetMapping("/api/public/address")
         public Map<String, Object> getPublicLibraryAddr(
-            @RequestParam String address1
+            @RequestParam String address1,
+            @RequestParam String keyword
         ){
+            keyword = "%"+keyword+"%";
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-            List<LibraryInfoVO> list = service.selectPublicLibraryAddr(address1+"%");
+            List<LibraryInfoVO> list = service.selectPublicLibraryAddr(address1+"%", keyword);
             resultMap.put("status", true);
             resultMap.put("data", list);
             return resultMap;
@@ -118,12 +121,15 @@ public class LibraryAPIController {
         // 작은도서관 지역선택
         @GetMapping("/api/small/address")
         public Map<String, Object> getSmallLibraryAddr(
-            @RequestParam String address1
+            @RequestParam String address1,
+            @RequestParam String keyword
         ){
+            keyword = "%"+keyword+"%";
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-            List<LibraryInfoVO> list = service.selectSmallLibraryAddr(address1+"%");
+            List<LibraryInfoVO> list = service.selectSmallLibraryAddr(address1+"%", keyword);
             resultMap.put("status", true);
             resultMap.put("data", list);
             return resultMap;
         }
+
     }
