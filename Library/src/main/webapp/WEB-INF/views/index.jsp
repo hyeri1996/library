@@ -32,7 +32,7 @@
             <p><i class="fas fa-book" style="font-size: 34px;"></i>
                 신작 도서
             </p>
-            <a href="/">+</a>
+            <a href="/newbook">+</a>
             <hr id="first_line" style="border: solid 3px rgb(221, 171, 171); width: 85%;">
         </div>
     </div>

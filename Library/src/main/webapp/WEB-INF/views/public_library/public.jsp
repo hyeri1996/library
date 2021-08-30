@@ -31,7 +31,6 @@
         </div>
     </div>
     <div class="dashboard_content">
-    
         <div class="search_box_area">
             <select id="adrress1_select">
                 <option value="">전국</option>
@@ -82,6 +81,35 @@
                         
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+    <div class="public_library_search">
+            <div class="public_book_box">
+                <p>베스트셀러</p>
+                <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
+            </div>
+        </div>
+        <div class="dashboard_content">
+            <div class="search_box">
+                <table class="public_bestseller_tbl">
+                    <thead>
+                        <tr>
+                            <td>도서 명</td>
+                            <td>저자</td>
+                            <td>도서 소개</td>
+                            <td>발행일</td>
+                        </tr>
+                    </thead>
+                    <tbody id="public_bestseller_tbody">
+
+                    </tbody>
+                </table>
+                <div class="search_pager_area">
+                    <button id="bestseller_prev">&lt;</button>
+                    <span class="best_current">이전페이지</span> / <span class="best_total">다음페이지</span>
+                    <button id="bestseller_next">&gt;</button>
+                </div>
             </div>
         </div>
     </div>  

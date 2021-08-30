@@ -41,7 +41,7 @@
             </table>
             <div class="search_pager_area">
                 <button id="newbook_prev">&lt;</button>
-                <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
+                <span class="new_current">이전페이지</span> / <span class="new_total">다음페이지</span>
                 <button id="newbook_next">&gt;</button>
             </div>
         </div>

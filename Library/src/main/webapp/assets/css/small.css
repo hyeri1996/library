@@ -41,16 +41,10 @@
 .search_box {
     width: 1200px; height: 700px;
     background-color: #fff; border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
-    padding:10px; margin-left: 5%;
+    box-sizing: border-box; margin-top: 10px; margin-right: 0px;
+    position: relative; padding:10px; margin-left: 5%;
 }
-.small_bestseller_tbl {
-    font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
-}
-.small_bestseller_tbl td {width: 20%; text-align: center;
-    padding: 10px 0; border: 1px solid #eee; font-size: 15px;
-}
-.small_bestseller_tbl thead td {background-color: rgb(213, 216, 220); color: rgb(0, 0, 0);}
+
 
 #search_keyword {
     width: 490px; font-size: 15px; font-weight: 300px;margin-bottom: 7px;
@@ -61,7 +55,7 @@
     box-sizing: content-box; background-color: #fff; border-radius: 5px;
     margin-left: 10px;font-family: "Noto Sans KR", serif; height: 23px;
 }
-#adrress1_select {
+#adrress_select {
     font-family: "Noto Sans KR", sans-serif;
     position: relative; font-size: 14px; font-weight: 500;
     box-shadow: 0 0 1px rgba(0,0,0,0.2);
@@ -112,4 +106,39 @@
 .fa-calendar-times:before {
     color:rgb(241,88,102)
 }
+
+.small_library_search {box-sizing: border-box; padding:10px; font-size: 0; margin-top: 10px; display: inline-block; vertical-align: top;
+    width: 1350px; position: relative;}
+.dashboard_content > div {
+    display: inline-block; vertical-align: top;
+    font-size: 12px; font-weight: 500px; font-family: "Noto Sans KR", sans-serif;}
+.dashboard_content > p {
+    font-size: 12px; text-align: left; margin-bottom: 10px;
+    font-weight: 700px; 
+}
+.small_bestseller_tbl {
+    font-size: 12px; width: 100%; font-family: "Noto Sans KR", sans-serif;
+    margin-top: 20px;
+}
+.small_bestseller_tbl td {width: 20%; text-align: center;
+    padding: 10px 0; border: 1px solid #eee; font-size: 15px;
+}
+.small_bestseller_tbl thead td {font-weight: 700; font-size: 18px; padding: 15px;
+    border-bottom: 5px double rgb(196, 196, 196);
+    border-left: none}
+
+.small_bestseller_tbl thead td:first-child {
+    border-left: none;
+}
+.small_bestseller_tbl td {
+    font-size: 13px; font-weight: 500; font-family: "Noto Sans KR", serif;
+    padding: 15px;
+    border-bottom: 1px solid rgb(196, 196, 196);
+    border-left: 5px double rgb(196, 196, 196);
+}
+.small_bestseller_tbl td:first-child {
+    border-left: none;
+}
+
+
 

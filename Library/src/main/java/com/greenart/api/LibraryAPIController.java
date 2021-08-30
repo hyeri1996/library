@@ -75,7 +75,7 @@ public class LibraryAPIController {
         }
 
         // 작은도서관 상세정보 (대표번호, 홈페이지, 개관시간, 휴관일)
-        @GetMapping("/api/smalllibrary/info")
+        @GetMapping("/api/small/detail")
         public Map<String, Object> getSmallLibraryInfo() {
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
             List<LibraryInfoVO> list = service.selectSmallLibraryInfo();

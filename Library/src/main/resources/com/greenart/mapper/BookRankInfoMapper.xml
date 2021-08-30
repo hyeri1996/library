@@ -14,7 +14,7 @@
         on a.isbn13 = c.isbn13 
         where b_rank ='1'
         order by b_rank asc
-        limit 5 offset 10
+        limit 30 offset 40
     </select>
 
     <!-- 작은도서관 베스트셀러 -->
@@ -28,7 +28,7 @@
         on a.isbn13 = c.isbn13 
         where b_rank ='1'
         order by b_rank asc
-        limit 5 offset 10
+        limit 30 offset 40
     </select>
 
 </mapper>
