@@ -14,4 +14,6 @@ public class UseAnalysisVO {
     private String pub_date;
     private String img_url;
     private Integer loan_count;
+
+    private Integer cnt;
 }

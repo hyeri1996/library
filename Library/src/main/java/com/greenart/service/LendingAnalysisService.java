@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.greenart.mapper.LendingAnalysisMapper;
 import com.greenart.vo.LendingAnalysisVO;
+import com.greenart.vo.UseAnalysisVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,8 @@ public class LendingAnalysisService {
     }
     public List<LendingAnalysisVO> selectLendArea(String ANALS_TRGET_YEAR, String ANALS_TRGET_MT) {
         return mapper.selectLendArea(ANALS_TRGET_YEAR, ANALS_TRGET_MT);
+    }
+    public List<UseAnalysisVO> selectLoanTotalCnt(Integer offset) {
+        return mapper.selectLoanTotalCnt(offset);
     }
 }

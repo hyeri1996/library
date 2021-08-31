@@ -41,4 +41,12 @@
         ANALS_TRGET_MT = #{ANALS_TRGET_MT}
         group by AREA_NM
     </select>
+
+    <select id="selectLoanTotalCnt" resultType="com.greenart.vo.UseAnalysisVO">
+    select distinct
+        title, vol, author, publisher, sum(loan_count) as cnt
+    from use_analysis
+    group by title
+    order by cnt desc limit 10 offset #{offset}
+    </select>
 </mapper>

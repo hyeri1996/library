@@ -4,7 +4,7 @@
 <mapper namespace="com.greenart.mapper.BookRankInfoMapper">
 
     <!-- 공공도서관 베스트셀러 -->
-    <select id="NewPublicLank" resultType="com.greenart.vo.BookRankInfoVO">
+    <select id="selectPublicBookRank" resultType="com.greenart.vo.BookRankInfoVO">
         select distinct 
             b_rank, a.title, a.author, a.description, a.pub_date
         from book_rank as a 
@@ -14,11 +14,10 @@
         on a.isbn13 = c.isbn13 
         where b_rank ='1'
         order by b_rank asc
-        limit 30 offset 40
     </select>
 
     <!-- 작은도서관 베스트셀러 -->
-    <select id="NewSmallLank" resultType="com.greenart.vo.BookRankInfoVO">
+    <select id="selectSmallBookRank" resultType="com.greenart.vo.BookRankInfoVO">
         select distinct 
             b_rank, a.title, a.author, a.description, a.pub_date
         from book_rank as a 
@@ -28,7 +27,6 @@
         on a.isbn13 = c.isbn13 
         where b_rank ='1'
         order by b_rank asc
-        limit 30 offset 40
     </select>
 
 </mapper>

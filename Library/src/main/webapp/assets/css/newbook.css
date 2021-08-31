@@ -34,12 +34,10 @@
     border-bottom: 5px double rgb(196, 196, 196);
     border-left: none}
 
-.new_book_tbl thead td:first-child {
+.new_book_list_tbl td:first-child {
     border-left: none;
 }
-.public_library_tbl thead:first-child {
-    border-left: none;
-}
+
 .search_pager_area {
     text-align: center; margin-top: 20px;
 }

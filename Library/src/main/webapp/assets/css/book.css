@@ -37,11 +37,49 @@
     margin-left: 100px; margin-top: 20px;float: left; margin-bottom: 10px;
     color: #666;
 }
-#search_box {
+.loading {
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100vw; height: 100vh; left: 0; top: 0;
+    display: none;
+}
+
+.loading img {
+    position: absolute; width: 50px;
+    left: 50%; top: 50%; margin-left: -25px; margin-top: -25px;
+}
+#search_keyword {
     width: 800px; height: 30px; font-size: 14px; margin-top: 5px;
     font-family: "Noto Sans KR", serif; font-weight: 300; margin-left: 18%;
 }
 #search_btn {
     margin-left: 5px; height: 30px; font-size: 14px; font-weight: 300;
     font-family: "Noto Sans KR", serif; width: 50px;
+}
+.search_book_list {
+    margin-top: 15px;
+    padding-left: 10%; text-align: center;
+}
+.book_list_tbl thead td {font-weight: 700; font-size: 18px; padding: 15px;
+    border-bottom: 5px double rgb(196, 196, 196);
+}
+
+.book_list_tbl thead td:first-child {
+    border-left: none;
+}
+.book_list_tbl td {
+    font-size: 13px; font-weight: 500; font-family: "Noto Sans KR", serif;
+    padding: 15px;
+    border-bottom: 1px solid rgb(196, 196, 196);
+    border-left: 5px double rgb(196, 196, 196);
+    width: 300px;
+}
+.book_list_tbl td:nth-child(2) {
+    width: 50px;
+}
+.book_list_tbl td:first-child {
+    border-left: none;
+}
+.search_pager_area {
+    margin-right: 150px; margin-top: 20px;
 }

@@ -90,14 +90,14 @@
                 <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
             </div>
         </div>
-        <div class="dashboard_content">
-            <div class="search_box">
+        <div class="bestseller_area">
+            <div class="bestseller_content">
                 <table class="public_bestseller_tbl">
                     <thead>
                         <tr>
                             <td>도서 명</td>
                             <td>저자</td>
-                            <td>도서 소개</td>
+                            <!-- <td>도서 소개</td> -->
                             <td>발행일</td>
                         </tr>
                     </thead>

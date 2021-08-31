@@ -14,13 +14,13 @@ public class BookRankInfoService {
     BookRankInfoMapper mapper;
 
     // 공공도서관 베스트셀러
-    public List<BookRankInfoVO> NewPublicLank() {
-        return mapper.NewPublicLank();
+    public List<BookRankInfoVO> selectPublicBookRank() {
+        return mapper.selectPublicBookRank();
     }
 
     // 작은도서관 베스트셀러
-    public List<BookRankInfoVO> NewSmallLank() {
-        return mapper.NewSmallLank();
+    public List<BookRankInfoVO> selectSmallBookRank() {
+        return mapper.selectSmallBookRank();
     }
     
 }

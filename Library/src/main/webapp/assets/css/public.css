@@ -121,11 +121,11 @@
     margin-top: 20px;
 }
 .public_bestseller_tbl td {width: 20%; text-align: center;
-    padding: 10px 0; border: 1px solid #eee; font-size: 15px;
+    padding: 10px 0;font-size: 15px;
 }
 .public_bestseller_tbl thead td {font-weight: 700; font-size: 18px; padding: 15px;
     border-bottom: 5px double rgb(196, 196, 196);
-    border-left: none}
+}
 
 .public_bestseller_tbl thead td:first-child {
     border-left: none;
@@ -139,6 +139,11 @@
 .public_bestseller_tbl td:first-child {
     border-left: none;
 }
+
+.bestseller_content {
+    width: 1050px; margin-left: 14%; text-align: center; vertical-align: center;
+}
+
 
 
 

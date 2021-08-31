@@ -8,7 +8,9 @@ import com.greenart.service.NewBookInfoService;
 import com.greenart.vo.NewBookInfoVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -36,9 +38,11 @@ public class NewBookAPIController {
 
     // 신작도서 목록 상세 (도서명, 저자, 도서소개, 출판사, 발행일)
     @GetMapping("/api/newbook/info")
-    public Map<String, Object> getNewBookInfo() {
+    public Map<String, Object> getNewBookInfo(
+        @RequestParam @Nullable Integer offset
+    ) {
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        List<NewBookInfoVO> list = service.selectNewBookInfo();
+        List<NewBookInfoVO> list = service.selectNewBookInfo(offset);
         resultMap.put("status", true);
         resultMap.put("data", list);
         return resultMap;

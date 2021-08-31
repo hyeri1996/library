@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공공도서관 정보</title>
+    <title>작은도서관 정보</title>
     <script src="https://kit.fontawesome.com/ef5f05643d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.structure.min.css" integrity="sha512-oM24YOsgj1yCDHwW895ZtK7zoDQgscnwkCLXcPUNsTRwoW1T1nDIuwkZq/O6oLYjpuz4DfEDr02Pguu68r4/3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -90,13 +90,13 @@
             </div>
         </div>
         <div class="dashboard_content">
-            <div class="search_box">
+            <div class="bestseller_content">
                 <table class="small_bestseller_tbl">
                     <thead>
                         <tr>
                             <td>도서 명</td>
                             <td>저자</td>
-                            <td>도서 소개</td>
+                            <!-- <td>도서 소개</td> -->
                             <td>발행일</td>
                         </tr>
                     </thead>

@@ -18,7 +18,7 @@ public class BookRankInfoAPIController {
     @GetMapping("/api/bookrank/public")
     public Map<String, Object> getNewPublicLank() {
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        List<BookRankInfoVO> list = service.NewPublicLank();
+        List<BookRankInfoVO> list = service.selectPublicBookRank();
         resultMap.put("status", true);
         resultMap.put("data", list);
         return resultMap;
@@ -26,7 +26,7 @@ public class BookRankInfoAPIController {
     @GetMapping("/api/bookrank/small")
     public Map<String, Object> getNewSamllLank() {
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        List<BookRankInfoVO> list = service.NewSmallLank();
+        List<BookRankInfoVO> list = service.selectSmallBookRank();
         resultMap.put("status", true);
         resultMap.put("data", list);
         return resultMap;

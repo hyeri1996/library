@@ -198,7 +198,7 @@ $(function () {
                     '<tr>'+
                         '<td>'+r.data[i].title+'</td>'+
                         '<td>'+r.data[i].author+'</td>'+
-                        '<td>'+r.data[i].description+'</td>'+
+                        // '<td>'+r.data[i].description+'</td>'+
                         '<td>'+r.data[i].pub_date+'</td>'+
                     '</tr>'
                     $(".public_bestseller_tbody").eq(page).append(tag);
