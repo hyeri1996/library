@@ -8,6 +8,7 @@ import com.greenart.service.LibraryInfoService;
 import com.greenart.vo.LibraryInfoVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -75,11 +76,11 @@ public class LibraryAPIController {
 
         // 작은도서관 상세정보 (대표번호, 홈페이지, 개관시간, 휴관일)
         @GetMapping("/api/small/detail")
-        public Map<String, Object> getSmallLibraryInfo() {
+        public Map<String, Object> getSmallLibraryInfo(@RequestParam String name) {
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-            List<LibraryInfoVO> list = service.selectSmallLibraryInfo();
+            LibraryInfoVO vo = service.selectSmallLibraryInfo(name);
             resultMap.put("status", true);
-            resultMap.put("data", list);
+            resultMap.put("data", vo);
             return resultMap;
         }
 
@@ -95,21 +96,23 @@ public class LibraryAPIController {
         
         // 공공도서관 상세정보 (대표번호, 홈페이지, 개관시간, 휴관일)
         @GetMapping("/api/public/detail")
-        public Map<String, Object> getPublicLibraryInfo() {
+        public Map<String, Object> getPublicLibraryInfo(@RequestParam String name) {
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-            List<LibraryInfoVO> list = service.selectPublicLibraryInfo();
+            LibraryInfoVO vo = service.selectPublicLibraryInfo(name);
             resultMap.put("status", true);
-            resultMap.put("data", list);
+            resultMap.put("data", vo);
             return resultMap;
         }
 
         // 공공도서관 지역선택
         @GetMapping("/api/public/address")
         public Map<String, Object> getPublicLibraryAddr(
-            @RequestParam String address1
+            @RequestParam String address1,
+            @RequestParam String keyword
         ){
+            keyword = "%"+keyword+"%";
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-            List<LibraryInfoVO> list = service.selectPublicLibraryAddr(address1+"%");
+            List<LibraryInfoVO> list = service.selectPublicLibraryAddr(address1+"%", keyword);
             resultMap.put("status", true);
             resultMap.put("data", list);
             return resultMap;
@@ -118,12 +121,15 @@ public class LibraryAPIController {
         // 작은도서관 지역선택
         @GetMapping("/api/small/address")
         public Map<String, Object> getSmallLibraryAddr(
-            @RequestParam String address1
+            @RequestParam String address1,
+            @RequestParam String keyword
         ){
+            keyword = "%"+keyword+"%";
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-            List<LibraryInfoVO> list = service.selectSmallLibraryAddr(address1+"%");
+            List<LibraryInfoVO> list = service.selectSmallLibraryAddr(address1+"%", keyword);
             resultMap.put("status", true);
             resultMap.put("data", list);
             return resultMap;
         }
+
     }

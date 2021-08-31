@@ -1,5 +1,4 @@
 $(function () {
-    // 공공 최다 대출 도서관 목록
 
     // 공공/작은 도서관 비율
     $.ajax({
@@ -38,17 +37,25 @@ $(function () {
         }
     });
 
-    // 도서관 목록 지역1선택
+    // 도서관 목록 지역1선택, 구/군검색, 도서관찾기
+
     $("#adrress1_select").change(function () {
-        console.log("changed");
+        // console.log("changed");
+        $("#search_keyword").val("");
         let address1 = $("#adrress1_select").find("option:selected").val();
-        // getpublic -> getPublic 
-        getPublicInfoByregion(address1);
+        let keyword = $("#search_keyword").val();
+        getPublicInfoByregion(address1, keyword);
+    })
+
+    $("#search_btn").click(function(){
+        let address1 = $("#adrress1_select").find("option:selected").val();
+        let keyword = $("#search_keyword").val();
+        getPublicInfoByregion(address1, keyword);
     })
     let currentPage = 0;
     let totalPage = 0;
 
-    getPublicInfoByregion("서울");
+    getPublicInfoByregion("서울", "");
     
     $("#library_next").click(function(){
         currentPage++;
@@ -65,11 +72,12 @@ $(function () {
         $(".current").html(currentPage+1)
     })
 
-    function getPublicInfoByregion(address1) {
+    function getPublicInfoByregion(address1, keyword) {
         $(".public_library_tbl").html(
             '<thead><tr><td>도서관 명</td><td>도로명 주소</td></tr></thead>'
         );
-        let url = "http://localhost:8090/api/public/address?address1=" + address1;
+
+        let url = "/api/public/address?address1=" + address1+"&keyword="+keyword;
         let total = 0;
         currentPage = 0;
         $.ajax ({
@@ -85,12 +93,20 @@ $(function () {
                 for(let i=0; i<r.data.length; i++) {
                     let page = Math.floor(i / 5);
                     let tag = 
-                    '<tr>'+
-                        '<td>'+r.data[i].lib_name+'</td>'+
+                    '<tr class="lib_tr">'+
+                        '<td class="lib_name">'+r.data[i].lib_name+'</td>'+
                         '<td>'+r.data[i].addr+'</td>'+
                     '</tr>'
                     $(".public_tbody").eq(page).append(tag);
                 }
+                $(".lib_tr").click(function(){
+                    let name = $(this).find(".lib_name").html();
+                    $(".lib_tr").css("background-color", "");
+                    $(this).css("background-color", "rgb(227, 246, 245)");
+                    getLibraryDetail(name);
+                    $(".search_box_area").addClass("open")
+                    $(".public_info_area").addClass("open")
+                })
                 $(".public_tbody").css("display", "none");
                 $(".public_tbody").eq(0).css("display", "table-row-group");
                 $(".total").html(total);
@@ -98,6 +114,8 @@ $(function () {
             }
         })
     }
+
+
 
     // 공공도서관 상세정보 (대표전화 , 휴관일 , 개관일 , 홈페이지)
     let infocurrentPage = 0;
@@ -120,40 +138,57 @@ $(function () {
 
     let infototal = 0;
     currentPage = 0;
-    $.ajax({
-        type: "get",
-        url: "/api/public/detail",
-        success: function (r) {
-            console.log(r);
-            infototalPage = infototal = Math.ceil(r.data.length/1);
-                for(let i=0; i<infototal; i++) {
-                    $(".public_info_tbl").append('<tbody class="public_library_tbody"></tbody>');
-                }
-                for(let i=0; i<r.data.length; i++) {
-                    let page = Math.floor(i / 1);
-                    let tag = 
+    function getLibraryDetail(name) {
+        $.ajax({
+            type: "get",
+            url: "/api/public/detail?name="+name,
+            success: function (r) {
+                console.log(r);
+                $("#public_library_tbody").html("");
+                let tag = 
                     '<tr>'+
-                        '<td><i class="fas fa-phone"></i>'+r.data[i].tel+'</td>'+
+                        '<td><i class="fas fa-phone"></i>'+r.data.tel+'</td>'+
                     '</tr>'+
                     '<tr>'+
-                        '<td><i class="fas fa-home"></i>'+r.data[i].homepage+'</td>'+
+                        '<td><i class="fas fa-home"></i>'+r.data.homepage+'</td>'+
                     '</tr>'+
                     '<tr>'+
-                        '<td><i class="far fa-clock"></i>'+r.data[i].operatingTime+'</td>'+
+                        '<td><i class="far fa-clock"></i>'+r.data.operatingTime+'</td>'+
                     '</tr>'+
                     '<tr>'+
-                        '<td><i class="far fa-calendar-times"></i>'+r.data[i].closedOn+'</td>'+
+                        '<td><i class="far fa-calendar-times"></i>'+r.data.closedOn+'</td>'+
                     '</tr>'
-                    $(".public_library_tbody").eq(page).append(tag);
-                }
-                $(".public_library_tbody").css("display", "none");
-                $(".public_library_tbody").eq(0).css("display", "table-row-group");
-                $(".detail_total").html(infototalPage);
-                $(".detail_current").html(currentPage+1)
+                $("#public_library_tbody").html(tag);
+            // console.log(r);
+            // infototalPage = infototal = Math.ceil(r.data.length/1);
+            //     for(let i=0; i<infototal; i++) {
+            //         $(".public_info_tbl").append('<tbody class="public_library_tbody"></tbody>');
+            //     }
+            //     for(let i=0; i<r.data.length; i++) {
+            //         let page = Math.floor(i / 1);
+            //         let tag = 
+            //         '<tr>'+
+            //             '<td><i class="fas fa-phone"></i>'+r.data[i].tel+'</td>'+
+            //         '</tr>'+
+            //         '<tr>'+
+            //             '<td><i class="fas fa-home"></i>'+r.data[i].homepage+'</td>'+
+            //         '</tr>'+
+            //         '<tr>'+
+            //             '<td><i class="far fa-clock"></i>'+r.data[i].operatingTime+'</td>'+
+            //         '</tr>'+
+            //         '<tr>'+
+            //             '<td><i class="far fa-calendar-times"></i>'+r.data[i].closedOn+'</td>'+
+            //         '</tr>'
+            //         $(".public_library_tbody").eq(page).append(tag);
+            //     }
+            //     $(".public_library_tbody").css("display", "none");
+            //     $(".public_library_tbody").eq(0).css("display", "table-row-group");
+            //     $(".detail_total").html(infototalPage);
+            //     $(".detail_current").html(currentPage+1)
             }
         })
-
-    // 공공 베스트셀러
+    }
+    // 공공 베스트셀러 (도서명, 저자, 발행일)
 
     let bestcurrentPage = 0;
     let besttotalPage = 0;
@@ -190,7 +225,7 @@ $(function () {
                     '<tr>'+
                         '<td>'+r.data[i].title+'</td>'+
                         '<td>'+r.data[i].author+'</td>'+
-                        '<td>'+r.data[i].description+'</td>'+
+                        // '<td>'+r.data[i].description+'</td>'+
                         '<td>'+r.data[i].pub_date+'</td>'+
                     '</tr>'
                     $(".public_bestseller_tbody").eq(page).append(tag);

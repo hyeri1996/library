@@ -8,7 +8,7 @@
     select 
         book_title, authors, description, publisher, pub_date
         from new_book
-        limit 30 offset 40
+        limit 30 offset #{offset}
     </select>
     
     <!-- 신작도서 정보 -->

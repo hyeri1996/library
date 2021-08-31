@@ -16,7 +16,7 @@
 
 .search_box_area {
     margin-top: 10px;
-    width: 700px; height: 370px; position: relative;
+    width: 1100px; height: 370px; position: relative;
     background-color: #fff; border-radius: 20px;
     box-sizing: border-box;
     padding:10px; margin-left: 8%; margin-right: 0px;
@@ -35,7 +35,9 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
     margin-left: 80px; position: relative; 
 }
-.small_info_area {width: 250px; height: 200px; position: relative;}
+.dashboard_content > .small_info_area {
+    width: 250px; height: 200px; position: relative; display: none;
+}
 
 
 .search_box {
@@ -47,7 +49,7 @@
 
 
 #search_keyword {
-    width: 490px; font-size: 15px; font-weight: 300px;margin-bottom: 7px;
+    width: 300px; font-size: 15px; font-weight: 300px;margin-bottom: 7px;
     box-sizing: content-box; font-family: "Noto Sans KR", serif;
     border-radius: 5px; margin-left: 10px;
 }
@@ -55,13 +57,11 @@
     box-sizing: content-box; background-color: #fff; border-radius: 5px;
     margin-left: 10px;font-family: "Noto Sans KR", serif; height: 23px;
 }
-#adrress_select {
+#adrress1_select {
     font-family: "Noto Sans KR", sans-serif;
     position: relative; font-size: 14px; font-weight: 500;
     box-shadow: 0 0 1px rgba(0,0,0,0.2);
 }
-#small_prev {background-color: #fff; border-radius: 5px;}
-#small_next {background-color: #fff; border-radius: 5px;}
 
 .search_pager_area {
     text-align: center; margin-top: 20px;
@@ -123,11 +123,11 @@
     margin-top: 20px;
 }
 .small_bestseller_tbl td {width: 20%; text-align: center;
-    padding: 10px 0; border: 1px solid #eee; font-size: 15px;
+    padding: 10px 0;font-size: 15px;
 }
 .small_bestseller_tbl thead td {font-weight: 700; font-size: 18px; padding: 15px;
     border-bottom: 5px double rgb(196, 196, 196);
-    border-left: none}
+}
 
 .small_bestseller_tbl thead td:first-child {
     border-left: none;
@@ -141,6 +141,12 @@
 .small_bestseller_tbl td:first-child {
     border-left: none;
 }
+.bestseller_content {
+    width: 1050px; margin-left: 10%; text-align: center; vertical-align: center;
+}
+
+.search_box_area.open {width: 700px;}
+.dashboard_content > .small_info_area.open {display: inline-block;}
 
 
 

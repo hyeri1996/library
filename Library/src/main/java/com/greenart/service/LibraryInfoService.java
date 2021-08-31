@@ -39,8 +39,8 @@ public class LibraryInfoService {
     }
 
     // 작은도서관 상세정보
-    public List<LibraryInfoVO> selectSmallLibraryInfo() {
-        return mapper.selectSmallLibraryInfo();
+    public LibraryInfoVO selectSmallLibraryInfo(String name) {
+        return mapper.selectSmallLibraryInfo(name);
     }
 
     // 공공도서관 정보
@@ -49,17 +49,20 @@ public class LibraryInfoService {
     }
 
     // 공공도서관 상세정보
-    public List<LibraryInfoVO> selectPublicLibraryInfo() {
-        return mapper.selectPublicLibraryInfo();
+    public LibraryInfoVO selectPublicLibraryInfo(String name) {
+        return mapper.selectPublicLibraryInfo(name);
     }
 
     // 공공도서관 지역 선택
-    public List<LibraryInfoVO> selectPublicLibraryAddr(String address1) {
-        return mapper.selectPublicLibraryAddr(address1);
+    public List<LibraryInfoVO> selectPublicLibraryAddr(String address1, String keyword) {
+        return mapper.selectPublicLibraryAddr(address1, keyword);
     }
 
     // 작은도서관 지역 선택
-    public List<LibraryInfoVO> selectSmallLibraryAddr(String address1) {
-        return mapper.selectSmallLibraryAddr(address1);
+    public List<LibraryInfoVO> selectSmallLibraryAddr(String address1, String keyword) {
+        return mapper.selectSmallLibraryAddr(address1, keyword);
     }
+
+    
+
 }

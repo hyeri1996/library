@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.greenart.service.LendingAnalysisService;
 import com.greenart.vo.LendingAnalysisVO;
+import com.greenart.vo.UseAnalysisVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
@@ -100,15 +101,15 @@ public class LendingAnalysisAPIController {
             resultMap.put("lendarea", list);
             return resultMap;
     }
-
-    @GetMapping("/api/lend/count")
-    public Map<String, Object> getLendCount() {
+    @GetMapping("/api/lend/cnt")
+    public Map<String, Object> selectLoanTotalCnt(
+        @RequestParam @Nullable Integer offset
+    ) {
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        List<LendingAnalysisVO> list = service.selectLendCount();
+        List<UseAnalysisVO> list = service.selectLoanTotalCnt(offset);
         resultMap.put("status", true);
         resultMap.put("data", list);
         return resultMap;
-
     }
     
 }

@@ -33,6 +33,7 @@
     <div class="dashboard_content">
         <div class="search_box_area">
             <select id="adrress1_select">
+                <option value="">전국</option>
                 <option value="서울">서울특별시</option>
                 <option value="경기">경기도</option>
                 <option value="인천">인천광역시</option>
@@ -51,7 +52,7 @@
                 <option value="충청북도">충청북도</option>
                 <option value="강원">강원도</option>
             </select>
-            <input type="text" id="search_keyword" placeholder="도서관 명을 입력하세요.">
+            <input type="text" id="search_keyword" placeholder="찾으시는 도서관의 주소를 입력하세요.">
                 <button id="search_btn">검색</button>
             <table class="public_library_tbl">
                 <thead>
@@ -62,7 +63,7 @@
                 </thead>
                 <!-- <div class="content_area"> -->
                     <tbody class="public_tbody">
-
+                        
                     </tbody>
                 <!-- </div> -->
             </table>
@@ -89,14 +90,14 @@
                 <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
             </div>
         </div>
-        <div class="dashboard_content">
-            <div class="search_box">
+        <div class="bestseller_area">
+            <div class="bestseller_content">
                 <table class="public_bestseller_tbl">
                     <thead>
                         <tr>
                             <td>도서 명</td>
                             <td>저자</td>
-                            <td>도서 소개</td>
+                            <!-- <td>도서 소개</td> -->
                             <td>발행일</td>
                         </tr>
                     </thead>

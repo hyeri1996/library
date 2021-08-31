@@ -22,8 +22,8 @@ public class NewBookInfoService {
     }
 
     // 신작도서 목록 (상세)
-    public List<NewBookInfoVO> selectNewBookInfo() {
-        return mapper.selectNewBookInfo();
+    public List<NewBookInfoVO> selectNewBookInfo(Integer offset) {
+        return mapper.selectNewBookInfo(offset);
     }
     public List<NewBookInfoVO> PublicBookCntRank() {
         return mapper.PublicBookCntRank();

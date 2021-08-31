@@ -3,16 +3,17 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.greenart.mapper.BookDetailMapper">
     <select id="selectBookDetail" resultType="com.greenart.vo.BookDetailVO">
-        select 
-            title,vol,author,publisher,description,pub_date,img_url
+        select
+            title,vol,author,publisher,pub_date
         from book_detail
-        limit 20
+        where title like #{keyword}
+        limit 10 offset #{offset}
     </select>
-    <select id="selectBookDetailByTitle" resultType="com.greenart.vo.BookDetailVO">
-        select 
-            title,vol,author,publisher,description,pub_date,img_url
-        from book_detail where title like #{title}
-        limit 20 offset #{offset};
+    <select id="selectBookDetailCnt" resultType="java.lang.Integer">
+        select
+            count(*)
+        from book_detail
+        where title like #{keyword}
     </select>
 
     <select id="selectBookRankChange" resultType="com.greenart.vo.BookRankVO">

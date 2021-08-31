@@ -27,7 +27,7 @@
         select count(*) lib_type_nm from library_info
         group by lib_type_nm
     </select>
-
+    <!-- 작은도서관 정보 검색 -->
     <select id="selectSmallSearch" resultType="com.greenart.vo.LibraryInfoVO">
         select distinct 
             lib_name,addr
@@ -35,15 +35,15 @@
         where lib_type_nm ='작은'
         limit 10
     </select>
-
+    <!-- 작은도서관 상세정보 -->
     <select id="selectSmallLibraryInfo" resultType="com.greenart.vo.LibraryInfoVO">
         select distinct 
-            tel, homepage, operatingTime, closedOn
+            lib_name, tel, homepage, operatingTime, closedOn
         from library_info
-        where lib_type_nm ='작은'
-        limit 5
+        where lib_type_nm ='작은' and lib_name=#{name}
+        limit 1
     </select>
-
+    <!-- 공공도서관 정보 검색 -->
     <select id="selectPublicSearch" resultType="com.greenart.vo.LibraryInfoVO">
         select distinct 
             lib_name,addr
@@ -51,22 +51,28 @@
         where lib_type_nm ='공공'
         limit 10
     </select>
-
+    <!-- 공공도서관 상세정보 -->
     <select id="selectPublicLibraryInfo" resultType="com.greenart.vo.LibraryInfoVO">
         select distinct 
-            tel, homepage, operatingTime, closedOn
+            lib_name, tel, homepage, operatingTime, closedOn
         from library_info
-        where lib_type_nm ='공공'
+        where lib_type_nm ='공공' and lib_name=#{name}
+        limit 1
     </select>
 
     <select id="selectPublicLibraryAddr" resultType="com.greenart.vo.LibraryInfoVO">
-        select lib_name, addr from library_info
-        where lib_type_nm = '공공' and address1 like #{address1}
+        select distinct lib_name, addr from library_info
+        where 
+            lib_type_nm = '공공' and address1 like #{address1}
+            and addr like #{keyword}
     </select>
 
     <select id="selectSmallLibraryAddr" resultType="com.greenart.vo.LibraryInfoVO">
-        select lib_name, addr from library_info
-        where lib_type_nm = '작은' and address1 like #{address1}
+        select distinct lib_name, addr from library_info
+        where 
+            lib_type_nm = '작은' and address1 like #{address1}
+            and addr like #{keyword}
     </select>
+
 
 </mapper>

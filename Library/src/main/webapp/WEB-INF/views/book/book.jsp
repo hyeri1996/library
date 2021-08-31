@@ -18,6 +18,9 @@
     <script src="/assets/js/book.js"></script>
 </head>
 <body>
+    <div class="loading">
+        <img src="/assets/images/loading.gif" alt="">
+    </div>
     <%@include file="/WEB-INF/views/includes/menu.jsp"%>
     <div class="container">
         <p>인기 상승 도서</p>
@@ -38,15 +41,34 @@
                     </p>
                     <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
                 <div class="search_book_box">
-                    <input type="search" id="search_box" placeholder="찾으시는 책의 제목을 입력해 주세요.">
+                    <input type="text" id="search_keyword" placeholder="찾으시는 책의 제목을 입력해 주세요.">
                     <button id="search_btn">
                         <span>검색</span>
                     </button>
                     <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
+                    <div class="search_book_list">
+                    <table class="book_list_tbl">
+                        <thead>
+                            <tr>
+                                <td>도서 명</td>
+                                <td>권</td>
+                                <td>저자</td>
+                                <td>출판사</td>
+                            </tr>
+                        </thead>
+                        <tbody id="book_list_tbody">
+                        </tbody>
+                    </table>
+                    <div class="search_pager_area">
+                        <button id="book_prev">&lt;</button>
+                        <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
+                        <button id="book_next">&gt;</button>
+                    </div>
                 </div>
-                </div>
+            </div>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>

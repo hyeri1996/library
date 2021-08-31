@@ -9,6 +9,7 @@ import com.greenart.vo.BookDetailVO;
 import com.greenart.vo.BookRankVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,25 +20,31 @@ public class BookDetailAPIController {
     BookDetailInfoService service;
     // 책정보 입력 X
     @GetMapping("/api/book") 
-        public Map<String, Object> getBookDetailInfo() {
+        public Map<String, Object> getBookDetailInfo(
+            @RequestParam String keyword,
+            @RequestParam @Nullable Integer offset
+        ) {
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-                List<BookDetailVO> list = service.selectBookDetail();
+                keyword = "%"+keyword+"%";
+                List<BookDetailVO> list = service.selectBookDetail(keyword,offset);
+                
                 resultMap.put("status", true);
                 resultMap.put("data", list);
+                
                 return resultMap;
             }
         // 책정보 제목 키워드 입력
-        @GetMapping("/api/book/{title}") 
-            public Map<String, Object> getBookDetailInfoByTitle(
-                @PathVariable String title,@RequestParam Integer offset
-                ) {
-                Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-                title = "%"+title+"%"; // 키워드 검색 시 앞 뒤로 %를 붙여주셔야 됩니다.
-                List<BookDetailVO> list = service.selectBookDetailByTitle(title, offset);
-                resultMap.put("status", true);
-                resultMap.put("data", list);
-            return resultMap;
-        }
+        // @GetMapping("/api/book/{title}") 
+        //     public Map<String, Object> getBookDetailInfoByTitle(
+        //         @PathVariable String title,@RequestParam Integer offset
+        //         ) {
+        //         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        //         title = "%"+title+"%"; // 키워드 검색 시 앞 뒤로 %를 붙여주셔야 됩니다.
+        //         List<BookDetailVO> list = service.selectBookDetailByTitle(title, offset);
+        //         resultMap.put("status", true);
+        //         resultMap.put("data", list);
+        //     return resultMap;
+        // }
 
         // 대출 급상승 도서
         @GetMapping("/api/book/rank/{reg_dt}")
@@ -50,4 +57,12 @@ public class BookDetailAPIController {
                 resultMap.put("ranklist", list);
                 return resultMap;
             }
+
+    @GetMapping("/api/book/cnt")
+    public Integer getBookDetailCnt(
+        @RequestParam String keyword
+    ) {
+        keyword = "%"+keyword+"%";
+        return service.selectBookDetailCnt(keyword);
+    }
 }
