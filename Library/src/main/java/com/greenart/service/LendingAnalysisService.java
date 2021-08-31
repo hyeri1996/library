@@ -23,4 +23,7 @@ public class LendingAnalysisService {
     public List<LendingAnalysisVO> selectLendArea(String ANALS_TRGET_YEAR, String ANALS_TRGET_MT) {
         return mapper.selectLendArea(ANALS_TRGET_YEAR, ANALS_TRGET_MT);
     }
+    public List<LendingAnalysisVO> selectLendCount() {
+        return mapper.selectLendCount();
+    }
 }

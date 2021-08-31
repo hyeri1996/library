@@ -41,4 +41,13 @@
         ANALS_TRGET_MT = #{ANALS_TRGET_MT}
         group by AREA_NM
     </select>
+
+    <select id="selectLendCount" resultType="com.greenart.vo.LendingAnalysisVO">
+    select 
+        a.title, a.author, a.publisher, a.pub_date, b.loan_cnt, a.vol
+    from book_detail 
+    as a inner join book_rank 
+    as b on a.isbn13 = b.isbn13 
+    order by loan_cnt desc
+    </select>
 </mapper>

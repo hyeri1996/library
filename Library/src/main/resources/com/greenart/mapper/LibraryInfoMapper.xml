@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatix.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.greenart.mapper.LibraryInfoMapper">
+    <!-- 도서관 찾기 -->
     <select id="selectLibraryInfo" resultType="com.greenart.vo.LibraryInfoVO">
         select distinct 
             lib_name,addr

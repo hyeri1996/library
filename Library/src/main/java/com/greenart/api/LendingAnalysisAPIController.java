@@ -100,5 +100,15 @@ public class LendingAnalysisAPIController {
             resultMap.put("lendarea", list);
             return resultMap;
     }
+
+    @GetMapping("/api/lend/count")
+    public Map<String, Object> getLendCount() {
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        List<LendingAnalysisVO> list = service.selectLendCount();
+        resultMap.put("status", true);
+        resultMap.put("data", list);
+        return resultMap;
+
+    }
     
 }

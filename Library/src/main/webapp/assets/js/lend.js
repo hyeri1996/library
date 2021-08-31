@@ -93,4 +93,51 @@ $(function(){
             });
         }
     })
+
+    let lendcurrentPage = 0;
+    let lendtotalPage = 0;
+    
+    $("#lend_next").click(function(){
+        lendcurrentPage++;
+        if(lendcurrentPage >= lendtotalPage) lendcurrentPage = lendtotalPage - 1;
+        $(".lend_book_tbody").css("display", "none");
+        $(".lend_book_tbody").eq(lendcurrentPage).css("display", "table-row-group");
+        $(".current").html(lendcurrentPage+1)
+    })
+    $("#lend_prev").click(function(){
+        lendcurrentPage--;
+        if(lendcurrentPage < 0) lendcurrentPage = 0;
+        $(".lend_book_tbody").css("display", "none");
+        $(".lend_book_tbody").eq(lendcurrentPage).css("display", "table-row-group");
+        $(".current").html(lendcurrentPage+1)
+    })
+
+    let lendcounttotal = 0;
+    currentPage = 0;
+    $.ajax({
+        type: "get",
+        url: "/api/lend/count",
+        success: function (r) {
+            console.log(r);
+            lendtotalPage = lendcounttotal = Math.ceil(r.data.length/5);
+                for(let i=0; i<lendcounttotal; i++) {
+                    $(".lend_book_tbody").append('<tbody class="lend_book_tbody"></tbody>');
+                }
+                for(let i=0; i<r.data.length; i++) {
+                    let page = Math.floor(i / 5);
+                    let tag = 
+                    '<tr>'+
+                        '<td>'+r.data[i].title+'</td>'+
+                        '<td>'+r.data[i].author+'</td>'+
+                        '<td>'+r.data[i].publisher+'</td>'+
+                        '<td>'+r.data[i].vol+'</td>'+
+                    '</tr>'
+                    $(".lend_book_tbody").eq(page).append(tag);
+                }
+                $(".lend_book_tbody").css("display", "none");
+                $(".lend_book_tbody").eq(0).css("display", "table-row-group");
+                $(".total").html(lendcounttotal);
+                $(".current").html(currentPage+1)
+            }
+        })
 })

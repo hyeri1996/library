@@ -2,18 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.greenart.mapper.NewBookInfoMapper">
-    <select id="selectNewBookDate" resultType="com.greenart.vo.NewBookInfoVO">
-    select 
-        isbn13,book_title,authors,description,publisher,pub_date
-    from new_book order by input_date desc
-    </select>
-
-    <select id="selectNewBookTitle" resultType="com.greenart.vo.NewBookInfoVO">
-    select 
-        isbn13,book_title,authors,description,publisher,pub_date
-    from new_book
-    where book_title like #{book_title} order by book_title asc
-    </select>
 
     <!-- 신작도서 목록(상세) -->
     <select id="selectNewBookInfo" resultType="com.greenart.vo.NewBookInfoVO">
@@ -30,17 +18,5 @@
         from new_book
         limit 5
     </select>
-
-    <!-- <select id="PublicBookCntRank" resultType="com.greenart.vo.NewBookInfoVO">
-        select distinct 
-            c.rank, a.book_title, c.vol
-        from new_book as a
-            inner join public_library as b 
-        on a.isbn13 = b.isbn13
-            inner join book_rank as c 
-        on b.isbn13 = c.isbn13 
-        order by c.rank asc
-        limit 5
-    </select> -->
     
 </mapper>
