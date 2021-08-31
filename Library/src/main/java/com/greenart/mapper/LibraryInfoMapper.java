@@ -16,10 +16,10 @@ public interface LibraryInfoMapper {
     public List<LibraryInfoVO> selectLibraryInfoByType();   // 도서관비율
     
     public List<LibraryInfoVO> selectSmallSearch(); // 작은도서관 정보
-    public List<LibraryInfoVO> selectSmallLibraryInfo();    // 작은도서관 상세정보
+    public LibraryInfoVO selectSmallLibraryInfo(String name);    // 작은도서관 상세정보
 
     public List<LibraryInfoVO> selectPublicSearch();    //공공도서관 정보
-    public List<LibraryInfoVO> selectPublicLibraryInfo();   // 공공도서관 상세정보
+    public LibraryInfoVO selectPublicLibraryInfo(String name);   // 공공도서관 상세정보
 
     public List<LibraryInfoVO> selectPublicLibraryAddr(String address1, String keyword); // 공공도서관 지역 선택
     public List<LibraryInfoVO> selectSmallLibraryAddr(String address1, String keyword); // 작은도서관 지역 선택

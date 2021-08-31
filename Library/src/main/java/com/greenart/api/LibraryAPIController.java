@@ -76,11 +76,11 @@ public class LibraryAPIController {
 
         // 작은도서관 상세정보 (대표번호, 홈페이지, 개관시간, 휴관일)
         @GetMapping("/api/small/detail")
-        public Map<String, Object> getSmallLibraryInfo() {
+        public Map<String, Object> getSmallLibraryInfo(@RequestParam String name) {
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-            List<LibraryInfoVO> list = service.selectSmallLibraryInfo();
+            LibraryInfoVO vo = service.selectSmallLibraryInfo(name);
             resultMap.put("status", true);
-            resultMap.put("data", list);
+            resultMap.put("data", vo);
             return resultMap;
         }
 
@@ -96,11 +96,11 @@ public class LibraryAPIController {
         
         // 공공도서관 상세정보 (대표번호, 홈페이지, 개관시간, 휴관일)
         @GetMapping("/api/public/detail")
-        public Map<String, Object> getPublicLibraryInfo() {
+        public Map<String, Object> getPublicLibraryInfo(@RequestParam String name) {
             Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-            List<LibraryInfoVO> list = service.selectPublicLibraryInfo();
+            LibraryInfoVO vo = service.selectPublicLibraryInfo(name);
             resultMap.put("status", true);
-            resultMap.put("data", list);
+            resultMap.put("data", vo);
             return resultMap;
         }
 

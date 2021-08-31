@@ -13,4 +13,11 @@ public class LendingAnalysisVO {
     private Double LON_RATE;
 
     private String area;
+
+    private String title;
+    private String author;
+    private String publisher;
+    private String pub_date;
+    private String loan_cnt;
+    private String vol;
 }
