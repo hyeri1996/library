@@ -53,12 +53,20 @@ $(function(){
                 for(let i=0; i<r.data.length; i++) {
                     let page = Math.floor(i / 5);
                     let tag = 
-                    '<tr>'+
-                        '<td>'+r.data[i].lib_name+'</td>'+
+                    '<tr class="lib_tr">'+
+                        '<td class="lib_name">'+r.data[i].lib_name+'</td>'+
                         '<td>'+r.data[i].addr+'</td>'+
                     '</tr>'
                     $(".small_tbody").eq(page).append(tag);
                 }
+                $(".lib_tr").click(function(){
+                    let name = $(this).find(".lib_name").html();
+                    $(".lib_tr").css("background-color", "");
+                    $(this).css("background-color", "rgb(250, 227, 217)");
+                    getLibraryDetail(name);
+                    $(".search_box_area").addClass("open")
+                    $(".small_info_area").addClass("open")
+                })
                 $(".small_tbody").css("display", "none");
                 $(".small_tbody").eq(0).css("display", "table-row-group");
                 $(".total").html(total);
@@ -88,41 +96,59 @@ $(function(){
 
     let infototal = 0;
     currentPage = 0;
-    $.ajax({
-        type: "get",
-        url: "/api/small/detail",
-        success: function (r) {
-            console.log(r);
-            infototalPage = infototal = Math.ceil(r.data.length/1);
-                for(let i=0; i<infototal; i++) {
-                    $(".small_info_tbl").append('<tbody class="small_library_tbody"></tbody>');
-                }
-                for(let i=0; i<r.data.length; i++) {
-                    let page = Math.floor(i / 1);
-                    let tag = 
+    function getLibraryDetail(name) {
+        $.ajax({
+            type: "get",
+            url: "/api/small/detail?name="+name,
+            success: function (r) {
+                console.log(r);
+                $("#small_library_tbody").html("");
+                let tag = 
                     '<tr>'+
-                        '<td><i class="fas fa-phone"></i>'+r.data[i].tel+'</td>'+
+                        '<td><i class="fas fa-phone"></i>'+r.data.tel+'</td>'+
                     '</tr>'+
                     '<tr>'+
-                        '<td><i class="fas fa-home"></i>'+r.data[i].homepage+'</td>'+
+                        '<td><i class="fas fa-home"></i>'+r.data.homepage+'</td>'+
                     '</tr>'+
                     '<tr>'+
-                        '<td><i class="far fa-clock"></i>'+r.data[i].operatingTime+'</td>'+
+                        '<td><i class="far fa-clock"></i>'+r.data.operatingTime+'</td>'+
                     '</tr>'+
                     '<tr>'+
-                        '<td><i class="far fa-calendar-times"></i>'+r.data[i].closedOn+'</td>'+
+                        '<td><i class="far fa-calendar-times"></i>'+r.data.closedOn+'</td>'+
                     '</tr>'
-                    $(".small_library_tbody").eq(page).append(tag);
-                }
-                $(".small_library_tbody").css("display", "none");
-                $(".small_library_tbody").eq(0).css("display", "table-row-group");
-                $(".total").html(infototal);
-                $(".current").html(currentPage+1)
+                $("#small_library_tbody").html(tag);
+            // console.log(r);
+            // infototalPage = infototal = Math.ceil(r.data.length/1);
+            //     for(let i=0; i<infototal; i++) {
+            //         $(".small_info_tbl").append('<tbody class="small_library_tbody"></tbody>');
+            //     }
+            //     for(let i=0; i<r.data.length; i++) {
+            //         let page = Math.floor(i / 1);
+            //         let tag = 
+            //         '<tr>'+
+            //             '<td><i class="fas fa-phone"></i>'+r.data[i].tel+'</td>'+
+            //         '</tr>'+
+            //         '<tr>'+
+            //             '<td><i class="fas fa-home"></i>'+r.data[i].homepage+'</td>'+
+            //         '</tr>'+
+            //         '<tr>'+
+            //             '<td><i class="far fa-clock"></i>'+r.data[i].operatingTime+'</td>'+
+            //         '</tr>'+
+            //         '<tr>'+
+            //             '<td><i class="far fa-calendar-times"></i>'+r.data[i].closedOn+'</td>'+
+            //         '</tr>'
+            //         $(".small_library_tbody").eq(page).append(tag);
+            //     }
+            //     $(".small_library_tbody").css("display", "none");
+            //     $(".small_library_tbody").eq(0).css("display", "table-row-group");
+            //     $(".total").html(infototal);
+            //     $(".current").html(currentPage+1)
             }
         })
+    }
 
 
-    // 작은 베스트셀러
+    // 작은 베스트셀러 (도서명, 저자, 발행일)
 
     let bestsellercurrentPage = 0;
     let bestsellertotalPage = 0;

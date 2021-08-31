@@ -51,7 +51,7 @@
                 <option value="충청북도">충청북도</option>
                 <option value="강원">강원도</option>
             </select>
-            <input type="text" id="search_keyword" placeholder="도서관 명을 입력하세요.">
+            <input type="text" id="search_keyword" placeholder="찾으시는 도서관의 주소를 입력하세요.">
                 <button id="search_btn">검색</button>
             <table class="small_library_tbl">
                 <thead>
