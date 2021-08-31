@@ -12,8 +12,8 @@
 </head>
 <body>
     <div class="main_menu_list">
-        <a href="/" id="logo">
-            <span>로고 영역</span>
+        <a href="/index" id="logo_img">
+            <img src="/assets/images/Dodo.png" alt="" id="logo_img">
         </a>
         <div class="menu_list">
             <div class="main_menu">
