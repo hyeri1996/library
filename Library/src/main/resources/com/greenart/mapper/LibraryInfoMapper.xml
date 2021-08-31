@@ -73,6 +73,4 @@
             lib_type_nm = '작은' and address1 like #{address1}
             and addr like #{keyword}
     </select>
-
-
 </mapper>

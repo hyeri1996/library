@@ -102,7 +102,7 @@ $(function () {
                 $(".lib_tr").click(function(){
                     let name = $(this).find(".lib_name").html();
                     $(".lib_tr").css("background-color", "");
-                    $(this).css("background-color", "rgb(227, 246, 245)");
+                    $(this).css("background-color", "rgb(250, 227, 217)");
                     getLibraryDetail(name);
                     $(".search_box_area").addClass("open")
                     $(".public_info_area").addClass("open")
