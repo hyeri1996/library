@@ -25,23 +25,13 @@
         </div>
     </div>
     <div class="dashboard_content">
-        <div class="search_box_area">
-            <table class="new_book_list_tbl">
-                <thead>
-                    <tr>
-                        <td>도서 명</td>
-                        <td>저자</td>
-                        <td>도서 소개</td>
-                        <td>출판사</td>
-                        <td>발행일</td>
-                    </tr>
-                </thead>
-                <tbody id="newbook_list_tbody">
-                </tbody>
-            </table>
-            <div class="search_pager_area">
+        <div class="content_area">
+            <div class="new_book_area">
+                
+            </div>
+            <div class="new_pager_area">
                 <button id="newbook_prev">&lt;</button>
-                <span class="new_current">이전페이지</span> / <span class="new_total">다음페이지</span>
+                <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
                 <button id="newbook_next">&gt;</button>
             </div>
         </div>

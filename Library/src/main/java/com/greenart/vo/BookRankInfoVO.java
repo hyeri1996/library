@@ -12,5 +12,6 @@ public class BookRankInfoVO {
     private String description;
     private String publisher;
     private String pub_date;
+    private String img_url;
 
 }

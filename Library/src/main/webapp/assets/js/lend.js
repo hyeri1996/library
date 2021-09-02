@@ -1,6 +1,48 @@
 $(function(){
 
+    let currentPage = 0;
+    let totalPage = 0;
+
+    getLendBookList(0);
     
+    $("#lend_next").click(function(){
+        currentPage++;
+        getLendBookList(currentPage);
+    })
+    $("#lend_prev").click(function(){
+        currentPage--;
+        if(currentPage < 0) currentPage = 0;
+        getLendBookList(currentPage);
+    })
+
+    function getLendBookList(offset) {
+        offset = offset * 8
+        let url = "/api/lend/cnt?offset="+offset ;
+        let total = 0;
+        $.ajax({
+            type:"get",
+            url:url,
+            success:function(r) {
+                console.log(r);
+                total = total = Math.ceil(r.data.length/8);
+                $(".lend_book_area").html("");
+                for(let i=0; i<r.data.length; i++){
+                    let tag = 
+                            '<div class="item">'+
+                                '<img class="image" src='+r.data[i].img_url+'>'+
+                                '<div class="bookTitle">'+r.data[i].title+'</div>'+
+                                '<div class="vol">'+r.data[i].vol+'</div>'+
+                                '<div class="author">'+r.data[i].author+'</div>'+
+                                '<div class="publisher">'+r.data[i].publisher+'</div>'+
+                                '<div class="cnt">'+r.data[i].cnt+'</div>'+
+                            '</div>';
+                    $(".lend_book_area").append(tag);
+                }
+                $(".current").html(currentPage + 1)
+            }
+        })
+    }
+
     $.ajax({
         type: "get",
         url: "/api/lend/month?ANALS_TRGET_YEAR=2021",
@@ -93,51 +135,4 @@ $(function(){
             });
         }
     })
-
-    let lendcurrentPage = 0;
-    let lendtotalPage = 0;
-    
-    $("#lend_next").click(function(){
-        lendcurrentPage++;
-        if(lendcurrentPage >= lendtotalPage) lendcurrentPage = lendtotalPage - 1;
-        $(".lend_book_tbody").css("display", "none");
-        $(".lend_book_tbody").eq(lendcurrentPage).css("display", "table-row-group");
-        $(".current").html(lendcurrentPage+1)
-    })
-    $("#lend_prev").click(function(){
-        lendcurrentPage--;
-        if(lendcurrentPage < 0) lendcurrentPage = 0;
-        $(".lend_book_tbody").css("display", "none");
-        $(".lend_book_tbody").eq(lendcurrentPage).css("display", "table-row-group");
-        $(".current").html(lendcurrentPage+1)
-    })
-
-    let lendcounttotal = 0;
-    currentPage = 0;
-    $.ajax({
-        type: "get",
-        url: "/api/lend/count",
-        success: function (r) {
-            console.log(r);
-            lendtotalPage = lendcounttotal = Math.ceil(r.data.length/5);
-                for(let i=0; i<lendcounttotal; i++) {
-                    $(".lend_book_tbody").append('<tbody class="lend_book_tbody"></tbody>');
-                }
-                for(let i=0; i<r.data.length; i++) {
-                    let page = Math.floor(i / 5);
-                    let tag = 
-                    '<tr>'+
-                        '<td>'+r.data[i].title+'</td>'+
-                        '<td>'+r.data[i].author+'</td>'+
-                        '<td>'+r.data[i].publisher+'</td>'+
-                        '<td>'+r.data[i].vol+'</td>'+
-                    '</tr>'
-                    $(".lend_book_tbody").eq(page).append(tag);
-                }
-                $(".lend_book_tbody").css("display", "none");
-                $(".lend_book_tbody").eq(0).css("display", "table-row-group");
-                $(".total").html(lendcounttotal);
-                $(".current").html(currentPage+1)
-            }
-        })
 })

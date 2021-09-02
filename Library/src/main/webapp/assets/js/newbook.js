@@ -2,53 +2,56 @@ $(function() {
 
 
     // 신작 도서 목록 상세 (도서명, 저자, 도서소개, 출판사, 발행일)
-    let newbookcurrentPage = 0;
-    let newbooktotalPage = 0;
+    let currentPage = 0;
+    let totalPage = 0;
+    
+    getNewBookList(0);
     
     $("#newbook_next").click(function(){
-        newbookcurrentPage++;
-        if(newbookcurrentPage >= newbooktotalPage) newbookcurrentPage = newbooktotalPage - 1;
-        $(".newbook_list_tbody").css("display", "none");
-        $(".newbook_list_tbody").eq(newbookcurrentPage).css("display", "table-row-group");
-        $(".new_current").html(newbookcurrentPage+1)
+        currentPage++;
+        getNewBookList(currentPage);
+        // if(newbookcurrentPage >= newbooktotalPage) newbookcurrentPage = newbooktotalPage - 1;
+        // $(".newbook_list_tbody").css("display", "none");
+        // $(".newbook_list_tbody").eq(newbookcurrentPage).css("display", "table-row-group");
+        // $(".new_current").html(newbookcurrentPage+1)
     })
     $("#newbook_prev").click(function(){
-        newbookcurrentPage--;
-        if(newbookcurrentPage < 0) newbookcurrentPage = 0;
-        $(".newbook_list_tbody").css("display", "none");
-        $(".newbook_list_tbody").eq(newbookcurrentPage).css("display", "table-row-group");
-        $(".new_current").html(newbookcurrentPage+1)
+        currentPage--;
+        if(currentPage < 0) currentPage = 0;
+        getNewBookList(currentPage);
+        // $(".newbook_list_tbody").css("display", "none");
+        // $(".newbook_list_tbody").eq(newbookcurrentPage).css("display", "table-row-group");
+        // $(".new_current").html(newbookcurrentPage+1)
     })
 
-    let newtotal = 0;
-    currentPage = 0;
-    $.ajax({
-        type: "get",
-        url: "/api/newbook/info",
-        success: function (r) {
-            console.log(r);
-            newbooktotalPage = newtotal = Math.ceil(r.data.length/6);
-                for(let i=0; i<newtotal; i++) {
-                    $(".new_book_list_tbl").append('<tbody class="newbook_list_tbody"></tbody>');
-                }
-                for(let i=0; i<r.data.length; i++) {
-                    let page = Math.floor(i / 6);
+    function getNewBookList(offset) {
+        offset = offset * 12
+        let url = "/api/newbook/info?offset="+offset ;
+        let total = 0;
+        $.ajax({
+            type:"get",
+            url:url,
+            success:function(r) {
+                console.log(r);
+                total = total = Math.ceil(r.data.length/12);
+                $(".new_book_area").html("");
+                for(let i=0; i<r.data.length; i++){
                     let tag = 
-                    '<tr>'+
-                        '<td>'+r.data[i].book_title+'</td>'+
-                        '<td>'+r.data[i].authors+'</td>'+
-                        '<td>'+r.data[i].description+'</td>'+
-                        '<td>'+r.data[i].publisher+'</td>'+
-                        '<td>'+r.data[i].pub_date+'</td>'+
-                    '</tr>'
-                    $(".newbook_list_tbody").eq(page).append(tag);
+                        // '<div class="new_book_area">'+
+                            '<div class="item">'+
+                                '<img class="image" src='+r.data[i].aladin_img_url+'>'+
+                                '<div class="bookTitle">'+r.data[i].book_title+'</div>'+
+                                '<div class="authors">'+r.data[i].authors+'</div>'+
+                                '<div class="publisher">'+r.data[i].publisher+'</div>'+
+                            '</div>';
+                        // '</div>';
+                    $(".new_book_area").append(tag);
                 }
-                $(".newbook_list_tbody").css("display", "none");
-                $(".newbook_list_tbody").eq(0).css("display", "table-row-group");
-                $(".new_total").html(newtotal);
-                $(".new_current").html(currentPage+1)
+                $(".current").html(currentPage + 1)
             }
         })
+    }
+    
 
     // 신작도서 목록 (도서명, 저자, 출판사)
 

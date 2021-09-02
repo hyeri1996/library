@@ -20,4 +20,5 @@ public class LendingAnalysisVO {
     private String pub_date;
     private String loan_cnt;
     private String vol;
+    private String img_url;
 }

@@ -39,26 +39,16 @@
                     <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
                 </div>
             </div>
-        </div>
-        <div class="dashboard_content">
-            <div class="search_box">
-                <table class="lend_count_tbl">
-                    <thead>
-                        <tr>
-                            <td>도서 명</td>
-                            <td>저자</td>
-                            <td>출판사</td>
-                            <td>권</td>
-                        </tr>
-                    </thead>
-                    <tbody id="lend_book_tbody">
-
-                    </tbody>
-                </table>
-                <div class="search_pager_area">
-                    <button id="lend_prev">&lt;</button>
-                    <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
-                    <button id="lend_next">&gt;</button>
+            <div class="dashboard_content">
+                <div class="content_area">
+                    <div class="lend_book_area">
+                        
+                    </div>
+                    <div class="lend_pager_area">
+                        <button id="lend_prev">&lt;</button>
+                        <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
+                        <button id="lend_next">&gt;</button>
+                    </div>
                 </div>
             </div>
         </div>

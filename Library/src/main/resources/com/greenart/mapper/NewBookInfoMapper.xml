@@ -5,10 +5,10 @@
 
     <!-- 신작도서 목록(상세) -->
     <select id="selectNewBookInfo" resultType="com.greenart.vo.NewBookInfoVO">
-    select 
-        book_title, authors, description, publisher, pub_date
+    select distinct
+        book_title, authors, publisher, aladin_img_url
         from new_book
-        limit 30 offset #{offset}
+        limit 12 offset #{offset}
     </select>
     
     <!-- 신작도서 정보 -->

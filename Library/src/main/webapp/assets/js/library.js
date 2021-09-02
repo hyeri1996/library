@@ -223,6 +223,7 @@ $(function () {
                     let page = Math.floor(i / 5);
                     let tag = 
                     '<tr>'+
+                        '<td>'+'<img class="book_img" src='+r.data[i].img_url+'></td>'+
                         '<td>'+r.data[i].title+'</td>'+
                         '<td>'+r.data[i].author+'</td>'+
                         // '<td>'+r.data[i].description+'</td>'+

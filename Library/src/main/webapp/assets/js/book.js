@@ -5,11 +5,11 @@ $(function(){
         url:"/api/book/rank/2021-08-25",
         success:function(r) {
             console.log(r);
-            $("#changeRank").html(r.ranklist[0].change_rank);
-            $("#regRank").html(r.ranklist[0].reg_rank);
-            $("#bookTitle").html(r.ranklist[0].book_title);
-            $("#author").html(r.ranklist[0].author);
-            $("#publisher").html(r.ranklist[0].publisher);
+            $(".changeRank").html(r.ranklist[0].change_rank);
+            $(".regRank").html(r.ranklist[0].reg_rank);
+            $(".bookTitle").html(r.ranklist[0].book_title);
+            $(".author").html(r.ranklist[0].author);
+            $(".publisher").html(r.ranklist[0].publisher);
             $(".book_rank").html("");
             for(let i=0; i<r.ranklist.length; i++){
                 let tag = 
