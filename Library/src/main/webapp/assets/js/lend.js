@@ -3,40 +3,41 @@ $(function(){
     let currentPage = 0;
     let totalPage = 0;
 
-    getLendBookList(0);
+    getLendList(0);
     
     $("#lend_next").click(function(){
         currentPage++;
-        getLendBookList(currentPage);
+        getLendList(currentPage);
     })
     $("#lend_prev").click(function(){
         currentPage--;
         if(currentPage < 0) currentPage = 0;
-        getLendBookList(currentPage);
+        getLendList(currentPage);
     })
 
-    function getLendBookList(offset) {
-        offset = offset * 8
-        let url = "/api/lend/cnt?offset="+offset ;
+    function getLendList(offset) {
+        offset = offset * 10
+        let url = "/api/lend/cnt?offset="+offset;
+
         let total = 0;
-        $.ajax({
+        $.ajax ({
             type:"get",
             url:url,
-            success:function(r) {
-                console.log(r);
-                total = total = Math.ceil(r.data.length/8);
-                $(".lend_book_area").html("");
-                for(let i=0; i<r.data.length; i++){
+            success:function(r){
+                console.log(r)
+                total = total = Math.ceil(r.data.length/10);
+                $("#lend_list_tbody").html("");
+                for(let i=0; i<r.data.length; i++) {
+                    let page = Math.floor(i / 10);
                     let tag = 
-                            '<div class="item">'+
-                                '<img class="image" src='+r.data[i].img_url+'>'+
-                                '<div class="bookTitle">'+r.data[i].title+'</div>'+
-                                '<div class="vol">'+r.data[i].vol+'</div>'+
-                                '<div class="author">'+r.data[i].author+'</div>'+
-                                '<div class="publisher">'+r.data[i].publisher+'</div>'+
-                                '<div class="cnt">'+r.data[i].cnt+'</div>'+
-                            '</div>';
-                    $(".lend_book_area").append(tag);
+                    '<tr>'+
+                        '<td>'+r.data[i].title+'</td>'+
+                        '<td>'+r.data[i].vol+'</td>'+
+                        '<td>'+r.data[i].author+'</td>'+
+                        '<td>'+r.data[i].publisher+'</td>'+
+                        '<td>'+r.data[i].cnt+'</td>'+
+                    '</tr>'
+                    $("#lend_list_tbody").append(tag);
                 }
                 $(".current").html(currentPage + 1)
             }

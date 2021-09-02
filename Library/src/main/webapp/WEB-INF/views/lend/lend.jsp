@@ -37,21 +37,28 @@
                 <div class="lend_book_box">
                     <p>대출 횟수가 많은 책</p>
                     <hr style="border: solid 3px rgb(221, 171, 171); width: 85%;">
-                </div>
-            </div>
-            <div class="dashboard_content">
-                <div class="content_area">
-                    <div class="lend_book_area">
-                        
+                    <div class="lend_book_list">
+                        <table class="lend_list_tbl">
+                            <thead>
+                                <tr>
+                                    <td>도서 명</td>
+                                    <td>권</td>
+                                    <td>저자</td>
+                                    <td>출판사</td>
+                                    <td>대출횟수</td>
+                                </tr>
+                            </thead>
+                            <tbody id="lend_list_tbody">
+
+                            </tbody>
+                        </table>
+                        <div class="lend_pager_area">
+                            <button id="lend_prev">&lt;</button>
+                            <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
+                            <button id="lend_next">&gt;</button>
+                        </div>
                     </div>
-                    <div class="lend_pager_area">
-                        <button id="lend_prev">&lt;</button>
-                        <span class="current">이전페이지</span> / <span class="total">다음페이지</span>
-                        <button id="lend_next">&gt;</button>
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
 </body>
 </html>
