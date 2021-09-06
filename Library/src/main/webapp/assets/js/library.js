@@ -207,14 +207,17 @@ $(function () {
         $(".public_bestseller_tbody").eq(bestcurrentPage).css("display", "table-row-group");
         $(".best_current").html(bestcurrentPage+1)
     })
+    
 
     let bestsellertotal = 0;
     currentPage = 0;
+    $(".loading").css("display", "block");
     $.ajax({
         type: "get",
         url: "/api/bookrank/public",
         success: function (r) {
             console.log(r);
+            $(".loading").css("display", "");
             besttotalPage = bestsellertotal = Math.ceil(r.data.length/5);
                 for(let i=0; i<bestsellertotal; i++) {
                     $(".public_bestseller_tbl").append('<tbody class="public_bestseller_tbody"></tbody>');
@@ -223,7 +226,6 @@ $(function () {
                     let page = Math.floor(i / 5);
                     let tag = 
                     '<tr>'+
-                        '<td>'+'<img class="book_img" src='+r.data[i].img_url+'></td>'+
                         '<td>'+r.data[i].title+'</td>'+
                         '<td>'+r.data[i].author+'</td>'+
                         // '<td>'+r.data[i].description+'</td>'+

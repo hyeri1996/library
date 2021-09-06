@@ -170,11 +170,13 @@ $(function(){
 
     let besttotal = 0;
     currentPage = 0;
+    $(".loading").css("display", "block");
     $.ajax({
         type: "get",
         url: "/api/bookrank/small",
         success: function (r) {
             console.log(r);
+            $(".loading").css("display", "");
             bestsellertotalPage = besttotal = Math.ceil(r.data.length/5);
                 for(let i=0; i<besttotal; i++) {
                     $(".small_bestseller_tbl").append('<tbody class="small_bestseller_tbody"></tbody>');

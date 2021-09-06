@@ -15,5 +15,6 @@ public interface NewBookInfoMapper {
     public List<NewBookInfoVO> PublicBookCntRank();
 
     public List<NewBookInfoVO> selectNewBookList();     // 신작도서목록
+    public Integer selectNewBookCnt(); // 신작도서 갯수
 
 }

@@ -69,4 +69,9 @@ public class NewBookAPIController {
         System.out.println("end");
         return resultMap;
     }
+
+    @GetMapping("/api/newbook/cnt")
+    public Integer getNewBookCnt() {
+        return service.selectNewBookCnt();
+    }
 }

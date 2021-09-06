@@ -17,6 +17,9 @@
     <script src="/assets/js/lend.js"></script>
 </head>
 <body>
+    <div class="loading">
+        <img src="/assets/images/loading.gif" alt="">
+    </div>
     <div class="container">
         <%@include file="/WEB-INF/views/includes/menu.jsp"%>
         <div class="dashboard_area">

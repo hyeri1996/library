@@ -82,5 +82,17 @@ width: 1350px; position: relative;}
 .lend_list_tbl td:first-child {
     border-left: none;
 }
+.loading {
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100vw; height: 100vh; left: 0; top: 0;
+    display: none;
+    z-index: 999999999999;
+}
+
+.loading img {
+    position: absolute; width: 50px;
+    left: 50%; top: 50%; margin-left: -25px; margin-top: -25px;
+}
 
 

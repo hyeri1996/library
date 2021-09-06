@@ -1,4 +1,6 @@
 $(function(){
+    
+
 
     let currentPage = 0;
     let totalPage = 0;
@@ -20,11 +22,13 @@ $(function(){
         let url = "/api/lend/cnt?offset="+offset;
 
         let total = 0;
+        $(".loading").css("display", "block");
         $.ajax ({
             type:"get",
             url:url,
             success:function(r){
                 console.log(r)
+                $(".loading").css("display", "");
                 total = total = Math.ceil(r.data.length/10);
                 $("#lend_list_tbody").html("");
                 for(let i=0; i<r.data.length; i++) {

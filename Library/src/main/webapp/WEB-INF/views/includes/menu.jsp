@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="main_menu_list">
-        <a href="/index" id="logo_img">
+        <a href="http://localhost:8090/" id="logo_img">
             <img src="/assets/images/Dodo.png" alt="" id="logo_img">
         </a>
         <div class="menu_list">

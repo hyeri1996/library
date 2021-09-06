@@ -150,3 +150,15 @@ width: 1350px; position: relative;}
 
 .search_box_area.open {width: 700px;}
 .dashboard_content > .public_info_area.open {display: inline-block;}
+.loading {
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100vw; height: 100vh; left: 0; top: 0;
+    display: none;
+    z-index: 999999999999;
+}
+
+.loading img {
+    position: absolute; width: 50px;
+    left: 50%; top: 50%; margin-left: -25px; margin-top: -25px;
+}

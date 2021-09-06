@@ -72,5 +72,14 @@ $(function() {
 
         }
     })
+    $.ajax({
+        type:"get",
+        url:"/api/newbook/cnt",
+        success:function(cnt) {
+            console.log(cnt);
+            totalPage = Math.ceil(cnt/12);
+            $(".total").html(totalPage);
+        }
+    })
 
 });

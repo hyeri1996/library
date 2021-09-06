@@ -34,4 +34,8 @@ public class NewBookInfoService {
         return mapper.selectNewBookList();
     }
     
+    // 신작도서 갯수
+    public Integer selectNewBookCnt() {
+        return mapper.selectNewBookCnt();
+    }
 }

@@ -10,6 +10,13 @@
         from new_book
         limit 12 offset #{offset}
     </select>
+
+    <!-- 신작도서 총 갯수 -->
+    <select id="selectNewBookCnt" resultType="java.lang.Integer">
+        select
+            count(*)
+        from new_book
+    </select>
     
     <!-- 신작도서 정보 -->
     <select id="selectNewBookList" resultType="com.greenart.vo.NewBookInfoVO">
