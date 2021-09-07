@@ -29,11 +29,11 @@
     padding: 10px 0;font-size: 14px;
 }
 .search_box_detail {
-    width: 330px; height: 380px; margin-top: 20px;
+    width: 350px; height: 380px; margin-top: 20px;
     background-color: #fff; border-radius: 20px;
     border: 10px double rgb(175, 175, 175);
     box-shadow: 0 0 10px rgba(0,0,0,0.2); box-sizing: border-box;
-    margin-left: 80px; position: relative; 
+    margin-left: 60px; position: relative; 
 }
 .dashboard_content > .public_info_area {width: 250px; height: 200px; position: relative;
     display: none;
