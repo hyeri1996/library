@@ -150,7 +150,7 @@ $(function () {
                         '<td><i class="fas fa-phone"></i>'+r.data.tel+'</td>'+
                     '</tr>'+
                     '<tr>'+
-                        '<td><i class="fas fa-home"></i>'+r.data.homepage+'</td>'+
+                        '<td style="word-break:break-all"><i class="fas fa-home"></i>'+r.data.homepage+'</td>'+
                     '</tr>'+
                     '<tr>'+
                         '<td><i class="far fa-clock"></i>'+r.data.operatingTime+'</td>'+
